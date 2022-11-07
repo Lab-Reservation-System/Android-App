@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Lab-Reservation-System-Android.iml" filepath="$PROJECT_DIR$/.idea/modules/Lab-Reservation-System-Android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Lab-Reservation-System-Android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Lab-Reservation-System-Android.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Lab-Reservation-System-Android.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Lab-Reservation-System-Android.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Lab-Reservation-System-Android.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Lab-Reservation-System-Android.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Lab-Reservation-System-Android.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Lab-Reservation-System-Android.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab_reservation_system_android.iml" filepath="$PROJECT_DIR$/.idea/modules/lab_reservation_system_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/lab_reservation_system_android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/lab_reservation_system_android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/lab_reservation_system_android.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/lab_reservation_system_android.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/lab_reservation_system_android.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/lab_reservation_system_android.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/lab_reservation_system_android.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/lab_reservation_system_android.app.unitTest.iml" />
     </modules>
   </component>
 </project>

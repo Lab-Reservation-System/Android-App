@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Lab-Reservation-System-Android"
+rootProject.name = "lab_reservation_system_android"
 include ':app'
