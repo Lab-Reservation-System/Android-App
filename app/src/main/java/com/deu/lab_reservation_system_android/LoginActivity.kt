@@ -1,5 +1,6 @@
 package com.deu.lab_reservation_system_android
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -47,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful()) { // 응답 잘 받은 경우
                     Log.d("RESPONSE: ", response.body().toString())
-
+                    login_success()
                 } else {
                     // 통신 성공 but 응답 실패
                     Log.d("RESPONSE", "FAILURE")
@@ -60,4 +61,11 @@ class LoginActivity : AppCompatActivity() {
             }
         })
     }
+
+    fun login_success(){
+
+        val intent = Intent(this, Access_TokenActivity::class.java)
+        startActivity(intent)
+    }
+
 }

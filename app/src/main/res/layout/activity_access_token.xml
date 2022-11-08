@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#dcdcdc"
+    tools:context=".Access_TokenActivity">
+
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="40dp"
+        android:text="회원 사용 승인"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/skyblue_box"
+        android:orientation="vertical"
+        android:gravity="center"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="토큰 입력"
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/blue_corner"
+            android:textSize="30dp"
+            android:layout_margin="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_margin="20dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="40dp"
+                android:background="@drawable/white_blue_btn"
+                android:text="뒤로 가기"
+                android:textSize="30dp"
+                android:textColor="@color/black"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_margin="20dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="40dp"
+                android:background="@drawable/white_blue_btn"
+                android:text="사용 승인"
+                android:textSize="30dp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
