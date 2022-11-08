@@ -40,6 +40,7 @@
             android:textColor="@color/black" />
 
         <EditText
+            android:id="@+id/user_Id"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="0.7"
@@ -69,6 +70,7 @@
             android:textColor="@color/black" />
 
         <EditText
+            android:id="@+id/user_Password"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="0.7"
@@ -78,6 +80,7 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_btn"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
@@ -91,6 +94,7 @@
     />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/regist_btn"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
