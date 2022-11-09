@@ -5,14 +5,16 @@
       <map>
         <entry key="..\:/O/project/Lab-Reservation-System/Android-App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.216" />
         <entry key="..\:/O/project/Lab-Reservation-System/Android-App/app/src/main/res/drawable/blue_corner.xml" value="0.216" />
+        <entry key="..\:/O/project/Lab-Reservation-System/Android-App/app/src/main/res/drawable/blue_corner_gray.xml" value="0.216" />
         <entry key="..\:/O/project/Lab-Reservation-System/Android-App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.216" />
         <entry key="..\:/O/project/Lab-Reservation-System/Android-App/app/src/main/res/drawable/imac_message_talking_2_svgrepo_com.xml" value="0.216" />
         <entry key="..\:/O/project/Lab-Reservation-System/Android-App/app/src/main/res/drawable/skyblue_box.xml" value="0.216" />
         <entry key="..\:/O/project/Lab-Reservation-System/Android-App/app/src/main/res/drawable/splash_bg_gradient.xml" value="0.216" />
         <entry key="..\:/O/project/Lab-Reservation-System/Android-App/app/src/main/res/drawable/white_blue_btn.xml" value="0.216" />
         <entry key="..\:/O/project/Lab-Reservation-System/Android-App/app/src/main/res/layout/activity_access_token.xml" value="0.358695652173913" />
+        <entry key="..\:/O/project/Lab-Reservation-System/Android-App/app/src/main/res/layout/activity_info_change.xml" value="0.3333333333333333" />
         <entry key="..\:/O/project/Lab-Reservation-System/Android-App/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
-        <entry key="..\:/O/project/Lab-Reservation-System/Android-App/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="..\:/O/project/Lab-Reservation-System/Android-App/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="..\:/O/project/Lab-Reservation-System/Android-App/app/src/main/res/layout/login.xml" value="0.358695652173913" />
       </map>
     </option>
