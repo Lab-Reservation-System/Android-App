@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentFooterActivity">
+    tools:context=".Assistant_Lab_AllReservation_HistoryActivity">
 
-    <!-- 학생 화면 footer -->
+    <!-- 실습실 전체 예약 내역 조회 -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentFooterActivity">
+    tools:context=".TokenManagementActivity">
 
-    <!-- 학생 화면 footer -->
+    <!-- 토근 관리 화면 -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

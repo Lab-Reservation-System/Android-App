@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClassRegisterActivity">
+    tools:context=".Assistant_Student_Info_ChangeActivity">
 
+    <!-- 조교가 학생 정보 수정하는 화면 -->
 
-    <!-- 조교, 교수 정규 수업 등록 화면 -->
 </androidx.constraintlayout.widget.ConstraintLayout>
