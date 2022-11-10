@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Lab_ReservationActivity">
+    tools:context=".activity.Lab_ReservationActivity">
 
     <!-- 실습실 예약 선택 화면 -->
 

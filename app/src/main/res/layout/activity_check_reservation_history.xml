@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Check_Reservation_HistoryActivity">
+    tools:context=".activity.Check_Reservation_HistoryActivity">
 
 
     <!-- 내 예약 내역 조회 화면 -->

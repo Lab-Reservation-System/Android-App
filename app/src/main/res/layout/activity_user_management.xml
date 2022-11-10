@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserManagementActivity">
+    tools:context=".activity.UserManagementActivity">
 
     <!-- 조교가 사용자 관리하는 화면 -->
 

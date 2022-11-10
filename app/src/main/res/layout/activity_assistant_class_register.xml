@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AssistantClassRegisterActivity">
+    tools:context=".activity.AssistantClassRegisterActivity">
 
     <!-- 조교가 등록하는 정규 수업 화면 -->
 

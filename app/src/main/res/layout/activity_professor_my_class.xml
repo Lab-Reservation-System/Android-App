@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfessorMyClassActivity">
+    tools:context=".activity.ProfessorMyClassActivity">
 
 
     <!-- 교수 본인이 등록한 정규 수업 화면 -->

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AssistantReservationManagementActivity">
+    tools:context=".activity.AssistantReservationManagementActivity">
 
     <!-- 실습실 예약 관리(승인, 승인취소) 화면 -->
 
