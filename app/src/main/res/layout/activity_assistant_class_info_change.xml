@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Assistant_Class_Info_ChangeActivity">
+    tools:context=".activity.assistant.Assistant_Class_Info_ChangeActivity">
 
     <!-- 등록된 정규 수업 정보 수정 화면 -->
 

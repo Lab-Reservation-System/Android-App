@@ -16,14 +16,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".activity.AssistantFooterActivity"
+            android:name=".activity.assistant.AssistantFooterActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.TokenManagementActivity"
+            android:name=".activity.assistant.Assistant_TokenManagementActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -37,63 +37,63 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.Assistant_InfoChangeActivity"
+            android:name=".activity.assistant.Assistant_InfoChangeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.InfoChangeCheckActivity"
+            android:name=".activity.shared.InfoChangeCheckActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.AssistantMyPageActivity"
+            android:name=".activity.assistant.AssistantMyPageActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.Assistant_Lab_AllReservation_HistoryActivity"
+            android:name=".activity.assistant.Assistant_Lab_AllReservation_HistoryActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.AssistantReservationManagementActivity"
+            android:name=".activity.assistant.AssistantReservationManagementActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.Assistant_BlackListActivity"
+            android:name=".activity.assistant.Assistant_BlackListActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.Assistant_ProfessorSignUpActivity"
+            android:name=".activity.assistant.Assistant_ProfessorSignUpActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.Assistant_ProfessorInfoChangeActivity"
+            android:name=".activity.assistant.Assistant_ProfessorInfoChangeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.Assistant_Student_Info_ChangeActivity"
+            android:name=".activity.assistant.Assistant_Student_Info_ChangeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -107,42 +107,42 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.Assistant_Class_Info_ChangeActivity"
+            android:name=".activity.assistant.Assistant_Class_Info_ChangeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.AssistantClassRegisterActivity"
+            android:name=".activity.assistant.AssistantClassRegisterActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.Class_Info_ChangeActivity"
+            android:name=".activity.shared.Class_Info_ChangeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.ProfessorMyClassActivity"
+            android:name=".activity.professor.ProfessorMyClassActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.ProfessorMyPageActivity"
+            android:name=".activity.professor.ProfessorMyPageActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.ProfessorClassRegisterActivity"
+            android:name=".activity.professor.ProfessorClassRegisterActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -163,7 +163,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.Check_Reservation_HistoryActivity"
+            android:name=".activity.student.Check_Reservation_HistoryActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -177,14 +177,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.Lab_ScheduleActivity"
+            android:name=".activity.shared.Lab_ScheduleActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.Lab_ReservationActivity"
+            android:name=".activity.student.Lab_ReservationActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -205,7 +205,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.MyPageActivity"
+            android:name=".activity.shared.MyPageActivity"
             android:exported="false" />
         <activity
             android:name=".activity.InfoChangeActivity"

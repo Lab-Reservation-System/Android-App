@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.InfoChangeCheckActivity">
+    tools:context=".activity.shared.InfoChangeCheckActivity">
 
     <!-- 개인정보 수정 비밀번호 확인 화면 -->
 

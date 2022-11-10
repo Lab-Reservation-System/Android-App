@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Class_Info_ChangeActivity">
+    tools:context=".activity.shared.Class_Info_ChangeActivity">
 
 
     <!-- 정규 수업 수정 화면 -->

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Assistant_ProfessorInfoChangeActivity">
+    tools:context=".activity.assistant.Assistant_ProfessorInfoChangeActivity">
 
     <!-- 조교가 교수 정보 수정하는 화면 -->
 

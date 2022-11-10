@@ -1,13 +1,14 @@
-package com.deu.lab_reservation_system_android.activity
+package com.deu.lab_reservation_system_android.activity.shared
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.deu.lab_reservation_system_android.R
 
-// 실습실 예약 화면
-class Lab_ReservationActivity : AppCompatActivity() {
+
+// 개인정보 수정 비밀번호 확인
+class InfoChangeCheckActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_lab_reservation)
+        setContentView(R.layout.activity_info_change_check)
     }
 }

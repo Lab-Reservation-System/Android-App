@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Assistant_ProfessorSignUpActivity">
+    tools:context=".activity.assistant.Assistant_ProfessorSignUpActivity">
 
     <!-- 조교가 교수 계정 생성할 때 화면 -->
 </androidx.constraintlayout.widget.ConstraintLayout>

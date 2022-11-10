@@ -1,13 +1,13 @@
-package com.deu.lab_reservation_system_android.activity
+package com.deu.lab_reservation_system_android.activity.assistant
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.deu.lab_reservation_system_android.R
 
-// 정규 수업 수정
-class Class_Info_ChangeActivity : AppCompatActivity() {
+// 조교 개인정보수정
+class Assistant_InfoChangeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_class_info_change)
+        setContentView(R.layout.activity_assistant_info_change)
     }
 }

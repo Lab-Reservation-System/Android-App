@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Assistant_Lab_AllReservation_HistoryActivity">
+    tools:context=".activity.assistant.Assistant_Lab_AllReservation_HistoryActivity">
 
     <!-- 실습실 전체 예약 내역 조회 -->
 
