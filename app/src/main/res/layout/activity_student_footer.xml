@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Reservation_StatusActivity">
+    tools:context=".StudentFooter">
+
+    <!-- 학생 화면 footer -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
