@@ -1,6 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
+<<<<<<< HEAD
     id 'com.android.application' version '7.2.1' apply false
     id 'com.android.library' version '7.2.1' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.21' apply false
+=======
+    id 'com.android.application' version '7.3.1' apply false
+    id 'com.android.library' version '7.3.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
+>>>>>>> 56daf6dc9ed17466b14aa8d7b3c75da9885098ee
 }
