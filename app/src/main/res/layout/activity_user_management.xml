@@ -130,6 +130,54 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="20dp"
+        android:weightSum="1"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/blackListBtn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="블랙리스트 관리"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:background="@drawable/skyblue_box"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="20dp"
+        android:weightSum="1"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/professorRegister"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="교수 ID 생성"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:background="@drawable/skyblue_box"
+            />
+
+    </LinearLayout>
 
 
 </LinearLayout>
