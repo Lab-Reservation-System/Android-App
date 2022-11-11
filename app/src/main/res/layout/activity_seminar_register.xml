@@ -91,7 +91,10 @@
             android:layout_weight="0.6"
             android:textColor="@color/black"
             android:background="@drawable/blue_corner"
+            android:textAlignment="center"
             />
+
+        <!-- 실습실 선택 -->
         <Spinner
             android:layout_width="0dp"
             android:layout_height="40dp"
@@ -101,6 +104,149 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="30dp"
 
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:text="날짜(요일)"
+            android:layout_marginTop="30dp"
+            android:layout_weight="0.3"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/calendarDate"
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.7"
+            android:textColor="@color/black"
+            android:background="@drawable/blue_corner"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:text="시작 시간"
+            android:layout_marginTop="30dp"
+            android:layout_weight="0.3"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/sTime"
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.7"
+            android:textColor="@color/black"
+            android:background="@drawable/blue_corner"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:text="종료 시간"
+            android:layout_marginTop="30dp"
+            android:layout_weight="0.3"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/eTime"
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.7"
+            android:textColor="@color/black"
+            android:background="@drawable/blue_corner"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/registerBtn"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:text="등록"
+            android:layout_weight="0.35"
+            android:background="@drawable/white_blue_btn"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/registerCancleBtn"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:text="등록"
+            android:layout_weight="0.35"
+            android:background="@drawable/white_blue_btn"
             />
 
     </LinearLayout>
