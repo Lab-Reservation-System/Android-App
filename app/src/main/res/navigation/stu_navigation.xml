@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stu_navigation"
+    app:startDestination="@id/stu_LabStatusFragment">
+
+    <fragment
+        android:id="@+id/stu_LabStatusFragment"
+        android:name="com.deu.lab_reservation_system_android.stu_fragments.stu_LabStatusFragment"
+        android:label="fragment_stu_labstatus"
+        tools:layout="@layout/fragment_stu_labstatus" />
+    <fragment
+        android:id="@+id/stu_ScheduleFragment"
+        android:name="com.deu.lab_reservation_system_android.stu_fragments.stu_ScheduleFragment"
+        android:label="fragment_stu_schedule"
+        tools:layout="@layout/fragment_stu_schedule" />
+    <fragment
+        android:id="@+id/stu_MyPageFragment"
+        android:name="com.deu.lab_reservation_system_android.stu_fragments.stu_MyPageFragment"
+        android:label="fragment_stu_mypage"
+        tools:layout="@layout/fragment_stu_mypage" />
+</navigation>

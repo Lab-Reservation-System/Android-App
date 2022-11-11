@@ -1,5 +1,6 @@
 package com.deu.lab_reservation_system_android.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -14,7 +15,8 @@ class Access_TokenActivity : AppCompatActivity() {
         val back_btn = findViewById<Button>(R.id.backPageBtn)
 
         signup_btn.setOnClickListener{
-
+            val intent = Intent(this, Student_Nav_Activity::class.java)
+            startActivity(intent)
         }
 
         back_btn.setOnClickListener{
