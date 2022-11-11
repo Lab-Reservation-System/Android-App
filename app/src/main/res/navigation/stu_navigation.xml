@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/stu_navigation"
-    app:startDestination="@id/stu_LabStatusFragment">
+    app:startDestination="@id/stu_labStatusFragment">
 
     <fragment
-        android:id="@+id/stu_LabStatusFragment"
+        android:id="@+id/stu_labStatusFragment"
         android:name="com.deu.lab_reservation_system_android.stu_fragments.stu_LabStatusFragment"
         android:label="fragment_stu_labstatus"
         tools:layout="@layout/fragment_stu_labstatus" />
     <fragment
-        android:id="@+id/stu_ScheduleFragment"
+        android:id="@+id/stu_scheduleFragment"
         android:name="com.deu.lab_reservation_system_android.stu_fragments.stu_ScheduleFragment"
         android:label="fragment_stu_schedule"
         tools:layout="@layout/fragment_stu_schedule" />
     <fragment
-        android:id="@+id/stu_MyPageFragment"
+        android:id="@+id/stu_myPageFragment"
         android:name="com.deu.lab_reservation_system_android.stu_fragments.stu_MyPageFragment"
         android:label="fragment_stu_mypage"
         tools:layout="@layout/fragment_stu_mypage" />

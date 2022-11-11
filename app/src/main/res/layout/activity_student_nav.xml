@@ -12,6 +12,8 @@
     <!-- 학생 화면 네이게이션 -->
 
     <!-- 프레그먼트들이 보여질 컨테이너 뷰 -->
+
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/stu_nav_host"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -19,16 +21,13 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/stu_navigation"
-        />
-
-
+        app:navGraph="@navigation/stu_navigation" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/stu_bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00BCD4"
+        android:background="#e1e1e1"
         app:menu="@menu/stu_bottom_nav_menu"
 
         />

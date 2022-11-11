@@ -9,30 +9,33 @@
 
 
     <TextView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:gravity="center_horizontal"
         android:text="개인정보조회"
-        android:textSize="50dp"
+        android:textSize="30dp"
         android:textStyle="bold"
         android:textColor="#000"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:orientation="horizontal"
+        android:gravity="center"
         android:weightSum="1">
 
 
         <TextView
             android:layout_width="0dp"
             android:layout_weight="0.3"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:text="이름"
             android:textSize="20dp"
             android:textColor="#000"
@@ -42,7 +45,8 @@
         <EditText
             android:id="@+id/user_name"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
+            android:textSize="20dp"
             android:layout_weight="0.7"
             android:background="@android:color/transparent"
             />
@@ -50,8 +54,9 @@
     </LinearLayout>
 
     <LinearLayout
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
@@ -61,7 +66,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="0.3"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:text="ID(학번)"
             android:textSize="20dp"
             android:textColor="#000"
@@ -71,7 +77,8 @@
         <EditText
             android:id="@+id/user_Id"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
+            android:textSize="20dp"
             android:layout_weight="0.7"
             android:background="@android:color/transparent"
             />
@@ -79,8 +86,9 @@
     </LinearLayout>
 
     <LinearLayout
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
@@ -90,7 +98,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="0.3"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:text="이메일"
             android:textSize="20dp"
             android:textColor="#000"
@@ -98,15 +107,18 @@
         <EditText
             android:id="@+id/user_email"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
+            android:textSize="20dp"
             android:layout_weight="0.7"
             android:inputType="textEmailAddress"
             android:background="@android:color/transparent"
             />
     </LinearLayout>
     <LinearLayout
+
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
@@ -116,21 +128,21 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="0.3"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:text="전화번호"
             android:textSize="20dp"
             android:textColor="#000"
             />
         <EditText
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_weight="0.7"
+            android:textSize="20dp"
             android:background="@android:color/transparent"
             android:inputType="phone"
             />
     </LinearLayout>
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -145,7 +157,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/my_seminar_btn"
             android:layout_width="0dp"
-            android:layout_weight="0.4"
+            android:layout_weight="0.45"
             android:layout_height="40dp"
             android:text="내 세미나"
             android:textStyle="bold"
@@ -154,16 +166,16 @@
             android:textSize="20dp"
             />
 
-        <TextView
+        <View
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_weight="0.2"
+            android:layout_weight="0.1"
             />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/my_reservation_btn"
             android:layout_width="0dp"
-            android:layout_weight="0.4"
+            android:layout_weight="0.45"
             android:layout_height="40dp"
             android:text="예약 조회"
             android:textStyle="bold"
