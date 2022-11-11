@@ -1,6 +1,7 @@
 package com.deu.lab_reservation_system_android.stu_fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +12,15 @@ class stu_ScheduleFragment : Fragment() {
 
     private var mBinding : FragmentStuScheduleBinding? = null
 
+
+
     override fun onCreateView(
+
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d("로그", "onCreateView: 시간표")
         val binding = FragmentStuScheduleBinding.inflate(inflater, container, false)
 
         mBinding = binding
@@ -24,6 +29,7 @@ class stu_ScheduleFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+
         mBinding = null
         super.onDestroyView()
     }

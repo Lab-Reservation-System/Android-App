@@ -1,6 +1,7 @@
 package com.deu.lab_reservation_system_android.stu_fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +18,7 @@ class stu_LabStatusFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d("로그", "onCreateView: 실습실현황")
         val binding = FragmentStuLabstatusBinding.inflate(inflater, container, false)
 
         mBinding = binding

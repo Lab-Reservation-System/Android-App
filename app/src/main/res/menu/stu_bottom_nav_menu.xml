@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
+    <item
+        android:id="@+id/stu_scheduleFragment"
+        android:title="시간표"
+        android:icon="@drawable/ic_schedule"
+        />
 
     <item
         android:id="@+id/stu_labStatusFragment"
@@ -9,11 +14,6 @@
         android:icon="@drawable/ic_status"
         />
 
-    <item
-        android:id="@+id/stu_scheduleFragment"
-        android:title="시간표"
-        android:icon="@drawable/ic_schedule"
-        />
 
     <item
         android:id="@+id/stu_myPageFragment"

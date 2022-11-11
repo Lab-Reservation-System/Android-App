@@ -18,14 +18,13 @@ class Student_Nav_Activity : AppCompatActivity() {
 
         mBinding = ActivityStudentNavBinding.inflate(layoutInflater)
 
-        val TAG = "시발"
-        Log.d(TAG, "1번")
+
+
         setContentView(mBinding.root)
-        Log.d(TAG, "2번")
+
         // 네비게이션들을 담는 호스트
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.stu_nav_host) as NavHostFragment
 
-        Log.d(TAG, "3번")
         // 네비게이션 컨트롤러
         val navController = navHostFragment.navController
 
