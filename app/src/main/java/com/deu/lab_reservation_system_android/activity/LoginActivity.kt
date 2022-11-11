@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.model.Dto.LoginDto
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
+import org.json.JSONException
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,13 +35,13 @@ class LoginActivity : AppCompatActivity() {
         login_btn.setOnClickListener{
             id = userId.text.toString()
             pw = userPassword.text.toString()
-            val user = LoginDto()
-            user.id = userId.text.toString()
-            user.password = userPassword.text.toString()
+            val logindto = LoginDto()
+            logindto.id = userId.text.toString()
+            logindto.password = userPassword.text.toString()
 
-            Log.d("BUTTON CLICKED", "id: " + user.id + ", pw: " + user.password)
-            login_success() //화면 전환 테스트
-            //Login(user) 찐
+            Log.d("BUTTON CLICKED", "id: " + logindto.id + ", pw: " + logindto.password)
+            //login_success() //화면 전환 테스트
+            Login(logindto) //찐
         }
 
         regist_btn.setOnClickListener{  //회원 가입 버튼 클릭
@@ -49,9 +51,8 @@ class LoginActivity : AppCompatActivity() {
 
         }
     }
-    fun Login(user: LoginDto) {
-        val call = RetrofitBuilder.api.getLoginResponse(user)
-
+    fun Login(logindto: LoginDto) {
+        val call = RetrofitBuilder.api.getLoginResponse(logindto)
         call.enqueue(object : Callback<String> { // 비동기 방식 통신 메소드
 
             override fun onResponse( // 통신에 성공한 경우
@@ -60,6 +61,13 @@ class LoginActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful()) { // 응답 잘 받은 경우
                     Log.d("RESPONSE: ", response.body().toString())
+                    try {
+                        val email = JSONObject(response.body()).getString("email")
+                        Log.d("RESPONSE: ", email)
+
+                    }catch (e:JSONException){
+                        e.printStackTrace()
+                    }
                     login_success()
                 } else {
                     // 통신 성공 but 응답 실패

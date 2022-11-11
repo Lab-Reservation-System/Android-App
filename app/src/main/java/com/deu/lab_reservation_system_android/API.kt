@@ -6,6 +6,6 @@ import retrofit2.http.*
 
 public interface API {
     // login
-    @POST("/api/login")
-    fun getLoginResponse(@Body user: LoginDto): Call<String>
+    @POST("/api/user/login")
+    fun getLoginResponse(@Body logindto : LoginDto): Call<String>
 }

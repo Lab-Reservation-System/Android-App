@@ -51,7 +51,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
 
-
     //뷰모델
     def lifecycle_version = "2.6.0-alpha03"
     // ViewModel
