@@ -122,7 +122,7 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:textSize="20dp"
-            android:text="날짜(요일)"
+            android:text="날짜"
             android:layout_marginTop="30dp"
             android:layout_weight="0.3"
             android:textColor="@color/black"
@@ -176,6 +176,7 @@
             android:textColor="@color/black"
             android:background="@drawable/blue_corner"
             android:textAlignment="center"
+
             />
 
     </LinearLayout>
@@ -224,6 +225,7 @@
         android:weightSum="1"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
 
         >
 
@@ -231,10 +233,13 @@
             android:id="@+id/registerBtn"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:text="등록"
-            android:layout_weight="0.35"
-            android:background="@drawable/white_blue_btn"
+            android:textStyle="bold"
+            android:layout_weight="0.5"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:background="#1478FF"
 
             />
 
@@ -242,11 +247,14 @@
             android:id="@+id/registerCancleBtn"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
-            android:text="등록"
-            android:layout_weight="0.35"
-            android:background="@drawable/white_blue_btn"
+            android:text="취소"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_weight="0.5"
+            android:background="#F30D15"
             />
 
     </LinearLayout>
