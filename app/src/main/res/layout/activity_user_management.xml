@@ -1,11 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.UserManagementActivity">
+    tools:context=".activity.UserManagementActivity"
+    android:orientation="vertical"
+    >
 
     <!-- 조교가 사용자 관리하는 화면 -->
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="사용자 관리"
+        android:textSize="40dp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:gravity="center"
+        android:background="@drawable/blue_title"
+        android:textColor="@color/white"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="20dp"
+        android:weightSum="1"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.2"
+            android:text="학생"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:background="@drawable/blue_corner_gray"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.6"
+            android:background="@drawable/blue_corner"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.2"
+            android:textColor="@color/white"
+            android:text="조회"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:background="@drawable/skyblue_box"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/blue_corner"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:stretchColumns="*"
+            >
+
+            <TableRow>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="이름"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="학번"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="PW"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="승인 상태"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="23dp"
+                    />
+
+            </TableRow>
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
