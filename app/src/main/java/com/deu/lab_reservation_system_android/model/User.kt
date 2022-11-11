@@ -1,10 +1,16 @@
 package com.deu.lab_reservation_system_android.model
 
-class User {
-    var id : String? = null
-        get(){ return field }
-        set(value){ field = value }
-    var password : String? = null
-        get(){ return field }
-        set(value){ field = value }
-}
+import com.google.gson.annotations.SerializedName
+
+data class User(
+
+    @SerializedName("userId")
+    val userId: Int,
+
+    @SerializedName("id")
+    val id: String,
+
+    @SerializedName("body")
+    val body: String
+
+)

@@ -12,8 +12,9 @@
     >
 
     <TextView
+
         android:id="@+id/vertical_sign_up"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,17 +24,8 @@
         android:textSize="40dp"
         />
 
-    <ImageView
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        android:background="@drawable/logo"
-        android:id="@+id/logo_image"
-        />
-
     <EditText
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:id="@+id/name"
@@ -49,7 +41,7 @@
         android:layout_marginRight="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/stunum"
+        android:id="@+id/stu_id"
         android:hint="학번"
         android:textColorHint="#000"
         android:inputType="text"
@@ -99,16 +91,30 @@
         android:inputType="phone"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="30dp"
         android:id="@+id/signup_btn"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:text="회원가입"
-        android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:background="#1478FF"
         />
 
+    <androidx.appcompat.widget.AppCompatButton
+
+        android:id="@+id/back_btn"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="뒤로 가기"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:background="#636465"
+        />
 </LinearLayout>
