@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.UserManagementActivity"
     android:orientation="vertical"
+    android:background="@color/white"
     >
 
     <!-- 조교가 사용자 관리하는 화면 -->
@@ -48,6 +49,8 @@
             android:layout_height="40dp"
             android:layout_weight="0.6"
             android:background="@drawable/blue_corner"
+            android:textAlignment="center"
+            android:textColor="@color/black"
             />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -63,14 +66,12 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:orientation="vertical"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         >
-
         <TableLayout
             android:id="@+id/tableLayout"
             android:layout_width="match_parent"
@@ -79,10 +80,15 @@
             android:weightSum="1"
             android:orientation="horizontal"
             android:stretchColumns="*"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             >
 
-            <TableRow>
+            <TableRow
+                android:id="@+id/tableTitleRow"
+                >
                 <TextView
+                    android:id="@+id/userName"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.25"
@@ -93,6 +99,7 @@
                     android:textSize="25dp"
                     />
                 <TextView
+                    android:id="@+id/userNum"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.25"
@@ -103,6 +110,7 @@
                     android:textSize="25dp"
                     />
                 <TextView
+                    android:id="@+id/userPw"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.25"
@@ -113,6 +121,7 @@
                     android:textSize="25dp"
                     />
                 <TextView
+                    android:id="@+id/userCheck"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.25"
@@ -125,10 +134,22 @@
 
             </TableRow>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/table_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableTitleRow"
+                >
+            </androidx.recyclerview.widget.RecyclerView>
         </TableLayout>
 
 
-    </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <LinearLayout
         android:layout_marginTop="10dp"
@@ -178,6 +199,5 @@
             />
 
     </LinearLayout>
-
 
 </LinearLayout>
