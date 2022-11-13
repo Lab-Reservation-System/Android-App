@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/assist_scheduleFragment"
+        android:title="시간표"
+        android:icon="@drawable/ic_schedule"
+        />
+    <item
+        android:id="@+id/assist_userManageFragment"
+        android:title="사용자 관리"
+        android:icon="@drawable/ic_user_controll"
+        />
+
+    <item
+        android:id="@+id/assist_labStatusFragment"
+        android:title="실습실 사용 현황"
+        android:icon="@drawable/ic_status"
+        />
+
+    <item
+        android:id="@+id/assist_reservationFragment"
+        android:title="예약 내역"
+        android:icon="@drawable/ic_reservation"
+        />
+
+
+    <item
+        android:id="@+id/assist_myPageFragment"
+        android:title="마이페이지"
+        android:icon="@drawable/ic_mypage"
+        />
+
+</menu>

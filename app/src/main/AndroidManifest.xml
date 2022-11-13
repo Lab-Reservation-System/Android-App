@@ -221,10 +221,8 @@
         </activity>
 
         <activity
-            android:name=".activity.Student_Nav_Activity"
+            android:name=".activity.nav.Student_Nav_Activity"
             android:exported="false" >
-
-
 
             <meta-data
                 android:name="android.app.lib_name"
@@ -232,7 +230,16 @@
 
 
         </activity>
+        <activity
+            android:name=".activity.nav.Assistant_Nav_Activity"
+            android:exported="false" >
 
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+
+        </activity>
 
     </application>
 

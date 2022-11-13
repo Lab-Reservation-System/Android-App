@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context=".activity.nav.Student_Nav_Activity"
+    tools:context=".activity.nav.Assistant_Nav_Activity"
     >
 
     <!-- 학생 화면 네이게이션 -->
@@ -15,20 +15,20 @@
 
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/stu_nav_host"
+        android:id="@+id/assist_nav_host"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/stu_navigation" />
+        app:navGraph="@navigation/assist_navigation" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/stu_bottom_nav"
+        android:id="@+id/assist_bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#e1e1e1"
-        app:menu="@menu/stu_bottom_nav_menu"
+        app:menu="@menu/assist_bottom_nav_menu"
 
         />
 

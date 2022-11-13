@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.stu_fragments
+package com.deu.lab_reservation_system_android.assist_fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -6,24 +6,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.deu.lab_reservation_system_android.activity.nav.Assistant_Nav_Activity
 import com.deu.lab_reservation_system_android.activity.nav.Student_Nav_Activity
+import com.deu.lab_reservation_system_android.databinding.FragmentAssistMypageBinding
 
 import com.deu.lab_reservation_system_android.databinding.FragmentStuMypageBinding
 
-class stu_MyPageFragment : Fragment() {
+class assist_MyPageFragment : Fragment() {
 
-    private var mBinding : FragmentStuMypageBinding? = null
+    private var mBinding : FragmentAssistMypageBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.d("로그", "onCreateView: 마이페이ㅣㅈ")
+        Log.d("조교로그", "onCreateView: 마이페이ㅣㅈ")
 
-        var user = (activity as Student_Nav_Activity).getUser()
+        var user = (activity as Assistant_Nav_Activity).getUser()
 
-        val binding = FragmentStuMypageBinding.inflate(inflater, container, false)
+        val binding = FragmentAssistMypageBinding.inflate(inflater, container, false)
         mBinding = binding
 
         binding.userId.setText(user.id)

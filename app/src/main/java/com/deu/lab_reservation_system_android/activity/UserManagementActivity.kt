@@ -58,7 +58,7 @@ class UserManagementActivity : AppCompatActivity() {
         userList.add(StudentUser("asdasd", "20183152", "1234", true))
 
 
-        tableRecyclerView = findViewById(R.id.table_recycler_view)
+        tableRecyclerView = findViewById(R.id.table_recycler_view2)
         tableRowAdapter = TableRowAdapter(userList)
 
         tableRecyclerView.layoutManager = LinearLayoutManager(this)

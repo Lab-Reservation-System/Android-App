@@ -23,8 +23,5 @@
         android:name="com.deu.lab_reservation_system_android.stu_fragments.stu_MyPageFragment"
         android:label="fragment_stu_mypage"
         tools:layout="@layout/fragment_stu_mypage" >
-        <argument
-            android:name="myuser"
-            app:argType="com.deu.lab_reservation_system_android.model.User" />
     </fragment>
 </navigation>

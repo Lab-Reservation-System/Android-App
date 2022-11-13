@@ -8,7 +8,8 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.activity.Access_TokenActivity
-import com.deu.lab_reservation_system_android.activity.Student_Nav_Activity
+import com.deu.lab_reservation_system_android.activity.nav.Assistant_Nav_Activity
+import com.deu.lab_reservation_system_android.activity.nav.Student_Nav_Activity
 import com.deu.lab_reservation_system_android.model.Dto.LoginDto
 import com.deu.lab_reservation_system_android.model.User
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
@@ -44,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
 
             Log.d("BUTTON CLICKED", "id: " + logindto.id + ", pw: " + logindto.password)
 
-            var user2 = User("김준","1234","20183140", "1234-7897-44", true, "student","asds@naver.com")
+            var user2 = User("김준","1234","20183140", "1234-7897-44", true, "admin","asds@naver.com")
 
             job_check(user2) //화면 전환 테스트
 //            Login(logindto) //찐
@@ -109,13 +110,20 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intent)
 
             }
-            if(user.permissionState == true){
-                val intent = Intent(this, Student_Nav_Activity::class.java)
+            else if(user.permissionState == true){
+                intent = Intent(this, Student_Nav_Activity::class.java)
                 intent.putExtra("key",user)
                 startActivity(intent)
             }
         }
+        else if(user.job == "admin") {
+            Log.d("BUTTON CLICKED",user.job)
+            intent = Intent(this, Assistant_Nav_Activity::class.java)
+            intent.putExtra("key", user)
+            startActivity(intent)
 
+
+        }
 
 
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/assist_navigation"
+    app:startDestination="@id/assist_labStatusFragment">
+    <fragment
+        android:id="@+id/assist_labStatusFragment"
+        android:name="com.deu.lab_reservation_system_android.assist_fragments.assist_LabStatusFragment"
+        android:label="assist_LabStatusFragment"
+        tools:layout="@layout/fragment_assist_labstatus"/>
+    <fragment
+        android:id="@+id/assist_reservationFragment"
+        android:name="com.deu.lab_reservation_system_android.assist_fragments.assist_ReservationFragment"
+        android:label="assist_ReservationFragment"
+        tools:layout="@layout/fragment_assist_reservation"/>
+    <fragment
+        android:id="@+id/assist_myPageFragment"
+        android:name="com.deu.lab_reservation_system_android.assist_fragments.assist_MyPageFragment"
+        android:label="assist_MyPageFragment"
+        tools:layout="@layout/fragment_assist_mypage"/>
+    <fragment
+        android:id="@+id/assist_scheduleFragment"
+        android:name="com.deu.lab_reservation_system_android.assist_fragments.assist_ScheduleFragment"
+        android:label="assist_ScheduleFragment"
+        tools:layout="@layout/fragment_assist_schedule"/>
+    <fragment
+        android:id="@+id/assist_userManageFragment"
+        android:name="com.deu.lab_reservation_system_android.assist_fragments.assist_UserManageFragment"
+        android:label="assist_UserManageFragment"
+        tools:layout="@layout/fragment_assist_usermanage"
+        />
+
+
+</navigation>

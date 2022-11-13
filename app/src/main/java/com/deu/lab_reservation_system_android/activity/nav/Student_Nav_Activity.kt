@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.activity
+package com.deu.lab_reservation_system_android.activity.nav
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,6 +18,7 @@ import javax.net.ssl.HostnameVerifier
 class Student_Nav_Activity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityStudentNavBinding
+
     lateinit var data:User
 
     override fun onCreate(savedInstanceState: Bundle?) {
