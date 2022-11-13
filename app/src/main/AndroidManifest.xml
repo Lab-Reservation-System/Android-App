@@ -200,7 +200,7 @@
             android:name=".activity.InfoChangeActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SignUpActivity"
+            android:name=".activity.User.SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".activity.Access_TokenActivity"
@@ -210,7 +210,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".activity.User.LoginActivity"
             android:exported="true" >
 
             <intent-filter>

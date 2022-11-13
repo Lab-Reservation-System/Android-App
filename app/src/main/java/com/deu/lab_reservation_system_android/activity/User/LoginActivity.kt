@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.activity
+package com.deu.lab_reservation_system_android.activity.User
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,9 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.deu.lab_reservation_system_android.R
+import com.deu.lab_reservation_system_android.activity.Access_TokenActivity
 import com.deu.lab_reservation_system_android.model.Dto.LoginDto
+import com.deu.lab_reservation_system_android.model.User
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException
 import org.json.JSONObject
@@ -62,13 +64,23 @@ class LoginActivity : AppCompatActivity() {
                 if (response.isSuccessful()) { // 응답 잘 받은 경우
                     Log.d("RESPONSE: ", response.body().toString())
                     try {
-                        val email = JSONObject(response.body()).getString("email")
-                        Log.d("RESPONSE: ", email)
+                        val name = JSONObject(response.body()).getString("name")
+                        val id = JSONObject(response.body()).getString("id")
+                        val password = JSONObject(response.body()).getString("password")
+                        val permissionState = JSONObject(response.body()).getBoolean("permissionState")
+                        var phoneNumber: String = JSONObject(response.body()).getString("phoneNumber")
+                        var job = JSONObject(response.body()).getString("job")
+                        var email = JSONObject(response.body()).getString("email")
+
+                        var user = User(name,password,id, phoneNumber, permissionState, job, email)
+
+                        Log.d("RESPONSE: ", id)
+                        login_success(user)
 
                     }catch (e:JSONException){
                         e.printStackTrace()
                     }
-                    login_success()
+
                 } else {
                     // 통신 성공 but 응답 실패
                     Log.d("RESPONSE", "FAILURE")
@@ -82,9 +94,10 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-    fun login_success(){
+    fun login_success(user : User){
 
         val intent = Intent(this, Access_TokenActivity::class.java)
+        intent.putExtra("key",user)
         startActivity(intent)
     }
 
