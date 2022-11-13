@@ -12,9 +12,7 @@ class stu_ScheduleFragment : Fragment() {
 
     private var mBinding : FragmentStuScheduleBinding? = null
 
-
-
-    override fun onCreateView(
+        override fun onCreateView(
 
         inflater: LayoutInflater,
         container: ViewGroup?,

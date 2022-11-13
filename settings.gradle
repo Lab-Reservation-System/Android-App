@@ -10,8 +10,14 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+
     }
 
+
+
+
+
 }
+
 rootProject.name = "lab_reservation_system_android"
 include ':app'

@@ -8,6 +8,7 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.activity.Access_TokenActivity
+import com.deu.lab_reservation_system_android.activity.Student_Nav_Activity
 import com.deu.lab_reservation_system_android.model.Dto.LoginDto
 import com.deu.lab_reservation_system_android.model.User
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
@@ -42,8 +43,11 @@ class LoginActivity : AppCompatActivity() {
             logindto.password = userPassword.text.toString()
 
             Log.d("BUTTON CLICKED", "id: " + logindto.id + ", pw: " + logindto.password)
-            //login_success() //화면 전환 테스트
-            Login(logindto) //찐
+
+            var user2 = User("김준","1234","20183140", "1234-7897-44", true, "student","asds@naver.com")
+
+            job_check(user2) //화면 전환 테스트
+//            Login(logindto) //찐
         }
 
         regist_btn.setOnClickListener{  //회원 가입 버튼 클릭
@@ -75,7 +79,7 @@ class LoginActivity : AppCompatActivity() {
                         var user = User(name,password,id, phoneNumber, permissionState, job, email)
 
                         Log.d("RESPONSE: ", id)
-                        login_success(user)
+                        job_check(user)
 
                     }catch (e:JSONException){
                         e.printStackTrace()
@@ -94,11 +98,27 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-    fun login_success(user : User){
+    fun job_check(user : User){
+        var intent : Intent
 
-        val intent = Intent(this, Access_TokenActivity::class.java)
-        intent.putExtra("key",user)
-        startActivity(intent)
+        if(user.job == "student")
+        {
+            if(user.permissionState == false){
+                intent = Intent(this, Access_TokenActivity::class.java)
+                intent.putExtra("key",user)
+                startActivity(intent)
+
+            }
+            if(user.permissionState == true){
+                val intent = Intent(this, Student_Nav_Activity::class.java)
+                intent.putExtra("key",user)
+                startActivity(intent)
+            }
+        }
+
+
+
+
     }
 
 }
