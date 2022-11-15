@@ -48,9 +48,6 @@ class SignUpActivity : AppCompatActivity() {
             phone = stu_phone.text.toString()
             //val user = LoginDto()
 
-            val signupdto = SignupDto(id, name, password, password_ch, phone, email, false)
-            Log.d("BUTTON CLICKED", "회원가입 버튼 클릭")
-
 
             if(name.length == 0 || id.length ==0 || password.length == 0 || password_ch.length == 0 || email.length == 0|| phone.length == 0){
                 val builder = AlertDialog.Builder(this)
@@ -78,6 +75,8 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             else {
+                val signupdto = SignupDto(id, name, password, phone, email, "student", false)
+                Log.d("BUTTON CLICKED", "회원가입 버튼 클릭")
                 SignUp(signupdto)
             }
 
@@ -89,7 +88,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     fun SignUp(signupDto: SignupDto) {
-        val call = RetrofitBuilder.api.getSignupResponse(signupDto)
+        val call = RetrofitBuilder.api_user.getSignupResponse(signupDto)
         call.enqueue(object : Callback<String> { // 비동기 방식 통신 메소드
 
             override fun onResponse( // 통신에 성공한 경우

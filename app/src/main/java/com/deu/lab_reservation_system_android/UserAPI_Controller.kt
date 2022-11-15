@@ -5,7 +5,7 @@ import com.deu.lab_reservation_system_android.model.Dto.SignupDto
 import retrofit2.Call
 import retrofit2.http.*
 
-public interface UserAPI_Service {
+interface UserAPI_Controller {
     // login
     @POST("/api/user/login")
     fun getLoginResponse(@Body logindto : LoginDto): Call<String>

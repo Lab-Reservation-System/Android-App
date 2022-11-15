@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.activity.professor
+package com.deu.lab_reservation_system_android.activity.shared.professor
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

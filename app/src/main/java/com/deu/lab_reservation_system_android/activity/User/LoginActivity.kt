@@ -1,10 +1,13 @@
 package com.deu.lab_reservation_system_android.activity.User
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.activity.Access_TokenActivity
@@ -45,10 +48,10 @@ class LoginActivity : AppCompatActivity() {
 
             Log.d("BUTTON CLICKED", "id: " + logindto.id + ", pw: " + logindto.password)
 
-            var user2 = User("김준","1234","20183140", "1234-7897-44", true, "admin","asds@naver.com")
+            //var user2 = User("김준","1234","20183140", "1234-7897-44", true, "admin","asds@naver.com")
 
-            job_check(user2) //화면 전환 테스트
-//            Login(logindto) //찐
+            //job_check(user2) //화면 전환 테스트
+            Login(logindto) //찐
         }
 
         regist_btn.setOnClickListener{  //회원 가입 버튼 클릭
@@ -59,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
     fun Login(logindto: LoginDto) {
-        val call = RetrofitBuilder.api.getLoginResponse(logindto)
+        val call = RetrofitBuilder.api_user.getLoginResponse(logindto)
         call.enqueue(object : Callback<String> { // 비동기 방식 통신 메소드
 
             override fun onResponse( // 통신에 성공한 경우
@@ -88,7 +91,7 @@ class LoginActivity : AppCompatActivity() {
 
                 } else {
                     // 통신 성공 but 응답 실패
-                    Log.d("RESPONSE", "FAILURE")
+                    
                 }
             }
 

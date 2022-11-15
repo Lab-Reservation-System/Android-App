@@ -122,21 +122,21 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.professor.ProfessorMyClassActivity"
+            android:name=".activity.shared.professor.ProfessorMyClassActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.professor.ProfessorMyPageActivity"
+            android:name=".activity.shared.professor.ProfessorMyPageActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.professor.ProfessorClassRegisterActivity"
+            android:name=".activity.shared.professor.ProfessorClassRegisterActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"

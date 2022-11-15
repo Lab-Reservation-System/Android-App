@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.professor.ProfessorClassRegisterActivity">
+    tools:context=".activity.shared.professor.ProfessorClassRegisterActivity">
 
 
     <!-- 조교, 교수 정규 수업 등록 화면 -->
