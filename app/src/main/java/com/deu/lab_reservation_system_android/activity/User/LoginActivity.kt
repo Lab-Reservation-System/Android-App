@@ -14,8 +14,8 @@ import com.deu.lab_reservation_system_android.activity.Access_TokenActivity
 import com.deu.lab_reservation_system_android.activity.nav.Assistant_Nav_Activity
 import com.deu.lab_reservation_system_android.activity.nav.Professor_Nav_Activity
 import com.deu.lab_reservation_system_android.activity.nav.Student_Nav_Activity
-import com.deu.lab_reservation_system_android.activity.student.model.Dto.LoginDto
-import com.deu.lab_reservation_system_android.activity.student.model.User
+import com.deu.lab_reservation_system_android.model.Dto.LoginDto
+import com.deu.lab_reservation_system_android.model.User
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException
 import org.json.JSONObject

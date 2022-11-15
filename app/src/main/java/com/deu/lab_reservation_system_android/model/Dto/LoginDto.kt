@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.activity.student.model.Dto
+package com.deu.lab_reservation_system_android.model.Dto
 
 class LoginDto {
     var id : String? = null

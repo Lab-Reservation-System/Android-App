@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.activity.student.model
+package com.deu.lab_reservation_system_android.model
 
 import java.io.Serializable
 
@@ -10,5 +10,6 @@ data class User(
     var phoneNumber : String,
     var permissionState: Boolean,
     var job: String,
-    var email: String,
+    var email: String
+
 ) : Serializable

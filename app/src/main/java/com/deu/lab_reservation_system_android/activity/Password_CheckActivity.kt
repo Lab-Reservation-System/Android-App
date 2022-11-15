@@ -1,5 +1,7 @@
 package com.deu.lab_reservation_system_android.activity
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +9,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import com.deu.lab_reservation_system_android.R
-import com.deu.lab_reservation_system_android.activity.student.model.User
+import com.deu.lab_reservation_system_android.model.User
 
 class Password_CheckActivity : AppCompatActivity() {
 
@@ -30,7 +32,7 @@ class Password_CheckActivity : AppCompatActivity() {
                 intent.putExtra("key",data)
                 startActivity(intent)
             }
-            //else { wrong() }
+            else { wrong() }
 
         }
 
@@ -38,7 +40,13 @@ class Password_CheckActivity : AppCompatActivity() {
             finish()
         }
 
-
-
+    }
+    fun wrong(){
+        val builder = AlertDialog.Builder(this)
+            .setTitle("비밀번호가 틀립니다.")
+            .setMessage("다시 입력하세요")
+            .setPositiveButton("확인",
+                DialogInterface.OnClickListener{ dialog, which -> })
+        builder.show()
     }
 }
