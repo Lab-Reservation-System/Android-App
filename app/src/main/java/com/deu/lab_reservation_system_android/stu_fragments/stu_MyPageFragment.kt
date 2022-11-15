@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.deu.lab_reservation_system_android.activity.Access_TokenActivity
+import com.deu.lab_reservation_system_android.activity.Password_CheckActivity
 import com.deu.lab_reservation_system_android.activity.User.LoginActivity
 import com.deu.lab_reservation_system_android.activity.nav.Student_Nav_Activity
 
@@ -21,7 +23,7 @@ class stu_MyPageFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.d("로그", "onCreateView: 마이페이ㅣㅈ")
+        Log.d("로그", "onCreateView:학생 마이페이ㅣㅈ")
 
         var user = (activity as Student_Nav_Activity).getUser()
 
@@ -35,6 +37,11 @@ class stu_MyPageFragment : Fragment() {
 
         binding.logoutBtn.setOnClickListener(){
             var intent = Intent(activity, LoginActivity::class.java)
+            startActivity(intent)
+        }
+        binding.infoChangeBtn.setOnClickListener(){
+            var intent = Intent(activity, Password_CheckActivity::class.java)
+            intent.putExtra("key",user)
             startActivity(intent)
         }
 

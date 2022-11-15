@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.deu.lab_reservation_system_android.activity.Password_CheckActivity
 import com.deu.lab_reservation_system_android.activity.User.LoginActivity
 import com.deu.lab_reservation_system_android.activity.nav.Assistant_Nav_Activity
 import com.deu.lab_reservation_system_android.activity.nav.Student_Nav_Activity
@@ -37,6 +38,12 @@ class assist_MyPageFragment : Fragment() {
 
         binding.logoutBtn.setOnClickListener(){
             var intent = Intent(activity, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.infoChangeBtn.setOnClickListener(){
+            var intent = Intent(activity, Password_CheckActivity::class.java)
+            intent.putExtra("key",user)
             startActivity(intent)
         }
 

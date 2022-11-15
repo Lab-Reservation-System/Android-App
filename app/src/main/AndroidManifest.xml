@@ -128,13 +128,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".activity.shared.professor.ProfessorMyPageActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".activity.shared.professor.ProfessorClassRegisterActivity"
             android:exported="false" >
@@ -142,7 +136,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".activity.MySeminarActivity"
             android:exported="false" >
@@ -163,7 +156,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
         </activity>
         <activity
             android:name=".activity.shared.Lab_ScheduleActivity"
@@ -194,9 +186,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.shared.MyPageActivity"
-            android:exported="false" />
-        <activity
             android:name=".activity.InfoChangeActivity"
             android:exported="false" />
         <activity
@@ -212,43 +201,39 @@
         <activity
             android:name=".activity.User.LoginActivity"
             android:exported="true" >
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".activity.nav.Student_Nav_Activity"
             android:exported="false" >
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
-
         </activity>
         <activity
             android:name=".activity.nav.Assistant_Nav_Activity"
             android:exported="false" >
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
-
         </activity>
         <activity
             android:name=".activity.nav.Professor_Nav_Activity"
             android:exported="false" >
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
-
+        </activity>
+        <activity
+            android:name=".activity.Password_CheckActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
     </application>
 
