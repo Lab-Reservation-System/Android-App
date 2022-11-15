@@ -1,7 +1,7 @@
 package com.deu.lab_reservation_system_android
 
-import com.deu.lab_reservation_system_android.model.Dto.LoginDto
-import com.deu.lab_reservation_system_android.model.Dto.SignupDto
+import com.deu.lab_reservation_system_android.activity.student.model.Dto.LoginDto
+import com.deu.lab_reservation_system_android.activity.student.model.Dto.SignupDto
 import retrofit2.Call
 import retrofit2.http.*
 

@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.deu.lab_reservation_system_android.R
-import com.deu.lab_reservation_system_android.model.Dto.SignupDto
+import com.deu.lab_reservation_system_android.activity.student.model.Dto.SignupDto
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException
 import retrofit2.Call

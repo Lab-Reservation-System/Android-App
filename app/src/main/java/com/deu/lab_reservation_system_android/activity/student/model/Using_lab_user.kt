@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.model
+package com.deu.lab_reservation_system_android.activity.student.model
 
 //현재 실습실 사용중인 학생 정보
 class Using_lab_user {

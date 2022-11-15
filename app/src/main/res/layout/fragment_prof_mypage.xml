@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:id="@+id/stu_myPageFragment"
-    >
+    android:id="@+id/prof_myPageFragment">
 
 
     <TextView

@@ -7,7 +7,7 @@ import android.util.Log
 import android.widget.Button
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.activity.nav.Student_Nav_Activity
-import com.deu.lab_reservation_system_android.model.Dto.SignupDto
+import com.deu.lab_reservation_system_android.activity.student.model.Dto.SignupDto
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException
 import org.json.JSONObject

@@ -12,14 +12,14 @@ import androidx.navigation.ui.NavigationUI
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.databinding.ActivityAssistantNavBinding
 import com.deu.lab_reservation_system_android.databinding.ActivityStudentNavBinding
-import com.deu.lab_reservation_system_android.model.User
+import com.deu.lab_reservation_system_android.activity.student.model.User
 import javax.net.ssl.HostnameVerifier
 
 
 class Assistant_Nav_Activity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityAssistantNavBinding
-    lateinit var data:User
+    lateinit var data: User
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

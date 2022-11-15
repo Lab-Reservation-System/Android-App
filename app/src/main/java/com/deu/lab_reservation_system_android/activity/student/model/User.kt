@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.model
+package com.deu.lab_reservation_system_android.activity.student.model
 
 import java.io.Serializable
 

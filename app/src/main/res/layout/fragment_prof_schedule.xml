@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:id="@+id/stu_scheduleFragment"
-    tools:context="com.deu.lab_reservation_system_android.prof_fragments.prof_ScheduleFragment">
+    android:id="@+id/prof_scheduleFragment"    >
 
 
 

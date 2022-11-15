@@ -12,9 +12,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.activity.Access_TokenActivity
 import com.deu.lab_reservation_system_android.activity.nav.Assistant_Nav_Activity
+import com.deu.lab_reservation_system_android.activity.nav.Professor_Nav_Activity
 import com.deu.lab_reservation_system_android.activity.nav.Student_Nav_Activity
-import com.deu.lab_reservation_system_android.model.Dto.LoginDto
-import com.deu.lab_reservation_system_android.model.User
+import com.deu.lab_reservation_system_android.activity.student.model.Dto.LoginDto
+import com.deu.lab_reservation_system_android.activity.student.model.User
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException
 import org.json.JSONObject
@@ -91,7 +92,9 @@ class LoginActivity : AppCompatActivity() {
 
                 } else {
                     // 통신 성공 but 응답 실패
-                    
+
+                    wrong()
+
                 }
             }
 
@@ -124,12 +127,23 @@ class LoginActivity : AppCompatActivity() {
             intent = Intent(this, Assistant_Nav_Activity::class.java)
             intent.putExtra("key", user)
             startActivity(intent)
-
+        }
+        else if(user.job == "professor") {
+            Log.d("BUTTON CLICKED", user.job)
+            intent = Intent(this, Professor_Nav_Activity::class.java)
+            intent.putExtra("key", user)
+            startActivity(intent)
 
         }
+    }
 
-
-
+    fun wrong(){
+        val builder = AlertDialog.Builder(this)
+            .setTitle("로그인 실패")
+            .setMessage("다시 입력하세요")
+            .setPositiveButton("확인",
+                DialogInterface.OnClickListener{ dialog, which -> })
+        builder.show()
     }
 
 }

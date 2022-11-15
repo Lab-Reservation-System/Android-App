@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stu_navigation"
+    app:startDestination="@id/prof_labStatusFragment">
+
+    <fragment
+        android:id="@+id/prof_scheduleFragment"
+        android:name="com.deu.lab_reservation_system_android.prof_fragments.prof_ScheduleFragment"
+        android:label="prof_ScheduleFragment"
+        tools:layout="@layout/fragment_prof_schedule"
+        />
+
+    <fragment
+        android:id="@+id/prof_labStatusFragment"
+        android:name="com.deu.lab_reservation_system_android.prof_fragments.prof_LabStatusFragment"
+        android:label="prof_LabStatusFragment"
+        tools:layout="@layout/fragment_prof_labstatus"
+        />
+    <fragment
+        android:id="@+id/prof_myPageFragment"
+        android:name="com.deu.lab_reservation_system_android.prof_fragments.prof_MyPageFragment"
+        android:label="prof_MyPageFragment"
+        tools:layout="@layout/fragment_prof_mypage"
+        />
+</navigation>
