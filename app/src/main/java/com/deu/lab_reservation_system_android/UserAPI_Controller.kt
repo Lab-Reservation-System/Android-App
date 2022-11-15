@@ -13,4 +13,6 @@ interface UserAPI_Controller {
     @POST("/api/user/create")
     fun getSignupResponse(@Body signupDto: SignupDto): Call<String>
 
+    @PATCH("/api/user/permission/{userid}")
+    fun getUseAccessResponse(@Path("userid") userid: String): Call<String>
 }

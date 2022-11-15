@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/stu_labStatusFragment"
-        android:name="com.deu.lab_reservation_system_android.prof_fragments.prof_LabStatusFragment"
+        android:name="com.deu.lab_reservation_system_android.stu_fragments.stu_LabStatusFragment"
         android:label="fragment_stu_labstatus"
         tools:layout="@layout/fragment_stu_labstatus">
 
@@ -15,12 +15,12 @@
 
     <fragment
         android:id="@+id/stu_scheduleFragment"
-        android:name="com.deu.lab_reservation_system_android.prof_fragments.prof_ScheduleFragment"
+        android:name="com.deu.lab_reservation_system_android.stu_fragments.stu_ScheduleFragment"
         android:label="fragment_stu_schedule"
         tools:layout="@layout/fragment_stu_schedule" />
     <fragment
         android:id="@+id/stu_myPageFragment"
-        android:name="com.deu.lab_reservation_system_android.prof_fragments.prof_MyPageFragment"
+        android:name="com.deu.lab_reservation_system_android.stu_fragments.stu_MyPageFragment"
         android:label="fragment_stu_mypage"
         tools:layout="@layout/fragment_stu_mypage" >
     </fragment>

@@ -10,7 +10,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.deu.lab_reservation_system_android.R
-import com.deu.lab_reservation_system_android.databinding.ActivityStudentNavBinding
 import com.deu.lab_reservation_system_android.activity.student.model.User
 import com.deu.lab_reservation_system_android.databinding.ActivityProfessorNavBinding
 import javax.net.ssl.HostnameVerifier

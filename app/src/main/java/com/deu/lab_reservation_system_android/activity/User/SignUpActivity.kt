@@ -54,9 +54,7 @@ class SignUpActivity : AppCompatActivity() {
                     .setTitle("모든 내용을 입력하십시오!")
                     .setMessage("다시 입력하세요")
                     .setPositiveButton("확인",
-                        DialogInterface.OnClickListener{ dialog, which ->
-                            Toast.makeText(this, "확인", Toast.LENGTH_SHORT).show()
-                        })
+                        DialogInterface.OnClickListener{ dialog, which ->  })
                 builder.show()
 
             }
@@ -68,9 +66,7 @@ class SignUpActivity : AppCompatActivity() {
                     .setTitle("비밀번호가 일치하지 않습니다!")
                     .setMessage("다시 입력하세요")
                     .setPositiveButton("확인",
-                        DialogInterface.OnClickListener{ dialog, which ->
-                            Toast.makeText(this, "확인", Toast.LENGTH_SHORT).show()
-                        })
+                        DialogInterface.OnClickListener{ dialog, which ->   })
                 builder.show()
             }
 
@@ -108,6 +104,7 @@ class SignUpActivity : AppCompatActivity() {
 
                 } else {
                     // 통신 성공 but 응답 실패
+                    wrong()
                     Log.d("RESPONSE", "FAILURE")
                 }
             }
@@ -117,6 +114,16 @@ class SignUpActivity : AppCompatActivity() {
                 Log.d("CONNECTION FAILURE: ", t.localizedMessage)
             }
         })
+    }
+
+
+    fun wrong(){
+        val builder = AlertDialog.Builder(this)
+            .setTitle("회원가입 실패")
+            .setMessage("중복된 아이디 입니다.")
+            .setPositiveButton("확인",
+                DialogInterface.OnClickListener{ dialog, which -> })
+        builder.show()
     }
 
 }
