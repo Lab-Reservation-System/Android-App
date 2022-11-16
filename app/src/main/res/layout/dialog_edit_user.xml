@@ -49,6 +49,7 @@
             android:layout_weight="0.35"
             android:gravity="center"
             android:enabled="false"
+            android:singleLine="true"
             android:background="@drawable/blue_corner"
 
             android:textColor="@color/black" />
@@ -105,6 +106,7 @@
             android:layout_weight="0.7"
             android:textColor="@color/black"
             android:background="@drawable/blue_corner"
+            android:singleLine="true"
 
             />
 
@@ -141,6 +143,7 @@
             android:textColor="@color/black"
             android:background="@drawable/blue_corner"
             android:enabled="false"
+            android:singleLine="true"
             />
 
     </LinearLayout>
@@ -178,6 +181,7 @@
             android:maxEms="15"
             android:minEms="10"
             android:gravity="center"
+            android:singleLine="true"
             />
     </LinearLayout>
 
@@ -208,6 +212,7 @@
             android:layout_weight="0.7"
             android:inputType="textEmailAddress"
             android:gravity="center"
+            android:singleLine="true"
             />
     </LinearLayout>
     <LinearLayout
@@ -239,6 +244,7 @@
             android:gravity="center"
             android:background="@drawable/blue_corner"
             android:inputType="phone"
+            android:singleLine="true"
             />
     </LinearLayout>
 

@@ -50,7 +50,7 @@ class assist_UserManageFragment : Fragment() {
             update_Viewer(keyword)
         }
         binding.professorRegister.setOnClickListener(){
-            
+
         }
         return mBinding?.root
     }
@@ -64,15 +64,16 @@ class assist_UserManageFragment : Fragment() {
 
         var userList = ArrayList<user_show_format>()
 
+
         if(keyword.length==0){  //전체조회
             response_userList?.forEach { it ->
-                userList.add(user_show_format(it.name, it.id, it.job,it.permissionState))
+                userList.add(user_show_format(it.name, it.id, it.job,if(it.permissionState == true) "승인" else "미승인"))
             }
         }
         else {
             response_userList?.forEach { it ->
                 if (it.id.contains(keyword) || it.name.contains(keyword) || it.job.contains(keyword))//키워드가 포함된다면
-                    userList.add(user_show_format(it.name, it.id, it.job, it.permissionState))
+                    userList.add(user_show_format(it.name, it.id, it.job,if(it.permissionState == true) "승인" else "미승인"))
             }
         }
 

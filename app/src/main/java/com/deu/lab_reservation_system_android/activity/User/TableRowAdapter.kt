@@ -19,7 +19,7 @@ class TableRowAdapter (private var userArrayList: ArrayList<user_show_format>) :
         viewHolder.UserName.text = userArrayList[i].name
         viewHolder.UserNum.text = userArrayList[i].stdNum
         viewHolder.UserPw.text = userArrayList[i].job
-        viewHolder.UserCheck.text = userArrayList[i].check.toString()
+        viewHolder.UserCheck.text = userArrayList[i].check
 
         // (1) 리스트 내 항목 클릭 시 onClick() 호출
         viewHolder.itemView.setOnClickListener {
