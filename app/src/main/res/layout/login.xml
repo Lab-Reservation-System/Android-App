@@ -16,7 +16,6 @@
         android:text="로그인"
         android:textStyle="bold"
         android:textSize="40dp"
-
         android:textColor="@color/black"
         />
 
@@ -45,6 +44,8 @@
             android:layout_height="40dp"
             android:layout_weight="0.7"
             android:background="@drawable/blue_corner"
+            android:singleLine="true"
+
 
             />
 
@@ -74,6 +75,7 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="0.7"
+            android:singleLine="true"
             android:background="@drawable/blue_corner"
 
             />
