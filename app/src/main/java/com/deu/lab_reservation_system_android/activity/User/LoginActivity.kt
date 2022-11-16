@@ -49,10 +49,9 @@ class LoginActivity : AppCompatActivity() {
 
             Log.d("BUTTON CLICKED", "id: " + logindto.id + ", pw: " + logindto.password)
 
-            //var user2 = User("김준","1234","20183140", "1234-7897-44", true, "admin","asds@naver.com")
-
-            //job_check(user2) //화면 전환 테스트
-            Login(logindto) //찐
+            var user2 = User("김준","1234","20183140", "1234-7897-44", true, "admin","asds@naver.com")
+            job_check(user2) //화면 전환 테스트
+            //Login(logindto) //찐
         }
 
         regist_btn.setOnClickListener{  //회원 가입 버튼 클릭

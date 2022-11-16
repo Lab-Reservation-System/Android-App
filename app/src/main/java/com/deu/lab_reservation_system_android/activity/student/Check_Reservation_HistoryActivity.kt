@@ -7,8 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.activity.User.DataReservationHistory
 import com.deu.lab_reservation_system_android.activity.User.ReservationHistoryTableRowAdapter
-import com.deu.lab_reservation_system_android.activity.User.StudentUser
-import com.deu.lab_reservation_system_android.activity.User.TableRowAdapter
 
 // 내 예약 내역 조회
 class Check_Reservation_HistoryActivity : AppCompatActivity() {

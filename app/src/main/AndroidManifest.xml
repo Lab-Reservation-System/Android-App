@@ -23,13 +23,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".activity.assistant.Assistant_TokenManagementActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".activity.assistant.Assistant_InfoChangeActivity"
             android:exported="false" >
@@ -93,13 +87,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".activity.UserManagementActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".activity.assistant.Assistant_Class_Info_ChangeActivity"
             android:exported="false" >

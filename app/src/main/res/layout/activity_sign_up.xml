@@ -35,7 +35,7 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:singleLine="true"
-        android:privateImeOptions="defauㅇㅁltInput-mode=korean"
+        android:privateImeOptions="defaultInput-mode=korean"
         android:textColorHint="#000" />
 
     <EditText

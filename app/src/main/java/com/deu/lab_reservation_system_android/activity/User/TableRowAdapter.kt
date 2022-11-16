@@ -5,10 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.deu.lab_reservation_system_android.R
+import com.deu.lab_reservation_system_android.model.user_show_format
 
-class TableRowAdapter (private var userArrayList: ArrayList<StudentUser>) : RecyclerView.Adapter<TableRowAdapter.ViewHolder> () {
+class TableRowAdapter (private var userArrayList: ArrayList<user_show_format>) : RecyclerView.Adapter<TableRowAdapter.ViewHolder> () {
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         val v: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.user_management_table_row_layout, viewGroup, false)
         return ViewHolder(v)
@@ -17,7 +17,7 @@ class TableRowAdapter (private var userArrayList: ArrayList<StudentUser>) : Recy
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
         viewHolder.UserName.text = userArrayList[i].name
         viewHolder.UserNum.text = userArrayList[i].stdNum
-        viewHolder.UserPw.text = userArrayList[i].pwd
+        viewHolder.UserPw.text = userArrayList[i].job
         viewHolder.UserCheck.text = userArrayList[i].check.toString()
     }
 
