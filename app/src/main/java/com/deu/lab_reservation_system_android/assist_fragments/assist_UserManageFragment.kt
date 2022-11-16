@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -49,6 +50,8 @@ class assist_UserManageFragment : Fragment() {
             update_Viewer(keyword)
         }
 
+
+
         return mBinding?.root
     }
 
@@ -79,6 +82,13 @@ class assist_UserManageFragment : Fragment() {
         tableRecyclerView.layoutManager = LinearLayoutManager(context)
         tableRecyclerView.adapter = tableRowAdapter
 
+        tableRowAdapter.setItemClickListener(object: TableRowAdapter.OnItemClickListener{
+            override fun onClick(v: View, i: Int) {
+                // 클릭 시 이벤트 작성
+                Log.d("몇번째클릭", "onClick: ${i}")
+
+            }
+        })
     }
 
     fun get_all_user() {
