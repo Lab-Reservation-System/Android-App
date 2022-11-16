@@ -11,8 +11,8 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="사용자 정보 수정"
         android:textSize="30dp"
@@ -23,7 +23,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/blue_corner_gray"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
@@ -58,7 +58,7 @@
             android:layout_height="40dp"
             android:text="승인생태"
             android:gravity="center"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:textColor="#ffffff"
             />
 
@@ -140,7 +140,7 @@
             android:layout_weight="0.7"
             android:textColor="@color/black"
             android:background="@drawable/blue_corner"
-
+            android:enabled="false"
             />
 
     </LinearLayout>
@@ -245,7 +245,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/cancel_btn"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:layout_marginTop="15dp"
         android:layout_marginRight="30dp"
@@ -260,7 +260,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/info_save_btn"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
@@ -274,7 +274,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/info_delete_btn"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
@@ -284,7 +284,9 @@
         android:background="#EF1D1D"
         android:textSize="20dp"
         />
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
 
 
 </LinearLayout>

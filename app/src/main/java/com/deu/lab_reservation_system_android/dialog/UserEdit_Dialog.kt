@@ -31,7 +31,7 @@ class UserEdit_Dialog(context : Context) {
     {
 
         dialog.setContentView(R.layout.dialog_edit_user)
-        dialog.window!!.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.MATCH_PARENT)
+        dialog.window!!.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT)
         dialog.setCanceledOnTouchOutside(true)
 
         dialog.setCancelable(true)
@@ -83,11 +83,12 @@ class UserEdit_Dialog(context : Context) {
                 user.phoneNumber = edit_phone.text.toString()
                 save_edit(user)
             }
-
+            onClickListener.onClicked(0)
             dialog.dismiss()
         }
         delete_btn.setOnClickListener(){
             DeleteUser(user.id)
+            onClickListener.onClicked(1)
             dialog.dismiss()
         }
 
@@ -95,7 +96,7 @@ class UserEdit_Dialog(context : Context) {
 
     interface OnDialogClickListener
     {
-        fun onClicked(name: String)
+        fun onClicked(i:Int)
     }
 
     fun save_edit(user: User) {
@@ -109,15 +110,12 @@ class UserEdit_Dialog(context : Context) {
                 if (response.isSuccessful()) { // 응답 잘 받은 경우
                     Log.d("RESPONSE: ", response.body().toString())
                     try {
-
-
                     }catch (e: JSONException){
                         e.printStackTrace()
                     }
 
                 } else {
                     // 통신 성공 but 응답 실패
-
                     Log.d("RESPONSE", "FAILURE")
                 }
             }

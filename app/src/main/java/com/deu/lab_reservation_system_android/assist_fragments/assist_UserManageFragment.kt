@@ -1,6 +1,8 @@
 package com.deu.lab_reservation_system_android.assist_fragments
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +19,6 @@ import com.deu.lab_reservation_system_android.dialog.UserEdit_Dialog
 import com.deu.lab_reservation_system_android.model.User
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -44,14 +45,13 @@ class assist_UserManageFragment : Fragment() {
 
         get_all_user()
 
-
         binding.userSearchBtn.setOnClickListener(){
             var keyword : String = binding.userSearchText.text.toString()
             update_Viewer(keyword)
         }
-
-
-
+        binding.professorRegister.setOnClickListener(){
+            
+        }
         return mBinding?.root
     }
 
@@ -89,12 +89,25 @@ class assist_UserManageFragment : Fragment() {
                 val dialog = UserEdit_Dialog(activity!!)
 
                 response_userList?.forEach { it ->
-                    if(it.id == userList.get(i).stdNum)
+                    if(it.id == userList.get(i).stdNum) {
                         dialog.showDialog(it)
+                        dialog.setOnClickListener(object : UserEdit_Dialog.OnDialogClickListener {
+                            override fun onClicked(ch_num : Int) {
+                                Log.d("업데이트뷰어", "onClicked: 클릭됨")
+                                if (ch_num == 0) {
+                                    Toast.makeText(activity, "변경 완료", Toast.LENGTH_SHORT).show()
+                                    update_Viewer("")
+                                } else{
+                                    Toast.makeText(activity, "삭제 처리중", Toast.LENGTH_SHORT).show()
+                                    Handler(Looper.getMainLooper()).postDelayed({ get_all_user() }, 1000)
+                                }
+                            }
+
+                        })
+
+                    }
+
                 }
-
-
-
 
             }
         })
@@ -115,11 +128,8 @@ class assist_UserManageFragment : Fragment() {
                         Log.d("Watching: ", "성공2")
 
                         response_userList = response.body()!!
-
-
-//
+                        //
                         update_Viewer("")
-
 
 
                     }catch (e:JSONException){
