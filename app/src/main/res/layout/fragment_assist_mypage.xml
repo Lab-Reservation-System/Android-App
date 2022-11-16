@@ -165,29 +165,11 @@
         >
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/my_seminar_btn"
+            android:id="@+id/show_token"
             android:layout_width="0dp"
-            android:layout_weight="0.45"
+            android:layout_weight="1"
             android:layout_height="40dp"
-            android:text="내 세미나"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:background="@drawable/blue_corner_gray"
-            android:textSize="20dp"
-            />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="0.1"
-            />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/my_reservation_btn"
-            android:layout_width="0dp"
-            android:layout_weight="0.45"
-            android:layout_height="40dp"
-            android:text="예약 조회"
+            android:text="토큰 확인"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:background="@drawable/blue_corner_gray"

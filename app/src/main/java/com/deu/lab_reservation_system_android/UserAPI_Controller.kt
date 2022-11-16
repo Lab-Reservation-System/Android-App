@@ -21,5 +21,5 @@ interface UserAPI_Controller {
     fun EditUserResponse(@Path("id") userid: String, @Body user: User): Call<String>
 
     @DELETE("/api/user/delete/{id}")
-    fun DeleteUserResponse(@Path("userid") userid: String): Call<String>
+    fun DeleteUserResponse(@Path("id") userid: String): Call<String>
 }

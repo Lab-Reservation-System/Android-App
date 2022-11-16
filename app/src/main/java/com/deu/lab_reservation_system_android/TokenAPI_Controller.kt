@@ -10,4 +10,6 @@ interface TokenAPI_Controller {
     @GET("/api/token/show")
     fun getTokenResponse(): Call<String>
 
+    @GET("/api/token/create")
+    fun changeTokenResponse(): Call<String>
 }

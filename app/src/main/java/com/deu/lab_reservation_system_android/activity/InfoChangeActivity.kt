@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import com.deu.lab_reservation_system_android.R
+import com.deu.lab_reservation_system_android.activity.User.LoginActivity
 import com.deu.lab_reservation_system_android.activity.nav.Assistant_Nav_Activity
 import com.deu.lab_reservation_system_android.activity.nav.Professor_Nav_Activity
 import com.deu.lab_reservation_system_android.activity.nav.Student_Nav_Activity
@@ -81,8 +82,45 @@ class InfoChangeActivity : AppCompatActivity() {
                 save_edit()
             }
         }
+        delete_btn.setOnClickListener {
+            DeleteUser(data.id)
+        }
 
     }
+
+    fun DeleteUser(user_id: String) {
+        val call = RetrofitBuilder.api_user.DeleteUserResponse(user_id)
+        call.enqueue(object : Callback<String> { // 비동기 방식 통신 메소드
+
+            override fun onResponse( // 통신에 성공한 경우
+                call: Call<String>,
+                response: Response<String>
+            ) {
+                if (response.isSuccessful()) { // 응답 잘 받은 경우
+                    Log.d("RESPONSE: ", response.body().toString())
+                    try {
+                        // 로그인으로 이동
+                        alertDelte()
+
+
+
+                    }catch (e: JSONException){
+                        e.printStackTrace()
+                    }
+
+                } else {
+                    // 통신 성공 but 응답 실패
+                    Log.d("RESPONSE", "FAILURE")
+                }
+            }
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+                // 통신에 실패한 경우
+                Log.d("CONNECTION FAILURE: ", t.localizedMessage)
+            }
+        })
+    }
+
 
     fun save_edit() {
         val call = RetrofitBuilder.api_user.EditUserResponse(data.id,data)
@@ -140,5 +178,19 @@ class InfoChangeActivity : AppCompatActivity() {
         }
     }
 
+    fun alertDelte(){
+        val builder = AlertDialog.Builder(this)
+            .setTitle("회원 탈퇴 성공")
+            .setMessage("로그인 화면으로 돌아갑니다.")
+            .setPositiveButton("확인",
+                DialogInterface.OnClickListener{ dialog, which ->
+                    var intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+
+                })
+        builder.show()
+
+
+    }
 }
 
