@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.InfoChangeActivity"
+    android:orientation="vertical"
+    android:background="#CFDFE6"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="사용자 정보 수정"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/blue_corner_gray"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="직 책"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            />
+
+        <!-- 이름 값 DB에서 가져와서(setText()사용) 비활성화 하기-->
+        <EditText
+            android:id="@+id/user_job"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.35"
+            android:gravity="center"
+            android:enabled="false"
+            android:background="@drawable/blue_corner"
+
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:layout_height="40dp"
+            android:text="승인생태"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            />
+
+        <!-- 이름 값 DB에서 가져와서(setText()사용) 비활성화 하기-->
+        <EditText
+            android:id="@+id/user_permission"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_weight="0.15"
+            android:background="@drawable/blue_corner"
+            android:enabled="false"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="horizontal"
+        android:background="@drawable/blue_corner_gray"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:text="이  름"
+            android:gravity="center"
+            android:textSize="20dp"
+
+            android:textColor="#ffffff"
+            />
+
+        <!-- 이름 값 DB에서 가져와서 비활성화-->
+        <EditText
+            android:id="@+id/user_name"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:textColor="@color/black"
+            android:background="@drawable/blue_corner"
+
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="horizontal"
+        android:background="@drawable/blue_corner_gray"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:text="I  D"
+            android:gravity="center"
+            android:textSize="20dp"
+
+            android:textColor="#ffffff"
+            />
+
+        <!-- 이름 값 DB에서 가져와서 비활성화-->
+        <EditText
+            android:id="@+id/user_Id"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:textColor="@color/black"
+            android:background="@drawable/blue_corner"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="horizontal"
+        android:background="@drawable/blue_corner_gray"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:text="P  W"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            />
+
+        <!-- 비밀번호 자리수 제한 예외처리 하기 -->
+        <!-- 비밀번호 자리수 최소 10자 ~ 최대 15자 -->
+        <EditText
+            android:id="@+id/user_pw"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/blue_corner"
+            android:layout_weight="0.7"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:maxEms="15"
+            android:minEms="10"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="horizontal"
+        android:background="@drawable/blue_corner_gray"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:text="이 메 일"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            />
+        <EditText
+            android:id="@+id/user_email"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/blue_corner"
+            android:layout_weight="0.7"
+            android:inputType="textEmailAddress"
+            android:gravity="center"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="horizontal"
+        android:background="@drawable/blue_corner_gray"
+
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:text="전화번호"
+            android:textSize="20dp"
+
+            android:gravity="center"
+            android:textColor="#ffffff"
+            />
+        <EditText
+            android:id="@+id/user_phone"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.7"
+            android:gravity="center"
+            android:background="@drawable/blue_corner"
+            android:inputType="phone"
+            />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cancel_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="취    소"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/blue_corner_gray"
+        android:textSize="20dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/info_save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="수정 완료"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="#5065DD"
+        android:textSize="20dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/info_delete_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="계정 삭제"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="#EF1D1D"
+        android:textSize="20dp"
+        />
+
+
+
+</LinearLayout>

@@ -13,6 +13,7 @@ import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.model.user_show_format
 import com.deu.lab_reservation_system_android.activity.User.TableRowAdapter
 import com.deu.lab_reservation_system_android.databinding.FragmentAssistUsermanageBinding
+import com.deu.lab_reservation_system_android.dialog.UserEdit_Dialog
 import com.deu.lab_reservation_system_android.model.User
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException
@@ -29,7 +30,6 @@ class assist_UserManageFragment : Fragment() {
     private lateinit var tableRecyclerView : RecyclerView
 
     private lateinit var tableRowAdapter: TableRowAdapter
-    private lateinit var user : user_show_format
     private lateinit var binding: FragmentAssistUsermanageBinding
     lateinit var response_userList:List<User>
 
@@ -86,6 +86,15 @@ class assist_UserManageFragment : Fragment() {
             override fun onClick(v: View, i: Int) {
                 // 클릭 시 이벤트 작성
                 Log.d("몇번째클릭", "onClick: ${i}")
+                val dialog = UserEdit_Dialog(activity!!)
+
+                response_userList?.forEach { it ->
+                    if(it.id == userList.get(i).stdNum)
+                        dialog.showDialog(it)
+                }
+
+
+
 
             }
         })
@@ -131,28 +140,6 @@ class assist_UserManageFragment : Fragment() {
                 Log.d("Watching: ", "실패2")
             }
         })
-    }
-    fun json_to_array(jsonString : String){
-        try {
-            val userInfo = JSONObject(jsonString)
-            val jsonArray = userInfo.optJSONArray("test")
-
-            Log.d("길이출력먼저", "json_to_array: " + jsonArray.length())
-            var i = 0
-            var tempStr = ""
-            while (i < jsonArray.length()) {
-                val jsonObject = jsonArray.getJSONObject(i)
-
-                val userName = jsonObject.getString("name")
-                val userId = jsonObject.getString("id")
-
-                tempStr = "이름: $userName 아이디: $userId "
-                Log.d("출력", "json_to_array: "+ tempStr)
-                i++
-            }
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
     }
 
 
