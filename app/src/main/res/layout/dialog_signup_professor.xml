@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.User.SignUpActivity"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="#FFF"
+    >
+
+    <TextView
+
+        android:id="@+id/vertical_sign_up"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="교수용 회원가입"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+
+        android:textSize="25dp"
+        />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="#D64242"
+        android:gravity="center"
+        android:text="주의!\n값이 없으면 회원가입이 진행되지 않습니다."
+        android:textSize="15dp"
+        />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:hint="이름"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:singleLine="true"
+        android:privateImeOptions="defaultInput-mode=korean"
+        android:textColorHint="#000" />
+
+    <EditText
+        android:id="@+id/pro_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:singleLine="true"
+        android:layout_marginRight="30dp"
+        android:hint="교번"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#000" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:hint="비밀번호"
+        android:singleLine="true"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="#000" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:hint="Email"
+        android:singleLine="true"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:textColorHint="#000" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:hint="전화번호"
+        android:singleLine="true"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:textColorHint="#000" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="30dp"
+        android:id="@+id/signup_btn"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="계정생성"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:background="#1478FF"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+
+        android:id="@+id/back_btn"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="뒤로 가기"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:background="#636465"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+</LinearLayout>

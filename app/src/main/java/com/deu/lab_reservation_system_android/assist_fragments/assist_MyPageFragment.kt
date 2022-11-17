@@ -1,6 +1,5 @@
 package com.deu.lab_reservation_system_android.assist_fragments
 
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
@@ -10,13 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.deu.lab_reservation_system_android.activity.Password_CheckActivity
+import com.deu.lab_reservation_system_android.activity.User.Password_CheckActivity
 import com.deu.lab_reservation_system_android.activity.User.LoginActivity
 import com.deu.lab_reservation_system_android.activity.nav.Assistant_Nav_Activity
-import com.deu.lab_reservation_system_android.activity.nav.Student_Nav_Activity
 import com.deu.lab_reservation_system_android.databinding.FragmentAssistMypageBinding
 
-import com.deu.lab_reservation_system_android.databinding.FragmentStuMypageBinding
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException
 import org.json.JSONObject

@@ -1,6 +1,5 @@
-package com.deu.lab_reservation_system_android.activity
+package com.deu.lab_reservation_system_android.activity.User
 
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
@@ -11,7 +10,6 @@ import android.widget.Button
 import android.widget.EditText
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.activity.nav.Student_Nav_Activity
-import com.deu.lab_reservation_system_android.model.Dto.SignupDto
 import com.deu.lab_reservation_system_android.model.User
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException

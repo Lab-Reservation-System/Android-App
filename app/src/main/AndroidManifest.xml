@@ -168,13 +168,13 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.InfoChangeActivity"
+            android:name=".activity.User.InfoChangeActivity"
             android:exported="false" />
         <activity
             android:name=".activity.User.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.Access_TokenActivity"
+            android:name=".activity.User.Access_TokenActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
@@ -211,7 +211,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.Password_CheckActivity"
+            android:name=".activity.User.Password_CheckActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"

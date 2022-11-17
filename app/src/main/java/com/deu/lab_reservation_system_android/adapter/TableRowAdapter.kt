@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.activity.User
+package com.deu.lab_reservation_system_android.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +10,7 @@ import com.deu.lab_reservation_system_android.model.user_show_format
 
 class TableRowAdapter (private var userArrayList: ArrayList<user_show_format>) : RecyclerView.Adapter<TableRowAdapter.ViewHolder> () {
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
-        val v: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.user_management_table_row_layout, viewGroup, false)
+        val v: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.table_row_layout_user_management, viewGroup, false)
 
         return ViewHolder(v)
     }
@@ -19,7 +19,7 @@ class TableRowAdapter (private var userArrayList: ArrayList<user_show_format>) :
         viewHolder.UserName.text = userArrayList[i].name
         viewHolder.UserNum.text = userArrayList[i].stdNum
         viewHolder.UserPw.text = userArrayList[i].job
-        viewHolder.UserCheck.text = userArrayList[i].check.toString()
+        viewHolder.UserCheck.text = userArrayList[i].check
 
         // (1) 리스트 내 항목 클릭 시 onClick() 호출
         viewHolder.itemView.setOnClickListener {

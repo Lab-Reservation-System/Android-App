@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.activity
+package com.deu.lab_reservation_system_android.activity.User
 
 import android.app.AlertDialog
 import android.content.DialogInterface

@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.activity
+package com.deu.lab_reservation_system_android.activity.notUsed
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
