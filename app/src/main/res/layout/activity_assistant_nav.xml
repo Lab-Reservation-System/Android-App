@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context=".activity.nav.Assistant_Nav_Activity"
+    tools:context=".nav.Assistant_Nav_Activity"
     >
 
     <!-- 학생 화면 네이게이션 -->

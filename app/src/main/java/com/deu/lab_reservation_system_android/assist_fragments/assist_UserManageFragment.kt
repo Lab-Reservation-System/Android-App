@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.model.user_show_format
-import com.deu.lab_reservation_system_android.adapter.TableRowAdapter
+import com.deu.lab_reservation_system_android.adapter.UserListTableRowAdapter
 import com.deu.lab_reservation_system_android.databinding.FragmentAssistUsermanageBinding
 import com.deu.lab_reservation_system_android.dialog.BlackList_Dialog
 import com.deu.lab_reservation_system_android.dialog.ProfSignUp_Dialog
@@ -32,7 +32,7 @@ class assist_UserManageFragment : Fragment() {
 
     private lateinit var tableRecyclerView : RecyclerView
 
-    private lateinit var tableRowAdapter: TableRowAdapter
+    private lateinit var userListTableRowAdapter: UserListTableRowAdapter
     private lateinit var binding: FragmentAssistUsermanageBinding
     lateinit var response_userList:List<User>
 
@@ -89,12 +89,12 @@ class assist_UserManageFragment : Fragment() {
         }
 
         tableRecyclerView = binding.tableRecyclerView.findViewById(R.id.table_recycler_view)
-        tableRowAdapter = TableRowAdapter(userList)
+        userListTableRowAdapter = UserListTableRowAdapter(userList)
 
         tableRecyclerView.layoutManager = LinearLayoutManager(context)
-        tableRecyclerView.adapter = tableRowAdapter
+        tableRecyclerView.adapter = userListTableRowAdapter
 
-        tableRowAdapter.setItemClickListener(object: TableRowAdapter.OnItemClickListener{
+        userListTableRowAdapter.setItemClickListener(object: UserListTableRowAdapter.OnItemClickListener{
             override fun onClick(v: View, i: Int) {
                 // 클릭 시 이벤트 작성
                 Log.d("몇번째클릭", "onClick: ${i}")

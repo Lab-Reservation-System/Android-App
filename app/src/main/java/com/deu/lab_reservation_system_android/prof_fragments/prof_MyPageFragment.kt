@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.deu.lab_reservation_system_android.activity.User.Password_CheckActivity
 import com.deu.lab_reservation_system_android.activity.User.LoginActivity
-import com.deu.lab_reservation_system_android.activity.nav.Professor_Nav_Activity
+import com.deu.lab_reservation_system_android.nav.Professor_Nav_Activity
 import com.deu.lab_reservation_system_android.databinding.FragmentProfMypageBinding
 
 class prof_MyPageFragment : Fragment() {

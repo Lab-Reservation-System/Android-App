@@ -13,7 +13,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:gravity="center_horizontal"
         android:text="개인정보조회"
         android:textSize="30dp"
@@ -156,8 +156,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:orientation="horizontal"
@@ -168,7 +168,7 @@
             android:id="@+id/show_token"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:text="토큰 확인"
             android:textStyle="bold"
             android:textColor="@color/white"

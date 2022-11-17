@@ -7,10 +7,10 @@ import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.deu.lab_reservation_system_android.R
-import com.deu.lab_reservation_system_android.model.DataReservationHistory
+import com.deu.lab_reservation_system_android.model.myReservation
 
 // 테이블에 동적으로 row를 추가하기 위한 어뎁터
-class ReservationHistoryTableRowAdapter (private var userArrayList: ArrayList<DataReservationHistory>) : RecyclerView.Adapter<ReservationHistoryTableRowAdapter.ViewHolder> () {
+class myReservationTableRowAdapter (private var userArrayList: ArrayList<myReservation>) : RecyclerView.Adapter<myReservationTableRowAdapter.ViewHolder> () {
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         val v: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.table_row_layout_reservation_history, viewGroup, false)
         return ViewHolder(v)

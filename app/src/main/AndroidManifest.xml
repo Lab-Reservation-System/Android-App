@@ -16,66 +16,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31" >
 
-        <activity
-            android:name=".activity.assistant.AssistantFooterActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
 
-        <activity
-            android:name=".activity.assistant.Assistant_InfoChangeActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
 
-        <activity
-            android:name=".activity.assistant.AssistantMyPageActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".activity.assistant.Assistant_Lab_AllReservation_HistoryActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".activity.assistant.AssistantReservationManagementActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".activity.assistant.Assistant_BlackListActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".activity.assistant.Assistant_ProfessorSignUpActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".activity.assistant.Assistant_ProfessorInfoChangeActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".activity.assistant.Assistant_Student_Info_ChangeActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
@@ -190,21 +135,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.nav.Student_Nav_Activity"
+            android:name=".nav.Student_Nav_Activity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.nav.Assistant_Nav_Activity"
+            android:name=".nav.Assistant_Nav_Activity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.nav.Professor_Nav_Activity"
+            android:name=".nav.Professor_Nav_Activity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"

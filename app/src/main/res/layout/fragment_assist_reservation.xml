@@ -17,6 +17,240 @@
         android:gravity="center"
         android:background="@drawable/blue_title"
         android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+    />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/search_all_btn"
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="전체 인원"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:background="@drawable/round_button"
+            android:textSize="15dp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/search_allow_btn"
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="승인 인원"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:background="@drawable/round_button"
+            android:textSize="15dp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/search_deny_btn"
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="미승인 인원"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:background="@drawable/round_button"
+            android:textSize="15dp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="오늘 예약 현황"
+        android:textSize="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:background="@drawable/white_blue_btn"
+
         />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/blue_corner"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:stretchColumns="*"
+            >
+
+            <TableRow
+                android:id="@+id/tableTitleRow"
+                >
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="이름"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:id="@+id/userId"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="학번"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    />
+
+                <TextView
+                    android:id="@+id/roomId"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="호실"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:id="@+id/seatNum"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="좌석"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:id="@+id/useTime"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="시간"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    />
+
+                <TextView
+                    android:id="@+id/permissionState"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="승인 상태"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    />
+
+
+            </TableRow>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/table_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            </androidx.recyclerview.widget.RecyclerView>
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/all_allow_btn"
+            android:layout_width="0dp"
+            android:layout_weight="0.9"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="전체 인원 승인"
+            android:textColor="@color/white"
+            android:background="@drawable/blue_title"
+            android:textSize="20dp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/select_allow_btn"
+            android:layout_width="0dp"
+            android:layout_weight="0.9"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="선택 인원 승인"
+            android:textColor="@color/white"
+            android:background="@drawable/blue_title"
+            android:textSize="20dp"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#9A9A9A"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_margin="10dp"
+        android:id="@+id/show_all_btn"
+        android:layout_width="match_parent"
+
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="전체 내역 조회"
+        android:textColor="@color/white"
+        android:background="@drawable/blue_title"
+        android:textSize="20dp"
+        />
 </LinearLayout>

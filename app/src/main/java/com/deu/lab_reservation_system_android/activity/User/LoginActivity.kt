@@ -9,9 +9,9 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.deu.lab_reservation_system_android.R
-import com.deu.lab_reservation_system_android.activity.nav.Assistant_Nav_Activity
-import com.deu.lab_reservation_system_android.activity.nav.Professor_Nav_Activity
-import com.deu.lab_reservation_system_android.activity.nav.Student_Nav_Activity
+import com.deu.lab_reservation_system_android.nav.Assistant_Nav_Activity
+import com.deu.lab_reservation_system_android.nav.Professor_Nav_Activity
+import com.deu.lab_reservation_system_android.nav.Student_Nav_Activity
 import com.deu.lab_reservation_system_android.model.Dto.LoginDto
 import com.deu.lab_reservation_system_android.model.User
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
