@@ -1,6 +1,7 @@
 package com.deu.lab_reservation_system_android.stu_fragments
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
@@ -11,15 +12,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.FrameLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.activity.student.Lab_ReservationActivity
 import com.deu.lab_reservation_system_android.databinding.FragmentStuLabstatusBinding
+import com.deu.lab_reservation_system_android.dialog.BlackList_Dialog
+import com.deu.lab_reservation_system_android.dialog.ProfSignUp_Dialog
+import com.deu.lab_reservation_system_android.dialog.SeatInfo_Dialog
 import com.deu.lab_reservation_system_android.model.Dto.TodayReservationDto
 import com.deu.lab_reservation_system_android.model.user_show_format
 import com.deu.lab_reservation_system_android.nav.Student_Nav_Activity
@@ -30,18 +32,21 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.math.log
 
 
 class stu_LabStatusFragment : Fragment() {
 
     private var mBinding : FragmentStuLabstatusBinding? = null
     lateinit var response_userList: List<TodayReservationDto>
+    lateinit var binding : FragmentStuLabstatusBinding
 
     // 강의실 현황
     private var lab_911: MutableList<String> = mutableListOf()
     private var lab_915: MutableList<String> = mutableListOf()
     private var lab_916: MutableList<String> = mutableListOf()
     private var lab_918: MutableList<String> = mutableListOf()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,7 +56,7 @@ class stu_LabStatusFragment : Fragment() {
         Log.d("로그", "onCreateView: 실습실현황")
         var user = (activity as Student_Nav_Activity).getUser()
 
-        val binding = FragmentStuLabstatusBinding.inflate(inflater, container, false)
+        binding = FragmentStuLabstatusBinding.inflate(inflater, container, false)
         mBinding = binding
 
         Log.d("로그", binding.labNumber.text.toString())
@@ -171,9 +176,127 @@ class stu_LabStatusFragment : Fragment() {
         }
 
         // 좌석 클릭했을 때 누가 앉아있는지 다이얼로그로 표시
+        binding.seat1.setOnClickListener {
+            show_detail_seat(binding.seat1.text.toString())
+        }
 
-        
-        
+        binding.seat2.setOnClickListener {
+            show_detail_seat(binding.seat2.text.toString())
+        }
+        binding.seat3.setOnClickListener {
+            show_detail_seat(binding.seat3.text.toString())
+        }
+        binding.seat4.setOnClickListener {
+            show_detail_seat(binding.seat4.text.toString())
+        }
+        binding.seat5.setOnClickListener {
+            show_detail_seat(binding.seat5.text.toString())
+        }
+        binding.seat6.setOnClickListener {
+            show_detail_seat(binding.seat6.text.toString())
+        }
+        binding.seat7.setOnClickListener {
+            show_detail_seat(binding.seat7.text.toString())
+        }
+        binding.seat8.setOnClickListener {
+            show_detail_seat(binding.seat8.text.toString())
+        }
+        binding.seat9.setOnClickListener {
+            show_detail_seat(binding.seat9.text.toString())
+        }
+        binding.seat10.setOnClickListener {
+            show_detail_seat(binding.seat10.text.toString())
+        }
+        binding.seat11.setOnClickListener {
+            show_detail_seat(binding.seat11.text.toString())
+        }
+        binding.seat12.setOnClickListener {
+            show_detail_seat(binding.seat12.text.toString())
+        }
+        binding.seat13.setOnClickListener {
+            show_detail_seat(binding.seat13.text.toString())
+        }
+        binding.seat14.setOnClickListener {
+            show_detail_seat(binding.seat14.text.toString())
+        }
+        binding.seat15.setOnClickListener {
+            show_detail_seat(binding.seat15.text.toString())
+        }
+        binding.seat16.setOnClickListener {
+            show_detail_seat(binding.seat16.text.toString())
+        }
+        binding.seat17.setOnClickListener {
+            show_detail_seat(binding.seat17.text.toString())
+        }
+        binding.seat18.setOnClickListener {
+            show_detail_seat(binding.seat18.text.toString())
+        }
+        binding.seat19.setOnClickListener {
+            show_detail_seat(binding.seat19.text.toString())
+        }
+        binding.seat20.setOnClickListener {
+            show_detail_seat(binding.seat20.text.toString())
+        }
+        binding.seat21.setOnClickListener {
+            show_detail_seat(binding.seat21.text.toString())
+        }
+        binding.seat22.setOnClickListener {
+            show_detail_seat(binding.seat22.text.toString())
+        }
+        binding.seat23.setOnClickListener {
+            show_detail_seat(binding.seat23.text.toString())
+        }
+        binding.seat24.setOnClickListener {
+            show_detail_seat(binding.seat24.text.toString())
+        }
+        binding.seat25.setOnClickListener {
+            show_detail_seat(binding.seat25.text.toString())
+        }
+        binding.seat26.setOnClickListener {
+            show_detail_seat(binding.seat26.text.toString())
+        }
+        binding.seat27.setOnClickListener {
+            show_detail_seat(binding.seat27.text.toString())
+        }
+        binding.seat28.setOnClickListener {
+            show_detail_seat(binding.seat28.text.toString())
+        }
+        binding.seat29.setOnClickListener {
+            show_detail_seat(binding.seat29.text.toString())
+        }
+        binding.seat30.setOnClickListener {
+            show_detail_seat(binding.seat30.text.toString())
+        }
+        binding.seat31.setOnClickListener {
+            show_detail_seat(binding.seat31.text.toString())
+        }
+        binding.seat32.setOnClickListener {
+            show_detail_seat(binding.seat32.text.toString())
+        }
+        binding.seat33.setOnClickListener {
+            show_detail_seat(binding.seat33.text.toString())
+        }
+        binding.seat34.setOnClickListener {
+            show_detail_seat(binding.seat34.text.toString())
+        }
+        binding.seat35.setOnClickListener {
+            show_detail_seat(binding.seat35.text.toString())
+        }
+        binding.seat36.setOnClickListener {
+            show_detail_seat(binding.seat36.text.toString())
+        }
+        binding.seat37.setOnClickListener {
+            show_detail_seat(binding.seat37.text.toString())
+        }
+        binding.seat38.setOnClickListener {
+            show_detail_seat(binding.seat38.text.toString())
+        }
+        binding.seat39.setOnClickListener {
+            show_detail_seat(binding.seat39.text.toString())
+        }
+        binding.seat40.setOnClickListener {
+            show_detail_seat(binding.seat40.text.toString())
+        }
 
         // 실습실 예약 버튼을 눌렀을 때
         binding.labReservationBtn.setOnClickListener {
@@ -186,17 +309,30 @@ class stu_LabStatusFragment : Fragment() {
         return mBinding?.root
     }
 
+    fun show_detail_seat(seatingNum : String){
+        response_userList.forEach { it ->
+            if(it.seat == seatingNum && it.labNumber == binding.labNumber.text.toString()) {
+                val dialog = SeatInfo_Dialog(requireActivity())
+                dialog.showDialog(it)
+                dialog.setOnClickListener(object : SeatInfo_Dialog.OnDialogClickListener {
+                    override fun onClicked() {
+                        Toast.makeText(activity, "신고되었습니다.", Toast.LENGTH_SHORT).show()
+                    }})
+            }
+        }
+    }
+
     override fun onDestroyView() {
         mBinding = null
         super.onDestroyView()
     }
 
+    // labNumber에 해당하는 실습실 정보 읽어오기
     fun labStatus(labNumber: String) {
-        // labNumber에 해당하는 실습실 정보 읽어오기
+        val TAG: String = "강의실 상태 로그"
         val call = RetrofitBuilder.api_lab.getReservationStatusResponse()
 
-
-        Log.d("로그", "성공1")
+        Log.d(TAG, "stu_LabStatusFragment - labStatus() called 성공 1")
 
         call.enqueue(object : Callback<List<TodayReservationDto>> { // 비동기 방식 통신 메소드
 
@@ -205,14 +341,14 @@ class stu_LabStatusFragment : Fragment() {
                 call: Call<List<TodayReservationDto>>,
                 response: Response<List<TodayReservationDto>>
             ) {
-                Log.d("로그", "성공2")
+                Log.d(TAG, "stu_LabStatusFragment - onResponse() called 성공2")
                 if (response.isSuccessful) { // 응답 잘 받은 경우
-                    Log.d("로그", "성공3")
+                    Log.d(TAG, "stu_LabStatusFragment - onResponse() called 성공3")
                     try {
                         //어떻게 응답
-                        Log.d("로그", "성공4")
+                        Log.d(TAG, "stu_LabStatusFragment - onResponse() called 성공4")
                         response_userList = response.body()!!
-                        Log.d("로그", "총 예약되어 있는 좌석은 " + response_userList.size.toString() + "입니다.")
+                        Log.d(TAG, "총 예약되어 있는 좌석은 " + response_userList.size.toString() + "입니다.")
 
                         if(response_userList.isNotEmpty()) {
 
@@ -237,7 +373,7 @@ class stu_LabStatusFragment : Fragment() {
 
                         }
                         else
-                            Log.d("로그", "예약된 좌석 정보가 없습니다.")
+                            Log.d(TAG, "예약된 좌석 정보가 없습니다.")
                     }catch (e: JSONException){
                         e.printStackTrace()
                     }

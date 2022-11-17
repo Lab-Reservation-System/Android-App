@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+    >
+
+    <!-- 내부 색상 -->
+    <solid android:color="@color/white"></solid>
+
+    <!-- 가로, 세로 길이 -->
+    <size android:width="100dp"
+        android:height="70dp" />
+
+    <!-- 라운드 정도 -->
+    <corners android:radius="10dp" />
+
+    <stroke
+        android:width="4dp"
+        android:color="#1478FF"
+        />
+
+</shape>
