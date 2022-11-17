@@ -15,6 +15,7 @@ import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.model.user_show_format
 import com.deu.lab_reservation_system_android.activity.User.TableRowAdapter
 import com.deu.lab_reservation_system_android.databinding.FragmentAssistUsermanageBinding
+import com.deu.lab_reservation_system_android.dialog.ProfSignUp_Dialog
 import com.deu.lab_reservation_system_android.dialog.UserEdit_Dialog
 import com.deu.lab_reservation_system_android.model.User
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
@@ -50,6 +51,8 @@ class assist_UserManageFragment : Fragment() {
             update_Viewer(keyword)
         }
         binding.professorRegister.setOnClickListener(){
+            signup_prof()
+
 
         }
         return mBinding?.root
@@ -59,6 +62,8 @@ class assist_UserManageFragment : Fragment() {
         mBinding = null
         super.onDestroyView()
     }
+
+
 
     fun update_Viewer(keyword:String){
 
@@ -113,6 +118,26 @@ class assist_UserManageFragment : Fragment() {
             }
         })
     }
+
+    fun signup_prof()
+    {
+        val dialog = ProfSignUp_Dialog(requireActivity())
+        dialog.showDialog()
+        dialog.setOnClickListener(object : ProfSignUp_Dialog.OnDialogClickListener {
+            override fun onClicked(ch_num : Int) {
+                //Log.d("업데이트뷰어", "onClicked: 클릭됨")
+                if (ch_num == 0) {
+                    Toast.makeText(activity, "이미 존재하는 아이디 입니다!", Toast.LENGTH_SHORT).show()
+                    //update_Viewer("")
+                } else {
+                    Toast.makeText(activity, "가입되었습니다.", Toast.LENGTH_SHORT).show()
+                    Handler(Looper.getMainLooper()).postDelayed({ get_all_user() }, 1000)
+                }
+            }})
+    }
+
+
+
 
     fun get_all_user() {
         val call = RetrofitBuilder.api_user.getAllUserResponse()

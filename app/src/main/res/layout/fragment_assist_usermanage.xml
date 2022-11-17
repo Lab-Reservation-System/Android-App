@@ -168,12 +168,11 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:textColor="@color/white"
+            android:background="@drawable/blue_title"
             android:text="블랙리스트 관리"
             android:textAlignment="center"
-            android:textSize="20dp"
-            android:background="@drawable/blue_title"
-            />
+            android:textColor="@color/white"
+            android:textSize="20dp" />
 
     </LinearLayout>
 
