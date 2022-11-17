@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.deu.lab_reservation_system_android.R
-import com.deu.lab_reservation_system_android.model.user_show_format
+import com.deu.lab_reservation_system_android.model.row_format.user_show_format
 
 class UserListTableRowAdapter (private var userArrayList: ArrayList<user_show_format>) : RecyclerView.Adapter<UserListTableRowAdapter.ViewHolder> () {
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {

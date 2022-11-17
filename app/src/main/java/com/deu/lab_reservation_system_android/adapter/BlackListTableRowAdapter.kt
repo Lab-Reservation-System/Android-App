@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.deu.lab_reservation_system_android.R
-import com.deu.lab_reservation_system_android.model.blackList_show_format
+import com.deu.lab_reservation_system_android.model.row_format.blackList_show_format
 
 class BlackListTableRowAdapter (private var blackListArrayList: ArrayList<blackList_show_format>) : RecyclerView.Adapter<BlackListTableRowAdapter.ViewHolder> () {
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {

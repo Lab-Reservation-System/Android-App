@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.adapter.BlackListTableRowAdapter
 import com.deu.lab_reservation_system_android.model.BlackList_user
-import com.deu.lab_reservation_system_android.model.blackList_show_format
+import com.deu.lab_reservation_system_android.model.row_format.blackList_show_format
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException
 import retrofit2.Call
@@ -45,7 +45,7 @@ class BlackList_Dialog(context : Context) {
         dialog.setCanceledOnTouchOutside(true)
         dialog.setCancelable(true)
 
-        get_all_user()
+        get_blackList()
 
 
 
@@ -73,7 +73,7 @@ class BlackList_Dialog(context : Context) {
         fun onClicked(i:Int)
     }
 
-    fun get_all_user() {
+    fun get_blackList() {
         val call = RetrofitBuilder.api_blacklist.getBlackListResponse()
         Log.d("Watching: ", "성공1")
         call.enqueue(object : Callback<List<BlackList_user>> { // 비동기 방식 통신 메소드
