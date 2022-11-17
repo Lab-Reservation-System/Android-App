@@ -1,5 +1,6 @@
 package com.deu.lab_reservation_system_android.retrofit
 
+import com.deu.lab_reservation_system_android.LabAPI_Controller
 import com.deu.lab_reservation_system_android.TokenAPI_Controller
 import com.deu.lab_reservation_system_android.UserAPI_Controller
 import retrofit2.Retrofit
@@ -25,4 +26,8 @@ object RetrofitBuilder {
         api_token = retrofit.create(TokenAPI_Controller::class.java)
     }
 
+    var api_lab: LabAPI_Controller
+    init {
+        api_lab = retrofit.create(LabAPI_Controller::class.java)
+    }
 }
