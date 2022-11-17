@@ -127,7 +127,7 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.25"
                     android:background="@drawable/blue_corner_gray"
-                    android:text="승인 상태"
+                    android:text="계정 상태"
                     android:gravity="center"
                     android:textColor="@color/white"
                     android:textSize="20dp"

@@ -111,7 +111,7 @@ class assist_UserManageFragment : Fragment() {
                                     update_Viewer("")
                                 } else{
                                     Toast.makeText(activity, "삭제 처리중", Toast.LENGTH_SHORT).show()
-                                    Handler(Looper.getMainLooper()).postDelayed({ get_all_user() }, 1000)
+                                    Handler(Looper.getMainLooper()).postDelayed({ get_all_user() }, 500)
                                 }
                             }
 

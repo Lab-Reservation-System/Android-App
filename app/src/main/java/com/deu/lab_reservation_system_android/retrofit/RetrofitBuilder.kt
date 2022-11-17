@@ -1,5 +1,6 @@
 package com.deu.lab_reservation_system_android.retrofit
 
+import com.deu.lab_reservation_system_android.BlackListAPI_Controller
 import com.deu.lab_reservation_system_android.TokenAPI_Controller
 import com.deu.lab_reservation_system_android.UserAPI_Controller
 import retrofit2.Retrofit
@@ -14,7 +15,6 @@ object RetrofitBuilder {
         .addConverterFactory(GsonConverterFactory.create()) // Gson을 역직렬화
         .build()
 
-
     var api_user: UserAPI_Controller
     init{
         api_user = retrofit.create(UserAPI_Controller::class.java)
@@ -24,5 +24,11 @@ object RetrofitBuilder {
     init{
         api_token = retrofit.create(TokenAPI_Controller::class.java)
     }
+
+    var api_blacklist: BlackListAPI_Controller
+    init{
+        api_blacklist = retrofit.create(BlackListAPI_Controller::class.java)
+    }
+
 
 }
