@@ -18,12 +18,11 @@ import androidx.annotation.RequiresApi
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import com.deu.lab_reservation_system_android.R
-import com.deu.lab_reservation_system_android.activity.Password_CheckActivity
-import com.deu.lab_reservation_system_android.activity.nav.Student_Nav_Activity
 import com.deu.lab_reservation_system_android.activity.student.Lab_ReservationActivity
 import com.deu.lab_reservation_system_android.databinding.FragmentStuLabstatusBinding
 import com.deu.lab_reservation_system_android.model.Dto.TodayReservationDto
 import com.deu.lab_reservation_system_android.model.user_show_format
+import com.deu.lab_reservation_system_android.nav.Student_Nav_Activity
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import kotlinx.coroutines.delay
 import org.json.JSONException
@@ -70,21 +69,30 @@ class stu_LabStatusFragment : Fragment() {
                     binding.labNumber.setText("911")
 
                     // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    labStatus(binding.labNumber.text.toString())
+                    screenClear((activity as Student_Nav_Activity).packageName)
+                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
+//                    labStatus(binding.labNumber.text.toString())
                 }
                 "916" -> {
                     // 실습실 텍스트 바꾸기
                     binding.labNumber.setText("915")
 
                     // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    labStatus(binding.labNumber.text.toString())
+                    screenClear((activity as Student_Nav_Activity).packageName)
+                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
+
+//                    labStatus(binding.labNumber.text.toString())
+
                 }
                 "918" -> {
                     // 실습실 텍스트 바꾸기
                     binding.labNumber.setText("916")
 
                     // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    labStatus(binding.labNumber.text.toString())
+                    screenClear((activity as Student_Nav_Activity).packageName)
+                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
+
+//                    labStatus(binding.labNumber.text.toString())
 
                 }
                 "911" -> {
@@ -92,7 +100,10 @@ class stu_LabStatusFragment : Fragment() {
                     binding.labNumber.setText("911")
 
                     // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    labStatus(binding.labNumber.text.toString())
+                    screenClear((activity as Student_Nav_Activity).packageName)
+                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
+
+//                    labStatus(binding.labNumber.text.toString())
 
                 }
             }
@@ -108,7 +119,10 @@ class stu_LabStatusFragment : Fragment() {
 
 
                     // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    labStatus(binding.labNumber.text.toString())
+                    screenClear((activity as Student_Nav_Activity).packageName)
+                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
+
+//                    labStatus(binding.labNumber.text.toString())
 
 
                 }
@@ -117,7 +131,10 @@ class stu_LabStatusFragment : Fragment() {
                     binding.labNumber.setText("918")
 
                     // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    labStatus(binding.labNumber.text.toString())
+                    screenClear((activity as Student_Nav_Activity).packageName)
+                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
+
+//                    labStatus(binding.labNumber.text.toString())
 
                 }
                 "911" -> {
@@ -125,7 +142,10 @@ class stu_LabStatusFragment : Fragment() {
                     binding.labNumber.setText("915")
 
                     // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    labStatus(binding.labNumber.text.toString())
+                    screenClear((activity as Student_Nav_Activity).packageName)
+                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
+
+//                    labStatus(binding.labNumber.text.toString())
 
                 }
                 "918" -> {
@@ -133,7 +153,10 @@ class stu_LabStatusFragment : Fragment() {
                     binding.labNumber.setText("918")
 
                     // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    labStatus(binding.labNumber.text.toString())
+                    screenClear((activity as Student_Nav_Activity).packageName)
+                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
+
+//                    labStatus(binding.labNumber.text.toString())
 
                 }
             }
