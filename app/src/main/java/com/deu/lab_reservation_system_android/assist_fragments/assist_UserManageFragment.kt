@@ -15,6 +15,7 @@ import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.model.user_show_format
 import com.deu.lab_reservation_system_android.activity.User.TableRowAdapter
 import com.deu.lab_reservation_system_android.databinding.FragmentAssistUsermanageBinding
+import com.deu.lab_reservation_system_android.dialog.BlackList_Dialog
 import com.deu.lab_reservation_system_android.dialog.ProfSignUp_Dialog
 import com.deu.lab_reservation_system_android.dialog.UserEdit_Dialog
 import com.deu.lab_reservation_system_android.model.User
@@ -52,9 +53,14 @@ class assist_UserManageFragment : Fragment() {
         }
         binding.professorRegister.setOnClickListener(){
             signup_prof()
-
-
         }
+        binding.blackListBtn.setOnClickListener()
+        {
+            val dialog = BlackList_Dialog(requireActivity())
+            dialog.showDialog()
+        }
+
+
         return mBinding?.root
     }
 

@@ -11,7 +11,7 @@ import com.deu.lab_reservation_system_android.R
 // 테이블에 동적으로 row를 추가하기 위한 어뎁터
 class ReservationHistoryTableRowAdapter (private var userArrayList: ArrayList<DataReservationHistory>) : RecyclerView.Adapter<ReservationHistoryTableRowAdapter.ViewHolder> () {
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
-        val v: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.reservation_history_table_row_layout, viewGroup, false)
+        val v: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.table_row_layout_reservation_history, viewGroup, false)
         return ViewHolder(v)
     }
 

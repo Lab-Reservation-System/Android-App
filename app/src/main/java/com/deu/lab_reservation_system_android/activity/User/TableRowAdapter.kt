@@ -10,7 +10,7 @@ import com.deu.lab_reservation_system_android.model.user_show_format
 
 class TableRowAdapter (private var userArrayList: ArrayList<user_show_format>) : RecyclerView.Adapter<TableRowAdapter.ViewHolder> () {
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
-        val v: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.user_management_table_row_layout, viewGroup, false)
+        val v: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.table_row_layout_user_management, viewGroup, false)
 
         return ViewHolder(v)
     }
