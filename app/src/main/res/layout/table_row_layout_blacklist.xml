@@ -23,6 +23,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="15dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 />
 
             <TextView
@@ -35,6 +37,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="15dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 />
             <TextView
                 android:id="@+id/restrictionEndDate"
@@ -46,6 +50,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="15dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 />
         </TableRow>
 

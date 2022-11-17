@@ -14,18 +14,7 @@
 
         <TableRow>
 
-            <TextView
-                android:id="@+id/usingDate"
-                android:layout_width="0dp"
-                android:layout_column="1"
-                android:layout_weight="1"
-                android:background="@drawable/blue_corner"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textSize="10dp"
-                />
+
             <TextView
                 android:id="@+id/userName"
                 android:layout_width="0dp"
@@ -34,9 +23,9 @@
                 android:background="@drawable/blue_corner"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:layout_height="match_parent"
                 android:gravity="center"
-                android:textSize="10dp"
+                android:layout_height="match_parent"
+                android:textSize="11dp"
                 />
             <TextView
                 android:id="@+id/userId"
@@ -46,14 +35,15 @@
                 android:background="@drawable/blue_corner"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:layout_height="match_parent"
                 android:gravity="center"
-                android:textSize="10dp"
+                android:layout_height="match_parent"
+                android:textSize="11dp"
                 />
 
             <TextView
                 android:id="@+id/labNum"
                 android:layout_width="0dp"
+                android:gravity="center"
                 android:layout_column="2"
                 android:layout_weight="1"
                 android:background="@drawable/blue_corner"
@@ -61,47 +51,47 @@
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:textSize="10dp"
+                android:textSize="11dp"
                 />
+
             <TextView
                 android:id="@+id/seatNum"
                 android:layout_width="0dp"
+
+                android:layout_height="match_parent"
                 android:layout_column="3"
                 android:layout_weight="1"
                 android:background="@drawable/blue_corner"
                 android:baselineAligned="false"
+                android:gravity="center"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textSize="10dp"
-                />
+                android:textSize="11dp" />
             <TextView
                 android:id="@+id/usingTime"
                 android:layout_width="0dp"
                 android:layout_column="3"
                 android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:background="@drawable/blue_corner"
                 android:baselineAligned="false"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:layout_height="match_parent"
                 android:gravity="center"
-                android:textSize="10dp"
+                android:textSize="11dp"
                 />
             <TextView
                 android:id="@+id/status"
                 android:layout_width="0dp"
                 android:layout_column="3"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/blue_corner"
                 android:baselineAligned="false"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:layout_height="match_parent"
                 android:gravity="center"
-                android:textSize="10dp"
+                android:textSize="11dp"
                 />
         </TableRow>
 

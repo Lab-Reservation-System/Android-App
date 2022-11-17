@@ -92,7 +92,7 @@ class BlackList_Dialog(context : Context) {
                         Log.d("테스트용",response_blackList.get(0).id)
 
                         response_blackList?.forEach { it ->
-                            blackList.add(blackList_show_format(it.id, it.numberOfReport, it.restrictionEndDate))
+                            blackList.add(blackList_show_format(it.id, it.numberOfReport, if(it.restrictionEndDate!=null) it.restrictionEndDate else "null"))
                             //blackList.add(blackList_show_format("21332", 1, "213"))
                         }
 
