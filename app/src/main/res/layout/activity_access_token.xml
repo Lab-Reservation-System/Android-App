@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="#dcdcdc"
-    tools:context=".activity.Access_TokenActivity">
+    tools:context=".activity.User.Access_TokenActivity">
 
 
     <TextView

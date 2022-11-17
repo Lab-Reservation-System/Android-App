@@ -7,10 +7,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.deu.lab_reservation_system_android.R
-import com.deu.lab_reservation_system_android.activity.Access_TokenActivity
 import com.deu.lab_reservation_system_android.activity.nav.Assistant_Nav_Activity
 import com.deu.lab_reservation_system_android.activity.nav.Professor_Nav_Activity
 import com.deu.lab_reservation_system_android.activity.nav.Student_Nav_Activity

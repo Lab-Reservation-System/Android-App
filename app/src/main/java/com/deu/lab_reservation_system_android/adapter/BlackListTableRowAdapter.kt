@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.activity
+package com.deu.lab_reservation_system_android.adapter
 
 import android.view.LayoutInflater
 import android.view.View

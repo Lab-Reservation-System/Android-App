@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.model.Dto.SignupDto
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder

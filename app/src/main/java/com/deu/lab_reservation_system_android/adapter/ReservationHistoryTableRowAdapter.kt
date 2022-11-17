@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.activity.User
+package com.deu.lab_reservation_system_android.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.deu.lab_reservation_system_android.R
+import com.deu.lab_reservation_system_android.model.DataReservationHistory
 
 // 테이블에 동적으로 row를 추가하기 위한 어뎁터
 class ReservationHistoryTableRowAdapter (private var userArrayList: ArrayList<DataReservationHistory>) : RecyclerView.Adapter<ReservationHistoryTableRowAdapter.ViewHolder> () {

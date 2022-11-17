@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.activity
+package com.deu.lab_reservation_system_android.activity.User
 
 import android.app.AlertDialog
 import android.content.DialogInterface
@@ -9,7 +9,6 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import com.deu.lab_reservation_system_android.R
-import com.deu.lab_reservation_system_android.activity.User.LoginActivity
 import com.deu.lab_reservation_system_android.activity.nav.Assistant_Nav_Activity
 import com.deu.lab_reservation_system_android.activity.nav.Professor_Nav_Activity
 import com.deu.lab_reservation_system_android.activity.nav.Student_Nav_Activity

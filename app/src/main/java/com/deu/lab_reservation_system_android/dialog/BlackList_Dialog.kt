@@ -10,11 +10,9 @@ import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.deu.lab_reservation_system_android.R
-import com.deu.lab_reservation_system_android.activity.BlackListTableRowAdapter
+import com.deu.lab_reservation_system_android.adapter.BlackListTableRowAdapter
 import com.deu.lab_reservation_system_android.model.BlackList_user
-import com.deu.lab_reservation_system_android.model.User
 import com.deu.lab_reservation_system_android.model.blackList_show_format
-import com.deu.lab_reservation_system_android.model.user_show_format
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException
 import retrofit2.Call
