@@ -12,9 +12,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewGroup.LayoutParams
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.core.view.get
+import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.activity.student.Lab_ReservationActivity
@@ -47,6 +49,11 @@ class stu_LabStatusFragment : Fragment() {
     private var lab_916: MutableList<String> = mutableListOf()
     private var lab_918: MutableList<String> = mutableListOf()
 
+    // 강의실 좌석에 따른 이름 lab_915_name
+    private var lab_915_adminName = mutableListOf<String>()
+    private var lab_916_adminName = mutableListOf<String>()
+    private var lab_918_adminName = mutableListOf<String>()
+    private var lab_911_adminName = mutableListOf<String>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -61,59 +68,38 @@ class stu_LabStatusFragment : Fragment() {
 
         Log.d("로그", binding.labNumber.text.toString())
 
+        Log.d("테스트로그", "labStatus 초기화 전 lab 915 현재 인원 수 " + lab_915.size.toString())
         labStatus(binding.labNumber.text.toString())
+
+        Log.d("테스트로그", "labStatus 초기화 후 lab 915 현재 인원 수 " + lab_915.size.toString())
+
 
         //실습실 뒤로 버튼 눌렀을 때
         binding.backLabNumber.setOnClickListener {
             binding.labFrame.removeView(binding.labFrame)
+
 
             // 실습실에 따라 화면 다르게 하는 부분
             when(binding.labNumber.text) {
                 "915" -> {
                     // 실습실 텍스트 바꾸기
                     binding.labNumber.setText("911")
-
-                    // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    screenClear((activity as Student_Nav_Activity).packageName)
-                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
-                    draw(lab_911)
-//                    labStatus(binding.labNumber.text.toString())
+                    run()
                 }
                 "916" -> {
                     // 실습실 텍스트 바꾸기
                     binding.labNumber.setText("915")
-
-                    // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    screenClear((activity as Student_Nav_Activity).packageName)
-                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
-                    draw(lab_915)
-
-//                    labStatus(binding.labNumber.text.toString())
-
+                    run()
                 }
                 "918" -> {
                     // 실습실 텍스트 바꾸기
                     binding.labNumber.setText("916")
-
-                    // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    screenClear((activity as Student_Nav_Activity).packageName)
-                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
-                    draw(lab_916)
-
-//                    labStatus(binding.labNumber.text.toString())
-
+                    run()
                 }
                 "911" -> {
                     // 실습실 텍스트 바꾸기
                     binding.labNumber.setText("911")
-
-                    // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    screenClear((activity as Student_Nav_Activity).packageName)
-                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
-                    draw(lab_911)
-
-//                    labStatus(binding.labNumber.text.toString())
-
+                    run()
                 }
             }
         }
@@ -125,57 +111,28 @@ class stu_LabStatusFragment : Fragment() {
                 "915" -> {
                     // 실습실 텍스트 바꾸기
                     binding.labNumber.setText("916")
-
-
-                    // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    screenClear((activity as Student_Nav_Activity).packageName)
-                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
-                    draw(lab_916)
-
-//                    labStatus(binding.labNumber.text.toString())
-
-
+                    run()
                 }
                 "916" -> {
                     // 실습실 텍스트 바꾸기
                     binding.labNumber.setText("918")
-
-                    // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    screenClear((activity as Student_Nav_Activity).packageName)
-                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
-                    draw(lab_918)
-
-//                    labStatus(binding.labNumber.text.toString())
-
+                    run()
                 }
                 "911" -> {
                     // 실습실 텍스트 바꾸기
                     binding.labNumber.setText("915")
-
-                    // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    screenClear((activity as Student_Nav_Activity).packageName)
-                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
-                    draw(lab_915)
-
-//                    labStatus(binding.labNumber.text.toString())
-
+                    run()
                 }
                 "918" -> {
                     // 실습실 텍스트 바꾸기
                     binding.labNumber.setText("918")
-
-                    // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
-                    screenClear((activity as Student_Nav_Activity).packageName)
-                    drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
-                    draw(lab_918)
-
-//                    labStatus(binding.labNumber.text.toString())
-
+                    run()
                 }
             }
         }
 
         // 좌석 클릭했을 때 누가 앉아있는지 다이얼로그로 표시
+        // 이거는 리팩토링할 때 구조 다시 생각해서 바꾸기
         binding.seat1.setOnClickListener {
             show_detail_seat(binding.seat1.text.toString())
         }
@@ -309,6 +266,37 @@ class stu_LabStatusFragment : Fragment() {
         return mBinding?.root
     }
 
+    // 강의실 안 열렸을 때 숨기는 함수
+    fun seatHide() {
+        for (i: Int in 0..3) {
+            binding.labLeftSeat.setColumnCollapsed(i, true)
+            binding.labRightSeat.setColumnCollapsed(i, true)
+        }
+
+        binding.labLeftSeat.setHeight(0)
+        binding.labRightSeat.setHeight(0)
+    }
+
+    // 강의실이 열리면 표시하는 함수
+    fun seatShow() {
+        for (i: Int in 0..3) {
+            binding.labLeftSeat.setColumnCollapsed(i, false)
+            binding.labRightSeat.setColumnCollapsed(i, false)
+            binding.labLeftSeat.setHeight(520)
+            binding.labRightSeat.setHeight(520)
+        }
+    }
+
+    // view height 설정을 위한 함수
+    fun View.setHeight(value: Int) {
+        val lp = layoutParams
+        lp?.let {
+            lp.height = value
+            layoutParams = lp
+        }
+    }
+
+    // 좌석 클릭했을 때 사용자 정보 보여주는 함수
     fun show_detail_seat(seatingNum : String){
         response_userList.forEach { it ->
             if(it.seat == seatingNum && it.labNumber == binding.labNumber.text.toString()) {
@@ -331,6 +319,8 @@ class stu_LabStatusFragment : Fragment() {
     fun labStatus(labNumber: String) {
         val TAG: String = "강의실 상태 로그"
         val call = RetrofitBuilder.api_lab.getReservationStatusResponse()
+
+        lab_915.clear(); lab_916.clear(); lab_918.clear(); lab_911.clear()
 
         Log.d(TAG, "stu_LabStatusFragment - labStatus() called 성공 1")
 
@@ -355,10 +345,10 @@ class stu_LabStatusFragment : Fragment() {
                             // 화면켜자마자 좌석 정보 911 915 916 918 좌석 정보 리스트에 저장
                             response_userList.forEach { it ->
                                 when(it.labNumber.toString()) {
-                                    "915" -> lab_915.add(it.seat.toString())
-                                    "916" -> lab_916.add(it.seat.toString())
-                                    "918" -> lab_918.add(it.seat.toString())
-                                    "911" -> lab_911.add(it.seat.toString())
+                                    "915" -> { lab_915.add(it.seat.toString()); lab_915_adminName.add(it.name) }
+                                    "916" -> { lab_916.add(it.seat.toString()); lab_916_adminName.add(it.name) }
+                                    "918" -> { lab_918.add(it.seat.toString()); lab_918_adminName.add(it.name) }
+                                    "911" -> { lab_911.add(it.seat.toString()); lab_911_adminName.add(it.name) }
                                 }
                             }
 
@@ -370,6 +360,8 @@ class stu_LabStatusFragment : Fragment() {
 
                             // 그리는걸 함수로 바꾸고 버튼 클릭시 호실을 인자로 해서 그 함수를 호출
                             drawLabStatus(labNumber, packageName)
+
+                            Log.d("테스트로그", "labStatus 초기화 중 lab 915 현재 인원 수 " + lab_915.size.toString())
 
                         }
                         else
@@ -399,19 +391,28 @@ class stu_LabStatusFragment : Fragment() {
         }
     }
     
-    // 화면에 강의실 현황대로 그리는 함수
+    // 각 강의실 현황대로 분배하는 함수
     fun drawLabStatus(labNumber: String, packageName: String) {
         val Tag = "강의실 그리기 호출"
         when(labNumber) {
 
-            "915" -> { draw(lab_915) ; Log.d(Tag, "stu_LabStatusFragment - drawLabStatus()  915 called")}
-            "916" -> { draw(lab_916) ; Log.d(Tag, "stu_LabStatusFragment - drawLabStatus()  916 called")}
-            "918" -> { draw(lab_918) ; Log.d(Tag, "stu_LabStatusFragment - drawLabStatus()  918 called")}
-            "911" -> { draw(lab_911) ; Log.d(Tag, "stu_LabStatusFragment - drawLabStatus()  911 called")}
+            "915" -> { draw(lab_915, lab_915_adminName) ; Log.d(Tag, "stu_LabStatusFragment - drawLabStatus()  915 called")}
+            "916" -> { draw(lab_916, lab_916_adminName) ; Log.d(Tag, "stu_LabStatusFragment - drawLabStatus()  916 called")}
+            "918" -> { draw(lab_918, lab_918_adminName) ; Log.d(Tag, "stu_LabStatusFragment - drawLabStatus()  918 called")}
+            "911" -> { draw(lab_911, lab_911_adminName) ; Log.d(Tag, "stu_LabStatusFragment - drawLabStatus()  911 called")}
         }
     }
 
-    fun draw(lab : MutableList<String>){
+    // 진짜로 강의실 현황을 그려주는 함수
+    fun draw(lab : MutableList<String>, name: MutableList<String>){
+        binding.nowNum.text = "현재 수 : " + lab.size.toString() // 현재 강의실 사용자 수
+
+        // 강의실 사용자가 존재한다면
+        if (name.size != 0)
+            binding.nowAmin.text = "관리자 : " + name[0] // 가장 먼저 예약한 사람의 이름을 관리자 이름으로 함
+        else
+            binding.nowAmin.text = "관리자 : X"
+
         for(i: Int in 0..lab.size - 1) {
             val tvId = resources.getIdentifier("seat${lab.get(i)}", "id", requireActivity().packageName)
 
@@ -421,4 +422,36 @@ class stu_LabStatusFragment : Fragment() {
         }
     }
 
+    // 강의실 인원 체크, 915 -> 916 -> 918 -> 911 순으로 강의실 열고, 강의실 인원 수가 20명 이상이면 다음 강의실 연다.
+    fun labCheck(labNumber: String) {
+
+        when(labNumber) {
+            "911" -> {
+                if (lab_915.size >= 20 && lab_916.size >= 20 && lab_918.size >= 20) {
+                    seatShow()
+                } else
+                    seatHide()
+            }
+            "918" -> {
+                if (lab_915.size >= 20 && lab_916.size >= 20) {
+                    seatShow()
+                } else
+                    seatHide()
+            }
+            "916" -> {
+                if (lab_915.size >= 20) {
+                    seatShow()
+                } else
+                    seatHide()
+            }
+            else -> seatShow()
+        }
+    }
+
+    fun run() {
+        // 실습실 좌석 값 읽어와서 예약 상태에 따라 그리기
+        screenClear((activity as Student_Nav_Activity).packageName)
+        drawLabStatus(binding.labNumber.text.toString(), (activity as Student_Nav_Activity).packageName)
+        labCheck(binding.labNumber.text.toString())
+    }
 }
