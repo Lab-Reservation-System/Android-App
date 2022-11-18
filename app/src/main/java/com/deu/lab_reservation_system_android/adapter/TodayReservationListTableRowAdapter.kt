@@ -32,12 +32,12 @@ class TodayReservationListTableRowAdapter(private var todayreservationListArrayL
 
         //화면 선택시 색칠 처리
         if(selected == i) {
-            viewHolder.name.setBackgroundColor(Color.BLUE)
-            viewHolder.id.setBackgroundColor(Color.BLUE)
-            viewHolder.lab.setBackgroundColor(Color.BLUE)
-            viewHolder.seat.setBackgroundColor(Color.BLUE)
-            viewHolder.time.setBackgroundColor(Color.BLUE)
-            viewHolder.status.setBackgroundColor(Color.BLUE)
+            viewHolder.name.setBackgroundResource(R.color.purple_200)
+            viewHolder.id.setBackgroundResource(R.color.purple_200)
+            viewHolder.lab.setBackgroundResource(R.color.purple_200)
+            viewHolder.seat.setBackgroundResource(R.color.purple_200)
+            viewHolder.time.setBackgroundResource(R.color.purple_200)
+            viewHolder.status.setBackgroundResource(R.color.purple_200)
         }
         else{
             viewHolder.name.setBackgroundResource(R.drawable.blue_corner)
@@ -54,12 +54,12 @@ class TodayReservationListTableRowAdapter(private var todayreservationListArrayL
 
             itemClickListener.onClick(it, i)
             selected = i
-            viewHolder.name.setBackgroundColor(Color.BLUE)
-            viewHolder.id.setBackgroundColor(Color.BLUE)
-            viewHolder.lab.setBackgroundColor(Color.BLUE)
-            viewHolder.seat.setBackgroundColor(Color.BLUE)
-            viewHolder.time.setBackgroundColor(Color.BLUE)
-            viewHolder.status.setBackgroundColor(Color.BLUE)
+            viewHolder.name.setBackgroundResource(R.color.purple_200)
+            viewHolder.id.setBackgroundResource(R.color.purple_200)
+            viewHolder.lab.setBackgroundResource(R.color.purple_200)
+            viewHolder.seat.setBackgroundResource(R.color.purple_200)
+            viewHolder.time.setBackgroundResource(R.color.purple_200)
+            viewHolder.status.setBackgroundResource(R.color.purple_200)
 
         }
     }

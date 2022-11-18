@@ -38,11 +38,11 @@
             android:layout_weight="0.8"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="전체 인원"
+            android:text="전체 예약 조회"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:background="@drawable/round_button"
-            android:textSize="15dp"
+            android:textSize="14dp"
             />
         <TextView
             android:layout_width="0dp"
@@ -55,11 +55,11 @@
             android:layout_weight="0.8"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="승인 인원"
+            android:text="승인 예약 조회"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:background="@drawable/round_button"
-            android:textSize="15dp"
+            android:textSize="14dp"
             />
         <TextView
             android:layout_width="0dp"
@@ -72,11 +72,11 @@
             android:layout_weight="0.8"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="미승인 인원"
+            android:text="미승인 예약 조회"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:background="@drawable/round_button"
-            android:textSize="15dp"
+            android:textSize="14dp"
             />
         <TextView
             android:layout_width="0dp"
@@ -229,7 +229,7 @@
             android:layout_weight="0.9"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="선택 에약 승인"
+            android:text="선택 예약 승인"
             android:textColor="@color/white"
             android:background="#7984BD"
             android:textSize="15dp"

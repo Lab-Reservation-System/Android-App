@@ -1,5 +1,7 @@
 package com.deu.lab_reservation_system_android.assist_fragments
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -45,7 +47,7 @@ class assist_ReservationFragment : Fragment() {
 
     private lateinit var reservationlist_tableRowAdapter: TodayReservationListTableRowAdapter
 
-    lateinit var response_ReservationList : List<Reservation>
+    lateinit var response_ReservationList : MutableList<Reservation>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -73,6 +75,17 @@ class assist_ReservationFragment : Fragment() {
             startActivity(intent)
         }
 
+
+        binding.allAllowBtn.setOnClickListener(){
+            val builder = AlertDialog.Builder(activity)
+                .setTitle("확인!")
+                .setMessage("모두 승인하시겠습니까?")
+                .setPositiveButton("닫기", DialogInterface.OnClickListener{ dialog, which -> })
+                .setNegativeButton("확인", DialogInterface.OnClickListener{ dialog, which -> allow_all_user();Toast.makeText(activity, "승인처리되었습니다.", Toast.LENGTH_SHORT).show()})
+
+            builder.show()
+
+        }
         binding.selectAllowBtn.setOnClickListener(){
             if(selectingID == "z")  //선택을 안했으면
                 Toast.makeText(activity, "값을 선택해주세요", Toast.LENGTH_SHORT).show()
@@ -81,6 +94,15 @@ class assist_ReservationFragment : Fragment() {
                 Toast.makeText(activity, "승인처리되었습니다.", Toast.LENGTH_SHORT).show()
             }
 
+
+        }
+        binding.selectDenyBtn.setOnClickListener(){
+            if(selectingID == "z")  //선택을 안했으면
+                Toast.makeText(activity, "값을 선택해주세요", Toast.LENGTH_SHORT).show()
+            else {
+                deny_user(selectingID)
+                Toast.makeText(activity, "삭제처리되었습니다.", Toast.LENGTH_SHORT).show()
+            }
         }
 
 
@@ -157,11 +179,11 @@ class assist_ReservationFragment : Fragment() {
     fun get_reservationList() {
         val call = RetrofitBuilder.api_lab.getTodayReservationResponse()
         Log.d("Watching: ", "성공1")
-        call.enqueue(object : Callback<List<Reservation>> { // 비동기 방식 통신 메소드
+        call.enqueue(object : Callback<MutableList<Reservation>> { // 비동기 방식 통신 메소드
 
             override fun onResponse( // 통신에 성공한 경우
-                call: Call<List<Reservation>>,
-                response: Response<List<Reservation>>
+                call: Call<MutableList<Reservation>>,
+                response: Response<MutableList<Reservation>>
             ) {
                 if (response.isSuccessful()) { // 응답 잘 받은 경우
                     //Log.d("RESPONSE: ", response.body().toString())
@@ -170,7 +192,7 @@ class assist_ReservationFragment : Fragment() {
 
                         response_ReservationList = response.body()!!
 
-                        Log.d("테스트용",response_ReservationList.get(0).id)
+//                        Log.d("테스트용",response_ReservationList[0].id)
                         update_Viewer(0)
 
 
@@ -187,7 +209,7 @@ class assist_ReservationFragment : Fragment() {
                 }
             }
 
-            override fun onFailure(call: Call<List<Reservation>>, t: Throwable) {
+            override fun onFailure(call: Call<MutableList<Reservation>>, t: Throwable) {
                 // 통신에 실패한 경우
                 Log.d("CONNECTION FAILURE: ", t.localizedMessage)
                 Log.d("Watching: ", "실패2")
@@ -234,8 +256,101 @@ class assist_ReservationFragment : Fragment() {
                 // 통신에 실패한 경우
                 Log.d("CONNECTION FAILURE: ", t.localizedMessage)
                 Log.d("Watching: ", "실패2")
+
             }
         })
     }
+    fun allow_all_user() {
+        val call = RetrofitBuilder.api_lab.getAllAllowReservation()
+        Log.d("Watching: ", "성공1")
+        call.enqueue(object : Callback<String> { // 비동기 방식 통신 메소드
+
+            override fun onResponse( // 통신에 성공한 경우
+                call: Call<String>,
+                response: Response<String>
+            ) {
+                if (response.isSuccessful()) { // 응답 잘 받은 경우
+
+                    try {
+                        Log.d("Watching: ", "성공2")
+
+                        response_ReservationList.forEach { it ->
+                            if (it.permissionState == false)
+                                it.permissionState = true
+                        }
+
+                        update_Viewer(0)
+
+
+
+                    }catch (e: JSONException){
+                        e.printStackTrace()
+                    }
+
+                } else {
+                    // 통신 성공 but 응답 실패
+                    Log.d("Watching: ", "실패1")
+                    //wrong()
+
+                }
+            }
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+                // 통신에 실패한 경우
+                Log.d("CONNECTION FAILURE: ", t.localizedMessage)
+                Log.d("Watching: ", "실패2")
+
+            }
+        })
+    }
+
+    fun deny_user(res_id:String) {
+        val call = RetrofitBuilder.api_lab.getDenyReservation(res_id)
+        var temp : Reservation? = null
+        Log.d("Watching: ", "성공1")
+        call.enqueue(object : Callback<String> { // 비동기 방식 통신 메소드
+
+            override fun onResponse( // 통신에 성공한 경우
+                call: Call<String>,
+                response: Response<String>
+            ) {
+                if (response.isSuccessful()) { // 응답 잘 받은 경우
+
+                    try {
+                        Log.d("Watching: ", "성공2")
+
+                        response_ReservationList.forEach { it ->
+                            if (it.reservationNum == res_id) {
+                                Log.d("삭제전", "onResponse: ${response_ReservationList.size}")
+                                temp = it
+                            }
+
+                        }
+                        Log.d("삭제후", "onResponse: ${response_ReservationList.size}")
+
+                        response_ReservationList.remove(temp)
+                        update_Viewer(0)
+
+                    }catch (e: JSONException){
+                        e.printStackTrace()
+                    }
+
+                } else {
+                    // 통신 성공 but 응답 실패
+                    Log.d("Watching: ", "실패1")
+                    //wrong()
+
+                }
+            }
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+                // 통신에 실패한 경우
+                Log.d("CONNECTION FAILURE: ", t.localizedMessage)
+                Log.d("Watching: ", "실패2")
+
+            }
+        })
+    }
+
 
 }
