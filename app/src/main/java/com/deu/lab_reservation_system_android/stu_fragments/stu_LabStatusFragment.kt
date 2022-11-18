@@ -9,21 +9,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-<<<<<<< HEAD
-import android.view.ViewGroup.LayoutParams
-=======
 
 import android.widget.TextView
-
->>>>>>> 692b84abbf4926bb52f5965eea8a6e5a7b913a87
 import android.widget.*
-
 import androidx.annotation.RequiresApi
-<<<<<<< HEAD
-import androidx.core.view.get
-import androidx.core.view.updateLayoutParams
-=======
->>>>>>> 692b84abbf4926bb52f5965eea8a6e5a7b913a87
 import androidx.fragment.app.Fragment
 
 import com.deu.lab_reservation_system_android.activity.student.Lab_ReservationActivity
