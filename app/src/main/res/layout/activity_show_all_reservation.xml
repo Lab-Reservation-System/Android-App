@@ -72,6 +72,19 @@
             <TableRow
                 android:id="@+id/tableTitleRow"
                 >
+
+                <TextView
+                    android:id="@+id/usedate"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="날짜"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="10dp"
+                    />
+
                 <TextView
                     android:id="@+id/userName"
                     android:layout_width="0dp"
@@ -81,7 +94,7 @@
                     android:text="이름"
                     android:gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="10dp"
                     />
                 <TextView
                     android:id="@+id/userId"
@@ -92,7 +105,7 @@
                     android:text="학번"
                     android:gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="10dp"
                     />
 
                 <TextView
@@ -104,7 +117,7 @@
                     android:text="호실"
                     android:gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="10dp"
                     />
                 <TextView
                     android:id="@+id/seatNum"
@@ -115,7 +128,7 @@
                     android:text="좌석"
                     android:gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="10dp"
                     />
                 <TextView
                     android:id="@+id/useTime"
@@ -126,7 +139,7 @@
                     android:text="시간"
                     android:gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="10dp"
                     />
 
                 <TextView
@@ -138,7 +151,7 @@
                     android:text="승인 상태"
                     android:gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="10dp"
                     />
 
 

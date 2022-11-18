@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.deu.lab_reservation_system_android.R
-import com.deu.lab_reservation_system_android.model.user_show_format
+import com.deu.lab_reservation_system_android.model.row_format.user_show_format
 import com.deu.lab_reservation_system_android.adapter.UserListTableRowAdapter
 import com.deu.lab_reservation_system_android.databinding.FragmentAssistUsermanageBinding
 import com.deu.lab_reservation_system_android.dialog.BlackList_Dialog

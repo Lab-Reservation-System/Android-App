@@ -1,36 +1,38 @@
 package com.deu.lab_reservation_system_android.stu_fragments
 
-import android.annotation.SuppressLint
-import android.app.AlertDialog
+
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+<<<<<<< HEAD
 import android.view.ViewGroup.LayoutParams
+=======
+
+import android.widget.TextView
+
+>>>>>>> 692b84abbf4926bb52f5965eea8a6e5a7b913a87
 import android.widget.*
+
 import androidx.annotation.RequiresApi
+<<<<<<< HEAD
 import androidx.core.view.get
 import androidx.core.view.updateLayoutParams
+=======
+>>>>>>> 692b84abbf4926bb52f5965eea8a6e5a7b913a87
 import androidx.fragment.app.Fragment
-import com.deu.lab_reservation_system_android.R
+
 import com.deu.lab_reservation_system_android.activity.student.Lab_ReservationActivity
 import com.deu.lab_reservation_system_android.databinding.FragmentStuLabstatusBinding
-import com.deu.lab_reservation_system_android.dialog.BlackList_Dialog
-import com.deu.lab_reservation_system_android.dialog.ProfSignUp_Dialog
+import com.deu.lab_reservation_system_android.model.Dto.Reservation
 import com.deu.lab_reservation_system_android.dialog.SeatInfo_Dialog
-import com.deu.lab_reservation_system_android.model.Dto.TodayReservationDto
-import com.deu.lab_reservation_system_android.model.user_show_format
 import com.deu.lab_reservation_system_android.nav.Student_Nav_Activity
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
-import kotlinx.coroutines.delay
 import org.json.JSONException
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -40,8 +42,10 @@ import kotlin.math.log
 class stu_LabStatusFragment : Fragment() {
 
     private var mBinding : FragmentStuLabstatusBinding? = null
-    lateinit var response_userList: List<TodayReservationDto>
+
+    lateinit var response_userList: List<Reservation>
     lateinit var binding : FragmentStuLabstatusBinding
+
 
     // 강의실 현황
     private var lab_911: MutableList<String> = mutableListOf()
@@ -324,12 +328,12 @@ class stu_LabStatusFragment : Fragment() {
 
         Log.d(TAG, "stu_LabStatusFragment - labStatus() called 성공 1")
 
-        call.enqueue(object : Callback<List<TodayReservationDto>> { // 비동기 방식 통신 메소드
+        call.enqueue(object : Callback<List<Reservation>> { // 비동기 방식 통신 메소드
 
             @RequiresApi(Build.VERSION_CODES.S)
             override fun onResponse( // 통신에 성공한 경우
-                call: Call<List<TodayReservationDto>>,
-                response: Response<List<TodayReservationDto>>
+                call: Call<List<Reservation>>,
+                response: Response<List<Reservation>>
             ) {
                 Log.d(TAG, "stu_LabStatusFragment - onResponse() called 성공2")
                 if (response.isSuccessful) { // 응답 잘 받은 경우
@@ -376,7 +380,7 @@ class stu_LabStatusFragment : Fragment() {
                 }
             }
 
-            override fun onFailure(call: Call<List<TodayReservationDto>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Reservation>>, t: Throwable) {
                 // 통신에 실패한 경우
                 Log.d("CONNECTION FAILURE: ", t.localizedMessage)
             }
