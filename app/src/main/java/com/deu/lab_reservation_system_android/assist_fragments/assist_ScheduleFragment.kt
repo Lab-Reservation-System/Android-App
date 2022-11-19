@@ -11,6 +11,7 @@ import com.deu.lab_reservation_system_android.databinding.FragmentAssistUsermana
 import com.deu.lab_reservation_system_android.databinding.FragmentStuScheduleBinding
 import com.deu.lab_reservation_system_android.dialog.BlackList_Dialog
 import com.deu.lab_reservation_system_android.dialog.ClassRegist_Dialog
+import com.deu.lab_reservation_system_android.dialog.SeminarRegist_Dialog
 import com.deu.lab_reservation_system_android.nav.Assistant_Nav_Activity
 
 class assist_ScheduleFragment : Fragment() {
@@ -35,6 +36,11 @@ class assist_ScheduleFragment : Fragment() {
         {
            val dialog = ClassRegist_Dialog(requireActivity())
            dialog.showDialog(user)
+        }
+        binding.seminarRegisterBtn.setOnClickListener() //정규수업 등록
+        {
+            val dialog = SeminarRegist_Dialog(requireActivity())
+            dialog.showDialog(user)
         }
 
         return mBinding?.root

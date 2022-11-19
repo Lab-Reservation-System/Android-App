@@ -8,6 +8,7 @@ import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -48,6 +49,7 @@ class show_All_Reservation_Activity : AppCompatActivity() {
         val date_text = findViewById<TextView>(R.id.datetext)
 
         get_reservationList()
+
 
         date.setOnClickListener {
             val cal = Calendar.getInstance()    //캘린더뷰 만들기

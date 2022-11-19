@@ -16,7 +16,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="정규 수업 등록"
+        android:text="세미나/특강 등록"
         android:textSize="30dp"
         android:gravity="center"
         android:textStyle="bold"
@@ -42,9 +42,11 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="0.4"
-            android:text="수업명"
+            android:text="세미나 명"
             android:gravity="center"
             android:textColor="@color/black"
+            android:singleLine="true"
+
             android:textSize="20dp" />
 
         <EditText
@@ -52,8 +54,8 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:textSize="20dp"
-            android:singleLine="true"
             android:textAlignment="center"
+            android:singleLine="true"
             android:background="@drawable/blue_corner"
             android:layout_weight="0.6"
             android:textColor="@color/black"
@@ -79,7 +81,7 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="0.4"
-            android:text="교수명"
+            android:text="담당자"
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="20dp" />
@@ -90,11 +92,11 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:textSize="20dp"
-            android:singleLine="true"
             android:textAlignment="center"
             android:background="@drawable/blue_corner"
             android:layout_weight="0.6"
             android:textColor="@color/black"
+            android:singleLine="true"
             android:textStyle="bold"
             />
 
@@ -162,35 +164,22 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:textSize="20dp"
-            android:text="요일"
+            android:text="일자"
             android:gravity="center"
             android:layout_weight="0.4"
             android:textColor="@color/black"
             />
-
-        <EditText
-            android:id="@+id/yoil"
+        <TextView
+            android:id="@+id/datetext"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:textSize="20dp"
-            android:layout_weight="0.5"
-            android:textColor="@color/black"
+            android:text="-"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
             android:background="@drawable/blue_corner"
-            android:textAlignment="center"
-            android:enabled="false"
-            />
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
-        <!-- 실습실 선택 -->
-        <Spinner
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:id="@+id/daySpinner"
-            android:layout_weight="0.1"
-
-            android:background="@drawable/ic_more"
-
-
-            />
 
     </LinearLayout>
 

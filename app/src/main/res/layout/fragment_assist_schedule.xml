@@ -19,13 +19,20 @@
         android:background="@drawable/blue_title"
         android:textColor="@color/white"
         />
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        >
+    </LinearLayout>
     <org.techtown.timetablelayout.CollegeTimeTableLayout
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="400dp"
         android:background="@color/cell_backgroud_color"
         android:columnCount="6"
-        android:rowCount="10" />
+        android:rowCount="9" />
 
     <LinearLayout
         android:layout_width="match_parent"
