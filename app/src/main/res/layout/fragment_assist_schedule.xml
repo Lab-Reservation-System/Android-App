@@ -19,15 +19,60 @@
         android:background="@drawable/blue_title"
         android:textColor="@color/white"
         />
-    <LinearLayout
+    <RadioGroup
+        android:layout_marginTop="10dp"
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:weightSum="1">
-        >
-    </LinearLayout>
+        android:weightSum="4"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/radioButton915"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_radio_button"
+            android:textColor="@color/black"
+            android:button="@null"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="915" />
+
+        <RadioButton
+            android:id="@+id/radioButton916"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_radio_button"
+            android:textColor="@color/black"
+            android:button="@null"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="916" />
+
+        <RadioButton
+            android:id="@+id/radioButton918"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_radio_button"
+            android:textColor="@color/black"
+            android:button="@null"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="918" />
+        <RadioButton
+            android:id="@+id/radioButton911"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_radio_button"
+            android:textColor="@color/black"
+            android:button="@null"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="911" />
+    </RadioGroup>
     <org.techtown.timetablelayout.CollegeTimeTableLayout
+        android:id="@+id/schedule"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:background="@color/cell_backgroud_color"

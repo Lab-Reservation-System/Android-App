@@ -32,12 +32,32 @@ class assist_ScheduleFragment : Fragment() {
         var binding = FragmentAssistScheduleBinding.inflate(inflater, container, false)
         mBinding = binding
 
-        binding.regularRegisterBtn.setOnClickListener() //정규수업 등록
+        val col : Array<String> = arrayOf("","월","화","수","목","금")
+        val row : Array<String> = arrayOf("","1교시","2교시","3교시","4교시","5교시","6교시","7교시","8교시")
+        binding.schedule.setColumnNames(col)
+        binding.schedule.setRowNames(row)
+
+        binding.radioButton915.setOnClickListener(){
+            Log.d("라디오 로그", "onCreateView: 915")
+        }
+
+        binding.radioButton916.setOnClickListener(){
+            Log.d("라디오 로그", "onCreateView: 916")
+        }
+        binding.radioButton918.setOnClickListener(){
+            Log.d("라디오 로그", "onCreateView: 918")
+        }
+
+        binding.radioButton911.setOnClickListener(){
+            Log.d("라디오 로그", "onCreateView: 911")
+        }
+
+            binding.regularRegisterBtn.setOnClickListener() //정규수업 등록
         {
            val dialog = ClassRegist_Dialog(requireActivity())
            dialog.showDialog(user)
         }
-        binding.seminarRegisterBtn.setOnClickListener() //정규수업 등록
+        binding.seminarRegisterBtn.setOnClickListener() //특강/세미나 등록
         {
             val dialog = SeminarRegist_Dialog(requireActivity())
             dialog.showDialog(user)
