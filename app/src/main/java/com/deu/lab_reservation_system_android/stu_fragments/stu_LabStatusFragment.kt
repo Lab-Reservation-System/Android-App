@@ -12,6 +12,7 @@ import android.view.ViewGroup
 
 import android.widget.TextView
 import android.widget.*
+import android.widget.LinearLayout.LayoutParams
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 
@@ -259,6 +260,22 @@ class stu_LabStatusFragment : Fragment() {
         return mBinding?.root
     }
 
+    // 강의실 안 열렸을 때 숨기고 Text 표시하는 함수
+    fun closeText() {
+        val height = 600
+        val width = FrameLayout.LayoutParams.MATCH_PARENT
+        val layoutParams = FrameLayout.LayoutParams(width, height)
+        binding.closeText.layoutParams = layoutParams
+    }
+
+    // 강의실 안 열려있다가 열렸을 때 Text 숨기는 함수
+    fun openView() {
+        val height = 0
+        val width = FrameLayout.LayoutParams.MATCH_PARENT
+        val layoutParams = FrameLayout.LayoutParams(width, height)
+        binding.closeText.layoutParams = layoutParams
+    }
+
     // 강의실 안 열렸을 때 숨기는 함수
     fun seatHide() {
         for (i: Int in 0..3) {
@@ -268,6 +285,7 @@ class stu_LabStatusFragment : Fragment() {
 
         binding.labLeftSeat.setHeight(0)
         binding.labRightSeat.setHeight(0)
+        closeText()
     }
 
     // 강의실이 열리면 표시하는 함수
@@ -278,6 +296,7 @@ class stu_LabStatusFragment : Fragment() {
             binding.labLeftSeat.setHeight(520)
             binding.labRightSeat.setHeight(520)
         }
+        openView()
     }
 
     // view height 설정을 위한 함수
@@ -422,8 +441,9 @@ class stu_LabStatusFragment : Fragment() {
             "911" -> {
                 if (lab_915.size >= 20 && lab_916.size >= 20 && lab_918.size >= 20) {
                     seatShow()
-                } else
+                } else {
                     seatHide()
+                }
             }
             "918" -> {
                 if (lab_915.size >= 20 && lab_916.size >= 20) {
