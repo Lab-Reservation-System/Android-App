@@ -7,7 +7,7 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import com.deu.lab_reservation_system_android.R
-import com.deu.lab_reservation_system_android.model.Dto.TodayReservationDto
+import com.deu.lab_reservation_system_android.model.Dto.Reservation
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException
 import retrofit2.Call
@@ -24,7 +24,7 @@ class SeatInfo_Dialog(context : Context) {
         onClickListener = listener
     }
 
-    fun showDialog(todayReservation: TodayReservationDto)
+    fun showDialog(todayReservation: Reservation)
     {
         dialog.setContentView(R.layout.dialog_seat_info)
         dialog.window!!.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT)

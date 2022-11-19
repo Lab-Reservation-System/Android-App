@@ -12,7 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Lab_reservation_system_android"
+        android:theme="@style/AppTheme"
+        
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
 

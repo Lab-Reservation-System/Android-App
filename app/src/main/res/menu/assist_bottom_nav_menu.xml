@@ -15,7 +15,7 @@
 
     <item
         android:id="@+id/assist_labStatusFragment"
-        android:title="실습실 사용 현황"
+        android:title="실습실 현황"
         android:icon="@drawable/ic_status"
         />
 

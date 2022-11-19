@@ -80,4 +80,8 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
+
+    // 시간표
+    implementation 'com.github.Sky-Titan:CollegeTimeTableLayout:0.3-test'
+
 }

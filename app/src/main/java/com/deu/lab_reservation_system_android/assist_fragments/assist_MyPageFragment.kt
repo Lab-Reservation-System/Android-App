@@ -24,7 +24,7 @@ import retrofit2.Response
 class assist_MyPageFragment : Fragment() {
 
     private var mBinding : FragmentAssistMypageBinding? = null
-    var token:String = "123"
+    var token:String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,

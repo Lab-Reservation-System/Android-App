@@ -74,7 +74,11 @@ class UserEdit_Dialog(context : Context) {
                 edit_pw.text.toString().length == 0 ||
                 edit_email.text.toString().length == 0 ||
                 edit_phone.text.toString().length == 0 ){
-
+                val builder = AlertDialog.Builder(dialog.context)
+                    .setTitle("오류")
+                    .setMessage("모든 내용을 입력하세요")
+                    .setPositiveButton("확인", DialogInterface.OnClickListener { dialog, which -> })
+                builder.show()
             }else{
                 user.name = edit_name.text.toString()
                 user.id = edit_id.text.toString()
