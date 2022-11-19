@@ -79,7 +79,7 @@
             >
             <TableLayout
                 android:id="@+id/labLeftSeat"
-                android:background="#000000"
+                android:background="#FFF"
                 android:padding="2dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -359,7 +359,7 @@
             </TableLayout>
 
             <TableLayout
-                android:background="#000000"
+                android:background="#FFF"
                 android:padding="2dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -369,12 +369,12 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:stretchColumns="*"
                 android:layout_weight="0.5"
+                android:id="@+id/labRightSeat"
                 >
 
                 <!-- 1 번째 줄 -->
                 <TableRow
                     android:background="#FFF"
-                    android:id="@+id/labRightSeat"
                     >
                     <TextView
                         android:id="@+id/seat5"
@@ -640,6 +640,60 @@
 
             </TableLayout>
 
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/closeText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Close"
+            android:textColor="@color/black"
+            android:textSize="50dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:background="#808080"
+            />
+
+        <LinearLayout
+            android:layout_marginTop="200dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            >
+            <TextView
+                android:id="@+id/nowNum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_gravity="center"
+                android:text="현재 수 : 0"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+
+                />
+            <TextView
+                android:id="@+id/nowAmin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_gravity="center"
+                android:text="관리자 : X"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+
+                />
         </LinearLayout>
 
 
