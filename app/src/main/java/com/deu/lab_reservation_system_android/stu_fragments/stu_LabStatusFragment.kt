@@ -26,6 +26,7 @@ import org.json.JSONException
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
 import kotlin.math.log
 
 
@@ -36,6 +37,8 @@ class stu_LabStatusFragment : Fragment() {
     lateinit var response_userList: List<Reservation>
     lateinit var binding : FragmentStuLabstatusBinding
 
+    // 현재 시간이 비일과인지 일과인지 체크하는 변수 (false : 비일과, true : 일과)
+    private var timeCheck: Boolean = true
 
     // 강의실 현황
     private var lab_911: MutableList<String> = mutableListOf()
@@ -63,6 +66,8 @@ class stu_LabStatusFragment : Fragment() {
         Log.d("로그", binding.labNumber.text.toString())
 
         Log.d("테스트로그", "labStatus 초기화 전 lab 915 현재 인원 수 " + lab_915.size.toString())
+
+        // 초기 화면
         labStatus(binding.labNumber.text.toString())
 
         Log.d("테스트로그", "labStatus 초기화 후 lab 915 현재 인원 수 " + lab_915.size.toString())
@@ -428,36 +433,73 @@ class stu_LabStatusFragment : Fragment() {
         for(i: Int in 0..lab.size - 1) {
             val tvId = resources.getIdentifier("seat${lab.get(i)}", "id", requireActivity().packageName)
 
-            Log.d("로그", "tvId : " + tvId.toString())
+            Log.d("로그", "tvId : $tvId")
 
             requireView()!!.findViewById<TextView>(tvId).setBackgroundColor(Color.parseColor("#808080"))
         }
     }
+    
+    // 현재 시간이 16:30분 이전이면 모든 강의실 오픈, 17:00 이후면 닫는 함수
+    fun checkTime() {
+        val currentTime : Long = System.currentTimeMillis() // ms로 반환
+        val dataFormat = SimpleDateFormat("hh")
+        val time = dataFormat.format(currentTime).toInt()
+
+        Log.d("현재time:", dataFormat.format(currentTime))
+
+        Log.d("labCheck", "stu_LabStatusFragment - checkTime() called 1 ${time}")
+
+        // 일과시간
+        if(time in 9..16) {
+            Log.d("labCheck", "stu_LabStatusFragment - checkTime() called 2 ${time}")
+            timeCheck = true
+            binding.nowAmin.text = "관리자 : 조교"
+        } else if ((time in 0..8 ) || (time in 17..23) ) { // 비일과 시간
+            Log.d("labCheck", "stu_LabStatusFragment - checkTime() called 3 ${time}")
+            timeCheck = false
+            binding.nowAmin.text = "관리자 : X"
+        }
+    }
+
+    // 일과시간 중 등록된 시간표가 있는지 확인하는 함수
+
 
     // 강의실 인원 체크, 915 -> 916 -> 918 -> 911 순으로 강의실 열고, 강의실 인원 수가 20명 이상이면 다음 강의실 연다.
     fun labCheck(labNumber: String) {
+        checkTime()
 
         when(labNumber) {
             "911" -> {
-                if (lab_915.size >= 20 && lab_916.size >= 20 && lab_918.size >= 20) {
+                if ((lab_915.size >= 20 && lab_916.size >= 20 && lab_918.size >= 20) && !timeCheck) {
                     seatShow()
-                } else {
+                } else if (!timeCheck){
                     seatHide()
+                } else {
+                    seatShow()
                 }
             }
             "918" -> {
-                if (lab_915.size >= 20 && lab_916.size >= 20) {
+                if ((lab_915.size >= 20 && lab_916.size >= 20) && !timeCheck) {
                     seatShow()
-                } else
+                } else if (!timeCheck){
                     seatHide()
+                } else {
+                    seatShow()
+                }
             }
             "916" -> {
-                if (lab_915.size >= 20) {
+                if (lab_915.size >= 20 && !timeCheck) {
                     seatShow()
-                } else
+                } else if (!timeCheck){
                     seatHide()
+                } else {
+                    seatShow()
+                }
             }
-            else -> seatShow()
+            else -> {
+                // 여기에 시간표 체크 조건 넣기
+                seatShow()
+            }
         }
     }
 
