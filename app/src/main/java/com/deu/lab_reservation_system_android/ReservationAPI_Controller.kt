@@ -6,7 +6,7 @@ import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface LabAPI_Controller {
+interface ReservationAPI_Controller {
 
     // 실시간
     @GET("/api/lab/show")

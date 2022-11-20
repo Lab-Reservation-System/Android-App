@@ -581,7 +581,7 @@
                     android:background="@drawable/selector_radio_button"
                     android:textColor="@color/black"
                     android:button="@null"
-                    android:text="24:00"
+                    android:text="00:00"
                     android:gravity="center"
 
                     />
@@ -594,7 +594,7 @@
                     android:background="@drawable/selector_radio_button"
                     android:textColor="@color/black"
                     android:button="@null"
-                    android:text="24:30"
+                    android:text="00:30"
                     android:gravity="center"
                     />
 
