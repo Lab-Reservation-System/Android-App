@@ -647,12 +647,12 @@
             android:id="@+id/closeText"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="Close"
+            android:text="다른 실습실의 \n좌석이 남아있어 \n사용이 불가합니다."
             android:textColor="@color/black"
-            android:textSize="50dp"
+            android:textSize="30dp"
             android:textAlignment="center"
             android:gravity="center"
-            android:background="#808080"
+                android:background="#CC757575"
             />
 
         <TextView
@@ -661,10 +661,10 @@
             android:layout_height="0dp"
             android:text="수업 또는 세미나 \n진행중입니다."
             android:textColor="@color/black"
-            android:textSize="50dp"
+            android:textSize="30dp"
             android:textAlignment="center"
             android:gravity="center"
-            android:background="#808080"
+                android:background="#CC757575"
             />
 
         <LinearLayout
