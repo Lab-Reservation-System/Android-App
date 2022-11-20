@@ -74,6 +74,7 @@
     <org.techtown.timetablelayout.CollegeTimeTableLayout
         android:id="@+id/schedule"
         android:layout_width="match_parent"
+        android:textSize="10dp"
         android:layout_height="400dp"
         android:background="@color/cell_backgroud_color"
         android:columnCount="6"
@@ -87,19 +88,17 @@
         android:layout_marginRight="30dp"
         android:orientation="horizontal"
         android:weightSum="1">
-        >
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/seminar_register_btn"
             android:layout_width="0dp"
-            android:layout_weight="0.45"
             android:layout_height="50dp"
-            android:text="세미나 등록"
-            android:textStyle="bold"
-            android:textColor="@color/white"
+            android:layout_weight="0.45"
             android:background="@drawable/blue_title"
+            android:text="세미나 등록"
+            android:textColor="@color/white"
             android:textSize="20dp"
-            />
+            android:textStyle="bold" />
 
         <View
             android:layout_width="0dp"

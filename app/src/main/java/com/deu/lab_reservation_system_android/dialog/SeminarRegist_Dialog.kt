@@ -26,9 +26,9 @@ class SeminarRegist_Dialog(context : Context) {
     var currentTime : Long = 0
 
     private val dialog = Dialog(context)
-    private lateinit var onClickListener: ProfSignUp_Dialog.OnDialogClickListener
+    private lateinit var onClickListener: OnDialogClickListener
 
-    fun setOnClickListener(listener: ProfSignUp_Dialog.OnDialogClickListener) {
+    fun setOnClickListener(listener: OnDialogClickListener) {
         onClickListener = listener
     }
 
@@ -260,7 +260,7 @@ class SeminarRegist_Dialog(context : Context) {
                     //Log.d("RESPONSE: ", response.body().toString())
                     try {
                         Log.d("Watching: ", "성공2")
-
+                        onClickListener.onClicked(1)
                         dialog.dismiss()
 
                     }catch (e: JSONException){

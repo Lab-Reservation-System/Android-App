@@ -19,7 +19,6 @@ import retrofit2.Response
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.math.log
 
 class ClassRegist_Dialog(context : Context) {
     var dateFormat = "yyyy-MM-dd"   //날짜 형식
@@ -27,9 +26,10 @@ class ClassRegist_Dialog(context : Context) {
     var monthList : MutableList<String> = mutableListOf("", "", "", "", "", "", "")
 
     private val dialog = Dialog(context)
-    private lateinit var onClickListener: ProfSignUp_Dialog.OnDialogClickListener
+    private lateinit var onClickListener: OnDialogClickListener
 
-    fun setOnClickListener(listener: ProfSignUp_Dialog.OnDialogClickListener) {
+    fun setOnClickListener(listener: OnDialogClickListener)
+    {
         onClickListener = listener
     }
 
@@ -107,10 +107,10 @@ class ClassRegist_Dialog(context : Context) {
                     3 -> {yoil.setText(daySpinner.selectedItem.toString())}
                     // 금
                     4 -> {yoil.setText(daySpinner.selectedItem.toString())}
-                    // 토
-                    5 -> {yoil.setText(daySpinner.selectedItem.toString())}
-                    // 일
-                    6 -> {yoil.setText(daySpinner.selectedItem.toString())}
+//                    // 토
+//                    5 -> {yoil.setText(daySpinner.selectedItem.toString())}
+//                    // 일
+//                    6 -> {yoil.setText(daySpinner.selectedItem.toString())}
                 }
             }
         }
@@ -318,7 +318,7 @@ class ClassRegist_Dialog(context : Context) {
                     //Log.d("RESPONSE: ", response.body().toString())
                     try {
                         Log.d("Watching: ", "성공2")
-
+                        onClickListener.onClicked(1)
                         dialog.dismiss()
 
                     }catch (e: JSONException){

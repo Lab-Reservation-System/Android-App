@@ -1,7 +1,7 @@
 package com.deu.lab_reservation_system_android.model
 
 data class Classes(
-    val className: Any,
+    val className: String,
     val classNum: Int,
     val date: String,
     val labNumber: String,
