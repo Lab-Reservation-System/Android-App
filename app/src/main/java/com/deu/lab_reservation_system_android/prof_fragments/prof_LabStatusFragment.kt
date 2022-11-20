@@ -1,6 +1,5 @@
 package com.deu.lab_reservation_system_android.prof_fragments
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -16,7 +15,7 @@ import androidx.fragment.app.Fragment
 import com.deu.lab_reservation_system_android.databinding.FragmentProfLabstatusBinding
 import com.deu.lab_reservation_system_android.dialog.SeatInfo_Dialog
 import com.deu.lab_reservation_system_android.model.Classes
-import com.deu.lab_reservation_system_android.model.Dto.Reservation
+import com.deu.lab_reservation_system_android.model.Reservation
 import com.deu.lab_reservation_system_android.nav.Professor_Nav_Activity
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException

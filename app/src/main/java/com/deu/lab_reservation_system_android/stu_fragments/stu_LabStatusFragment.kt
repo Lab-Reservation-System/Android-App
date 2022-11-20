@@ -12,14 +12,13 @@ import android.view.ViewGroup
 
 import android.widget.TextView
 import android.widget.*
-import android.widget.LinearLayout.LayoutParams
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.deu.lab_reservation_system_android.activity.Reservation_Activity
 
 
 import com.deu.lab_reservation_system_android.databinding.FragmentStuLabstatusBinding
-import com.deu.lab_reservation_system_android.model.Dto.Reservation
+import com.deu.lab_reservation_system_android.model.Reservation
 import com.deu.lab_reservation_system_android.dialog.SeatInfo_Dialog
 import com.deu.lab_reservation_system_android.model.Classes
 import com.deu.lab_reservation_system_android.nav.Student_Nav_Activity
@@ -29,7 +28,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
-import kotlin.math.log
 
 
 class stu_LabStatusFragment : Fragment() {
@@ -384,12 +382,9 @@ class stu_LabStatusFragment : Fragment() {
                 call: Call<List<Reservation>>,
                 response: Response<List<Reservation>>
             ) {
-                Log.d(TAG, "stu_LabStatusFragment - onResponse() called 성공2")
                 if (response.isSuccessful) { // 응답 잘 받은 경우
-                    Log.d(TAG, "stu_LabStatusFragment - onResponse() called 성공3")
                     try {
                         //어떻게 응답
-                        Log.d(TAG, "stu_LabStatusFragment - onResponse() called 성공4")
                         response_userList = response.body()!!
 
                         Log.d(TAG, "총 예약되어 있는 좌석은 " + response_userList.size.toString() + "입니다.")
@@ -406,7 +401,6 @@ class stu_LabStatusFragment : Fragment() {
                                 }
                             }
 
-                            Log.d("로그", response_userList.size.toString())
 
                             val packageName = activity!!.packageName
 
@@ -455,15 +449,14 @@ class stu_LabStatusFragment : Fragment() {
                 call: Call<List<Classes>>,
                 response: Response<List<Classes>>
             ) {
-                Log.d(TAG, "stu_LabStatusFragment - onResponse() called 성공 2")
+
                 if (response.isSuccessful) { // 응답 잘 받은 경우
-                    Log.d(TAG, "stu_LabStatusFragment - onResponse() called 성공 3")
+
                     try {
                         //어떻게 응답
-                        Log.d(TAG, "stu_LabStatusFragment - onResponse() called 성공 4")
                         response_classList = response.body()!!
 
-                        Log.d(TAG, "response_classList ${response_classList.size}")
+
 
                         if(response_classList.isNotEmpty()) {
 
@@ -477,10 +470,6 @@ class stu_LabStatusFragment : Fragment() {
                                 }
                             }
 
-                            Log.d(TAG, "lab_915_class = ${lab_915_class_time.size}, lab_915_class_date = ${lab_915_class_date.size}")
-                            Log.d(TAG, "lab_916_class = ${lab_916_class_time.size}, lab_916_class_date = ${lab_916_class_date.size}")
-                            Log.d(TAG, "lab_918_class = ${lab_918_class_time.size}, lab_918_class_date = ${lab_918_class_date.size}")
-                            Log.d(TAG, "lab_911_class = ${lab_911_class_time.size}, lab_911_class_date = ${lab_911_class_date.size}")
 
                             checkClass("915")
 
@@ -537,7 +526,6 @@ class stu_LabStatusFragment : Fragment() {
         for(i: Int in 0..lab.size - 1) {
             val tvId = resources.getIdentifier("seat${lab.get(i)}", "id", requireActivity().packageName)
 
-            Log.d("로그", "tvId : $tvId")
 
             requireView()!!.findViewById<TextView>(tvId).setBackgroundColor(Color.parseColor("#808080"))
         }
@@ -551,15 +539,12 @@ class stu_LabStatusFragment : Fragment() {
 
         Log.d("labCheck:", dataFormat.format(currentTime))
 
-        Log.d("labCheck", "stu_LabStatusFragment - checkTime() called 1 ${time}")
 
         // 일과시간
         if(time in 9..16) {
-            Log.d("labCheck", "stu_LabStatusFragment - checkTime() called 2 ${time}")
             timeCheck = true
             binding.nowAmin.text = "관리자 : 조교"
         } else if ((time in 0..8 ) || (time in 17..23) ) { // 비일과 시간
-            Log.d("labCheck", "stu_LabStatusFragment - checkTime() called 3 ${time}")
             timeCheck = false
             binding.nowAmin.text = "관리자 : X"
         }
@@ -575,9 +560,6 @@ class stu_LabStatusFragment : Fragment() {
         val dataFormat = SimpleDateFormat("yyyy-MM-dd HH")
         val data = dataFormat.format(currentTime).split(" ") // data[0] : 년 월 일, date[1] : 시간
 
-        Log.d(TAG, "테스트 ${data[0]}")
-        Log.d(TAG, "${lab_915_class_date[0].substring(5, 7)}")
-        Log.d(TAG, "data ${data[1]}")
         // timeCheck (true : 일과, false : 비일과)
         if (timeCheck) {
             when (labNumber) {
@@ -586,8 +568,6 @@ class stu_LabStatusFragment : Fragment() {
 
                     for(i: Int in 0 .. lab_915_class_time.size - 1) {
                         // 오늘 날짜랑 915에 등록된 수업, 세미나랑 비교
-                        Log.d(TAG+"1", "for,${data[0]},${lab_915_class_date[i]}")
-                        Log.d(TAG+"2", "for,${data[1]},${lab_915_class_time[i]}")
 
                         if(data[0].compareTo(lab_915_class_date[i]) == 0 && data[1].toString().compareTo(lab_915_class_time[i].toString()) == 0) {
 

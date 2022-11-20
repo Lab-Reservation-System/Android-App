@@ -1,6 +1,6 @@
 package com.deu.lab_reservation_system_android
 
-import com.deu.lab_reservation_system_android.model.Dto.Reservation
+import com.deu.lab_reservation_system_android.model.Reservation
 import retrofit2.Call
 import retrofit2.http.DELETE
 import retrofit2.http.GET

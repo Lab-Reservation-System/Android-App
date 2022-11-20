@@ -42,7 +42,7 @@ class stu_ScheduleFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.d("조교 로그", "onCreateView: 시간표")
+        Log.d("학생 로그", "onCreateView: 시간표")
 
         var user = (activity as Student_Nav_Activity).getUser() // 사용자 정보 가져오기
 

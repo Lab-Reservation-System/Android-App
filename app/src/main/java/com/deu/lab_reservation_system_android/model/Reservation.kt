@@ -1,4 +1,4 @@
-package com.deu.lab_reservation_system_android.model.Dto
+package com.deu.lab_reservation_system_android.model
 
 class Reservation (
     var reservationNum: String,

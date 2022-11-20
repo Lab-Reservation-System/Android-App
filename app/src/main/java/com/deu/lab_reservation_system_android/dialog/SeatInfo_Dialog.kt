@@ -7,7 +7,7 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import com.deu.lab_reservation_system_android.R
-import com.deu.lab_reservation_system_android.model.Dto.Reservation
+import com.deu.lab_reservation_system_android.model.Reservation
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException
 import retrofit2.Call
