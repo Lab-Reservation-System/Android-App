@@ -1,6 +1,7 @@
 package com.deu.lab_reservation_system_android.dialog
 
 import android.app.AlertDialog
+import android.app.DatePickerDialog
 import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
@@ -20,36 +21,28 @@ import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
-class ClassRegist_Dialog(context : Context) {
-    var dateFormat = "yyyy-MM-dd"   //날짜 형식
+class SeminarRegist_Dialog(context : Context) {
+
     var currentTime : Long = 0
-    var monthList : MutableList<String> = mutableListOf("", "", "", "", "", "", "")
 
     private val dialog = Dialog(context)
     private lateinit var onClickListener: OnDialogClickListener
 
-    fun setOnClickListener(listener: OnDialogClickListener)
-    {
+    fun setOnClickListener(listener: OnDialogClickListener) {
         onClickListener = listener
     }
 
     fun showDialog(user : User) {
 
+        var dateString:String = ""
+
         currentTime = System.currentTimeMillis()
-        val month_dataFormat = SimpleDateFormat("MM")
-        val todayMonth = month_dataFormat.format(currentTime).toInt()
+        val dataFormat = SimpleDateFormat("yyyy-MM-dd")
+        val today = dataFormat.format(currentTime)
 
-        if(todayMonth >= 9 || todayMonth < 3)
-            getMonthstartDate("9")
-        else
-            getMonthstartDate("3")
-
-
-        //Log.d("가져온 날짜", "showDialog: ${}월")
-
-
+        Log.d("가져온 날짜", "showDialog: ${today}")
         Log.d("가져온 아이디", "showDialog: ${user.id}")
-        dialog.setContentView(R.layout.dialog_regist_classes)
+        dialog.setContentView(R.layout.dialog_regist_seminar)
         dialog.window!!.setLayout(
             WindowManager.LayoutParams.WRAP_CONTENT,
             WindowManager.LayoutParams.WRAP_CONTENT
@@ -58,24 +51,29 @@ class ClassRegist_Dialog(context : Context) {
         dialog.setCancelable(true)
         dialog.show()
 
+
+        val date_text = dialog.findViewById<TextView>(R.id.datetext)
+        date_text.setOnClickListener {
+            val cal = Calendar.getInstance()    //캘린더뷰 만들기
+            val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+                dateString = "${year}-${month + 1}-${dayOfMonth}"
+                var datetemp = dataFormat.parse(dateString)
+                dateString = dataFormat.format(datetemp)
+
+                date_text.setText(dateString)
+            }
+            DatePickerDialog(dialog.context, dateSetListener, cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
+        }
+
         // 스피너 선언
         var labSpinner = dialog.findViewById<Spinner>(R.id.labSpinner)
-
-        var daySpinner = dialog.findViewById<Spinner>(R.id.daySpinner)
-
         // 실습실 선택 화면
         var labNumber = dialog.findViewById<EditText>(R.id.labNumber)
-
-        var yoil = dialog.findViewById<EditText>(R.id.yoil)
-
         // 어뎁터 설정 - resource - array.xml에 있는 아이템 목록을 추가한다.
         labSpinner.adapter = ArrayAdapter.createFromResource(dialog.context, R.array.labList, android.R.layout.simple_spinner_item)
-        daySpinner.adapter = ArrayAdapter.createFromResource(dialog.context, R.array.dayList, android.R.layout.simple_spinner_item)
-
         // 아이템 선택 리스너
         labSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
-
             }
             override fun onItemSelected(
                 parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
@@ -91,29 +89,7 @@ class ClassRegist_Dialog(context : Context) {
                 }
             }
         }
-        daySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>?) {
 
-            }
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                when (position) {
-                    // 월
-                    0 -> {yoil.setText(daySpinner.selectedItem.toString())}
-                    // 화
-                    1 -> {yoil.setText(daySpinner.selectedItem.toString())}
-                    // 수
-                    2 -> {yoil.setText(daySpinner.selectedItem.toString())}
-                    // 목
-                    3 -> {yoil.setText(daySpinner.selectedItem.toString())}
-                    // 금
-                    4 -> {yoil.setText(daySpinner.selectedItem.toString())}
-//                    // 토
-//                    5 -> {yoil.setText(daySpinner.selectedItem.toString())}
-//                    // 일
-//                    6 -> {yoil.setText(daySpinner.selectedItem.toString())}
-                }
-            }
-        }
         val cancel_btn = dialog.findViewById<Button>(R.id.registerCancleBtn)
 
         cancel_btn.setOnClickListener() {
@@ -194,10 +170,9 @@ class ClassRegist_Dialog(context : Context) {
 
         // 수업명
 
-        var className= dialog.findViewById<EditText>(R.id.className)
-        // 교수명
-        var profName= dialog.findViewById<EditText>(R.id.professorName)
-        profName.setText(user.name)
+        var seminarName= dialog.findViewById<EditText>(R.id.className)
+        // 관리자명
+        var profName = dialog.findViewById<EditText>(R.id.professorName)
 
         val regist_btn = dialog.findViewById<Button>(R.id.registerBtn)
 
@@ -206,10 +181,12 @@ class ClassRegist_Dialog(context : Context) {
 
         regist_btn.setOnClickListener() {
             var classes : MutableList<ClassesDto> = mutableListOf()
-            if (className.text.toString().length == 0 ||
+            Log.d("날짜비교", "showDialog: ${today.compareTo(dateString)}")
+            if (seminarName.text.toString().length == 0 ||
                 profName.text.toString().length == 0 ||
                 sTime.text.toString().length == 0 ||
-                eTime.text.toString().length == 0
+                eTime.text.toString().length == 0 ||
+                dateString.length ==0
             ) {
                 val builder = AlertDialog.Builder(dialog.context)
                     .setTitle("오류")
@@ -218,48 +195,48 @@ class ClassRegist_Dialog(context : Context) {
                 builder.show()
 
             } else {
-                val TAG = "수업등록 버튼클릭"
-                Log.d(TAG, "showDialog: " + className.text.toString())
-                Log.d(TAG, "showDialog: " + profName.text.toString())
-                Log.d(TAG, "showDialog: " + labNumber.text.toString())
-                Log.d(TAG, "showDialog: " + yoil.text.toString())
-                Log.d(TAG, "showDialog: " + sTime.text.toString())
-                Log.d(TAG, "showDialog: " + eTime.text.toString())
-
-                lateinit var st_yoil : String
-                var prof = profName.text.toString()
-                var class_name = className.text.toString()
-                var lab_num = labNumber.text.toString()
-                var startTime = sTime.text.toString().split(':')
-                var endTime = eTime.text.toString().split(':')
-
-                Log.d(TAG, "showDialog: "+startTime[0]+"/"+endTime[0])
-
-                var st = startTime[0].toInt()
-                var end = endTime[0].toInt()
-                if(st < end) end = end-1
-
-                when(yoil.text.toString()){ // 첫 번째 요일
-                    "월요일" -> st_yoil = monthList[0]
-                    "화요일" -> st_yoil = monthList[1]
-                    "수요일" -> st_yoil = monthList[2]
-                    "목요일" -> st_yoil = monthList[3]
-                    "금요일" -> st_yoil = monthList[4]
-                    "토요일" -> st_yoil = monthList[5]
-                    "일요일" -> st_yoil = monthList[6]
-                }
-
-                for(t in st..end)
+                if(today.compareTo(dateString) > 0)
                 {
-                    var tempclass : ClassesDto
-                    tempclass = ClassesDto(user.id,prof,class_name,lab_num,st_yoil,t.toString(),"Regular")
-                    classes.add(tempclass)
+                    val builder = AlertDialog.Builder(dialog.context)
+                        .setTitle("오류")
+                        .setMessage("세미나를 과거에 등록할 수 없습니다")
+                        .setPositiveButton("확인", DialogInterface.OnClickListener { dialog, which -> })
+                    builder.show()
                 }
+                else{
+
+                    val TAG = "수업등록 버튼클릭"
+                    Log.d(TAG, "showDialog: " + seminarName.text.toString())
+                    Log.d(TAG, "showDialog: " + profName.text.toString())
+                    Log.d(TAG, "showDialog: " + labNumber.text.toString())
+                    Log.d(TAG, "showDialog: " + sTime.text.toString())
+                    Log.d(TAG, "showDialog: " + eTime.text.toString())
+
+                    lateinit var st_yoil : String
+                    var prof = profName.text.toString()
+                    var class_name = seminarName.text.toString()
+                    var lab_num = labNumber.text.toString()
+                    var startTime = sTime.text.toString().split(':')
+                    var endTime = eTime.text.toString().split(':')
+
+                    Log.d(TAG, "showDialog: "+startTime[0]+"/"+endTime[0])
+
+                    var st = startTime[0].toInt()
+                    var end = endTime[0].toInt()
+                    if(st < end) end = end-1
 
 
-                get_create(classes)
+                    for(t in st..end)
+                    {
+                        var tempclass : ClassesDto
+                        tempclass = ClassesDto(user.id,prof,class_name,lab_num,dateString,t.toString(),"Seminar")
+                        classes.add(tempclass)
+                    }
 
 
+                    get_create(classes)
+
+                }
             }
         }
 
@@ -269,41 +246,6 @@ class ClassRegist_Dialog(context : Context) {
         fun onClicked(i:Int)
     }
 
-
-    fun getDOW(whatdate: String?): String { //getDayOfWeek
-        val cal: Calendar = Calendar.getInstance()
-        val df = SimpleDateFormat(dateFormat)
-        var dDay = Date()
-        try {
-            dDay = df.parse(whatdate)
-        } catch (e: ParseException) {
-            e.printStackTrace()
-        }
-        cal.time = dDay
-        return cal.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.KOREAN)
-    }
-    fun getMonthstartDate(month : String) //학기 시작 월 받기
-    {
-        var year_dataFormat = SimpleDateFormat("yyyy")
-        var todayYear = year_dataFormat.format(currentTime)
-        var dayName : String
-        for(i in 1..7) {
-            var stringtemp : String = i.toString()
-            var stringDate : String = todayYear + "-0"+month+"-0"+stringtemp
-            dayName = getDOW(stringDate)
-            //Log.d(month+"월"+i+"일은", dayName)
-            when(dayName){
-                "월요일" -> monthList[0] = stringDate
-                "화요일" -> monthList[1] = stringDate
-                "수요일" -> monthList[2] = stringDate
-                "목요일" -> monthList[3] = stringDate
-                "금요일" -> monthList[4] = stringDate
-                "토요일" -> monthList[5] = stringDate
-                "일요일" -> monthList[6] = stringDate
-            }
-        }
-
-    }
 
     fun get_create(classes : MutableList<ClassesDto>) {
         val call = RetrofitBuilder.api_classes.getCreateClassResponse(classes)

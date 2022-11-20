@@ -19,13 +19,66 @@
         android:background="@drawable/blue_title"
         android:textColor="@color/white"
         />
-
-    <org.techtown.timetablelayout.CollegeTimeTableLayout
+    <RadioGroup
+        android:layout_marginTop="10dp"
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="50dp"
+        android:weightSum="4"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/radioButton915"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_radio_button"
+            android:textColor="@color/black"
+            android:button="@null"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="915" />
+
+        <RadioButton
+            android:id="@+id/radioButton916"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_radio_button"
+            android:textColor="@color/black"
+            android:button="@null"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="916" />
+
+        <RadioButton
+            android:id="@+id/radioButton918"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_radio_button"
+            android:textColor="@color/black"
+            android:button="@null"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="918" />
+        <RadioButton
+            android:id="@+id/radioButton911"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_radio_button"
+            android:textColor="@color/black"
+            android:button="@null"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="911" />
+    </RadioGroup>
+    <org.techtown.timetablelayout.CollegeTimeTableLayout
+        android:id="@+id/schedule"
+        android:layout_width="match_parent"
+        android:textSize="10dp"
+        android:layout_height="400dp"
         android:background="@color/cell_backgroud_color"
         android:columnCount="6"
-        android:rowCount="10" />
+        android:rowCount="9" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,19 +88,17 @@
         android:layout_marginRight="30dp"
         android:orientation="horizontal"
         android:weightSum="1">
-        >
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/seminar_register_btn"
             android:layout_width="0dp"
-            android:layout_weight="0.45"
             android:layout_height="50dp"
-            android:text="세미나 등록"
-            android:textStyle="bold"
-            android:textColor="@color/white"
+            android:layout_weight="0.45"
             android:background="@drawable/blue_title"
+            android:text="세미나 등록"
+            android:textColor="@color/white"
             android:textSize="20dp"
-            />
+            android:textStyle="bold" />
 
         <View
             android:layout_width="0dp"
