@@ -531,7 +531,7 @@ class assist_LabStatusFragment : Fragment() {
     // 현재 시간이 16:30분 이전이면 모든 강의실 오픈, 17:00 이후면 닫는 함수
     fun checkTime() {
         val currentTime : Long = System.currentTimeMillis() // ms로 반환
-        val dataFormat = SimpleDateFormat("hh")
+        val dataFormat = SimpleDateFormat("HH")
         val time = dataFormat.format(currentTime).toInt()
 
         // 일과시간
