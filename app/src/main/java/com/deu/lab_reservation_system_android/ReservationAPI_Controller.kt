@@ -14,7 +14,7 @@ interface ReservationAPI_Controller {
 
     // 모든 예약 보기
     @GET("/api/reservation/show/all")
-    fun getAllReservationResponse () : Call<List<Reservation>>
+    fun getAllReservationResponse () : Call<MutableList<Reservation>>
 
     // 오늘 예약만 보기
     @GET("/api/reservation/show/today")

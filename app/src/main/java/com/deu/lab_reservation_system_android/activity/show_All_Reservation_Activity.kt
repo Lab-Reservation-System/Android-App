@@ -26,7 +26,7 @@ class show_All_Reservation_Activity : AppCompatActivity() {
 
     private lateinit var reservationlist_tableRowAdapter: ReservationListTableRowAdapter
 
-    lateinit var response_ReservationList : List<Reservation>
+    lateinit var response_ReservationList : MutableList<Reservation>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,11 +87,11 @@ class show_All_Reservation_Activity : AppCompatActivity() {
     fun get_reservationList() {
         val call = RetrofitBuilder.api_reservation.getAllReservationResponse()
         Log.d("Watching: ", "성공1")
-        call.enqueue(object : Callback<List<Reservation>> { // 비동기 방식 통신 메소드
+        call.enqueue(object : Callback<MutableList<Reservation>> { // 비동기 방식 통신 메소드
 
             override fun onResponse( // 통신에 성공한 경우
-                call: Call<List<Reservation>>,
-                response: Response<List<Reservation>>
+                call: Call<MutableList<Reservation>>,
+                response: Response<MutableList<Reservation>>
             ) {
                 if (response.isSuccessful()) { // 응답 잘 받은 경우
                     //Log.d("RESPONSE: ", response.body().toString())
@@ -117,7 +117,7 @@ class show_All_Reservation_Activity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<List<Reservation>>, t: Throwable) {
+            override fun onFailure(call: Call<MutableList<Reservation>>, t: Throwable) {
                 // 통신에 실패한 경우
                 Log.d("CONNECTION FAILURE: ", t.localizedMessage)
                 Log.d("Watching: ", "실패2")

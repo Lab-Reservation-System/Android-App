@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+
+    >
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="예약 관리"
+        android:textSize="40dp"
+
+        android:gravity="center"
+        android:background="@drawable/blue_title"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        />
+
+
+    <TextView
+        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="나의 예약 내역"
+        android:textSize="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:background="@drawable/white_blue_btn"
+
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/blue_corner"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:stretchColumns="*"
+            >
+
+            <TableRow
+                android:id="@+id/tableTitleRow"
+                >
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="이름"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:id="@+id/userId"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="학번"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    />
+
+                <TextView
+                    android:id="@+id/roomId"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="호실"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:id="@+id/seatNum"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="좌석"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:id="@+id/useTime"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="시간"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    />
+
+                <TextView
+                    android:id="@+id/permissionState"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/blue_corner_gray"
+                    android:text="승인 상태"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    />
+
+
+            </TableRow>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/table_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            </androidx.recyclerview.widget.RecyclerView>
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_height="40dp"
+
+        android:orientation="horizontal"
+        android:weightSum="3"
+        >
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancel_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1.3"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="닫기"
+            android:textColor="@color/white"
+            android:background="#807E7E"
+            android:textSize="15dp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/select_deny_btn"
+        android:layout_width="0dp"
+        android:layout_weight="1.3"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="선택 예약 취소"
+        android:textColor="@color/white"
+        android:background="#BF0707"
+        android:textSize="15dp"
+        />
+
+    </LinearLayout>
+
+
+</LinearLayout>

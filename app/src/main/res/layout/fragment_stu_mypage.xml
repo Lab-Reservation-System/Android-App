@@ -153,47 +153,23 @@
             />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:orientation="horizontal"
-        android:weightSum="1">
-        >
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/my_seminar_btn"
-            android:layout_width="0dp"
-            android:layout_weight="0.45"
-            android:layout_height="40dp"
-            android:text="내 세미나"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:background="@drawable/blue_corner_gray"
-            android:textSize="20dp"
-            />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="0.1"
-            />
-
-        <androidx.appcompat.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/my_reservation_btn"
-            android:layout_width="0dp"
-            android:layout_weight="0.45"
-            android:layout_height="40dp"
+            android:layout_width="match_parent"
+
             android:text="예약 조회"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:background="@drawable/blue_corner_gray"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
             android:textSize="20dp"
             />
 
-    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/info_change_btn"

@@ -12,6 +12,8 @@ import com.deu.lab_reservation_system_android.activity.User.LoginActivity
 import com.deu.lab_reservation_system_android.nav.Student_Nav_Activity
 
 import com.deu.lab_reservation_system_android.databinding.FragmentStuMypageBinding
+import com.deu.lab_reservation_system_android.dialog.ClassInfo_Dialog
+import com.deu.lab_reservation_system_android.dialog.MyReservation_Dialog
 
 class stu_MyPageFragment : Fragment() {
 
@@ -33,6 +35,12 @@ class stu_MyPageFragment : Fragment() {
         binding.userEmail.setText(user.email)
         binding.userName.setText(user.name)
         binding.userPhone.setText(user.phoneNumber)
+
+
+        binding.myReservationBtn.setOnClickListener(){
+            val dialog = MyReservation_Dialog(requireActivity())
+            dialog.showDialog(user.id)
+        }
 
         binding.logoutBtn.setOnClickListener(){
             var intent = Intent(activity, LoginActivity::class.java)

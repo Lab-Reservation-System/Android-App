@@ -37,8 +37,8 @@
             android:layout_height="40dp"
             android:layout_weight="0.2"
             android:text="검 색"
-            android:textAlignment="center"
-            android:textSize="25dp"
+            android:gravity="center"
+            android:textSize="20dp"
             android:textColor="@color/white"
             android:background="#777777"
             />
@@ -46,12 +46,11 @@
         <EditText
             android:id="@+id/user_search_text"
             android:layout_width="0dp"
-            android:layout_height="41dp"
+            android:layout_height="40dp"
             android:layout_weight="0.6"
             android:background="@drawable/white_blue_btn"
-            android:textColor="@color/black"
             android:paddingLeft="20dp"
-            />
+            android:textColor="@color/black" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="0dp"
@@ -59,7 +58,7 @@
             android:layout_weight="0.2"
             android:textColor="@color/white"
             android:text="조회"
-            android:textAlignment="center"
+            android:gravity="center"
             android:textSize="20dp"
             android:id="@+id/user_search_btn"
             android:background="@drawable/blue_title"

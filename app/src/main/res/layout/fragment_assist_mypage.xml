@@ -71,7 +71,7 @@
             android:layout_weight="0.3"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="ID(학번)"
+            android:text="ID"
             android:textSize="20dp"
             android:textColor="#000"
             />
