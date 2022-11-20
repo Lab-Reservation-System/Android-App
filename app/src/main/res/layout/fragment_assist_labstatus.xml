@@ -13,7 +13,7 @@
         android:layout_height="70dp"
         android:text="강의실 현황 조회"
         android:textSize="40dp"
-
+        android:layout_marginBottom="30dp"
         android:gravity="center"
         android:background="@drawable/blue_title"
         android:textColor="@color/white"
@@ -43,7 +43,8 @@
             android:text="915"
             android:textStyle="bold"
             android:textSize="24dp"
-            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/black"
             android:background="@drawable/skyblue_box"
             />
         <androidx.appcompat.widget.AppCompatButton

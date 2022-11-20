@@ -46,6 +46,8 @@
             android:background="@drawable/blue_corner"
             android:singleLine="true"
 
+            android:paddingLeft="10dp"
+
 
             />
 
@@ -75,6 +77,8 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="0.7"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
             android:singleLine="true"
             android:background="@drawable/blue_corner"
 

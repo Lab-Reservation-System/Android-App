@@ -85,7 +85,7 @@ class show_All_Reservation_Activity : AppCompatActivity() {
     }
 
     fun get_reservationList() {
-        val call = RetrofitBuilder.api_lab.getAllReservationResponse()
+        val call = RetrofitBuilder.api_reservation.getAllReservationResponse()
         Log.d("Watching: ", "성공1")
         call.enqueue(object : Callback<List<Reservation>> { // 비동기 방식 통신 메소드
 

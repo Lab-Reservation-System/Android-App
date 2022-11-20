@@ -369,7 +369,7 @@ class stu_LabStatusFragment : Fragment() {
     // labNumber에 해당하는 실습실 정보 읽어오기
     fun labStatus(labNumber: String) {
         val TAG: String = "강의실 상태 로그"
-        val call = RetrofitBuilder.api_lab.getReservationStatusResponse()
+        val call = RetrofitBuilder.api_reservation.getReservationStatusResponse()
 
         lab_915.clear(); lab_916.clear(); lab_918.clear(); lab_911.clear()
 
@@ -391,13 +391,32 @@ class stu_LabStatusFragment : Fragment() {
 
                         if(response_userList.isNotEmpty()) {
 
+
                             // 화면켜자마자 좌석 정보 911 915 916 918 좌석 정보 리스트에 저장
                             response_userList.forEach { it ->
-                                when(it.labNumber.toString()) {
-                                    "915" -> { lab_915.add(it.seat.toString()); lab_915_adminName.add(it.name) }
-                                    "916" -> { lab_916.add(it.seat.toString()); lab_916_adminName.add(it.name) }
-                                    "918" -> { lab_918.add(it.seat.toString()); lab_918_adminName.add(it.name) }
-                                    "911" -> { lab_911.add(it.seat.toString()); lab_911_adminName.add(it.name) }
+                                if(it.permissionState == true) {
+                                    when (it.labNumber.toString()) {
+                                        "915" -> {
+                                            lab_915.add(it.seat.toString()); lab_915_adminName.add(
+                                                it.name
+                                            )
+                                        }
+                                        "916" -> {
+                                            lab_916.add(it.seat.toString()); lab_916_adminName.add(
+                                                it.name
+                                            )
+                                        }
+                                        "918" -> {
+                                            lab_918.add(it.seat.toString()); lab_918_adminName.add(
+                                                it.name
+                                            )
+                                        }
+                                        "911" -> {
+                                            lab_911.add(it.seat.toString()); lab_911_adminName.add(
+                                                it.name
+                                            )
+                                        }
+                                    }
                                 }
                             }
 

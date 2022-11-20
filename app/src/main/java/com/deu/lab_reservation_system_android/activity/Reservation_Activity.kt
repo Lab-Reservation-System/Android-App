@@ -11,7 +11,6 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import com.deu.lab_reservation_system_android.R
 import com.deu.lab_reservation_system_android.dialog.CanUseSeat_Dialog
-import com.deu.lab_reservation_system_android.dialog.ClassInfo_assistant_Dialog
 import com.deu.lab_reservation_system_android.dialog.OverlapClass_Dialog
 import com.deu.lab_reservation_system_android.model.Classes
 import com.deu.lab_reservation_system_android.model.Dto.ReservationDto
@@ -187,8 +186,8 @@ class Reservation_Activity : AppCompatActivity() {
                 if(i.labNumber==j.labNumber) {
                     var reTime = i.time.split(':')
                     if (reTime[0].toInt() == j.time.toInt()) {
-                        Log.d("수업겹침 테스트", "compareWithClass: ${j.time}-${j.className}이랑 시간 겹침")
-                        alreadyExist.add("${j.time}-${j.className}")
+                        Log.d("수업겹침 테스트", "compareWithClass: ${j.time}:00 [${j.time}-${j.className}]이랑 시간 겹침")
+                        alreadyExist.add("${j.time}:00 [${j.time}-${j.className}]")
                         flag = 1
                         //수업 겹침
                     }
@@ -212,7 +211,7 @@ class Reservation_Activity : AppCompatActivity() {
         })
 
         val dialog = CanUseSeat_Dialog(this)
-        dialog.showDialog(clickedLab, reservationTodayList)
+        dialog.showDialog(clickedLab, reservationTodayList, reservationList)
 
 
 
@@ -221,7 +220,7 @@ class Reservation_Activity : AppCompatActivity() {
 
 
     fun get_reservationList() { //오늘 예약 가져오기
-        val call = RetrofitBuilder.api_lab.getTodayReservationResponse()
+        val call = RetrofitBuilder.api_reservation.getTodayReservationResponse()
         Log.d("Watching: ", "성공1")
         call.enqueue(object : Callback<MutableList<Reservation>> { // 비동기 방식 통신 메소드
 

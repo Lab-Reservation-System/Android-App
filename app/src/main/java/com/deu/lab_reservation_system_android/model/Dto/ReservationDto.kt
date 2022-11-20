@@ -7,6 +7,6 @@ data class ReservationDto(
     val date: String,
     val permissionState: Boolean,
     val labNumber: String,
-    val seat: String
+    var seat: String
 
 )

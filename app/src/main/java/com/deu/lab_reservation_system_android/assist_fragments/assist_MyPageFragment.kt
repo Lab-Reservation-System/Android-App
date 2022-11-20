@@ -102,8 +102,8 @@ class assist_MyPageFragment : Fragment() {
 
     fun alertDelete(){
         val builder = AlertDialog.Builder(activity)
-            .setTitle("                       토큰 확인")
-            .setMessage("                              현재 토큰 값\n                                 "+ token)
+            .setTitle("토큰 확인")
+            .setMessage("현재 토큰 값 : "+ token)
 
             .setPositiveButton("닫기", DialogInterface.OnClickListener{ dialog, which -> })
             .setNegativeButton("재발급", DialogInterface.OnClickListener{ dialog, which -> changeToken()})

@@ -42,6 +42,7 @@
             android:layout_height="40dp"
             android:background="@drawable/blue_corner"
             android:textSize="30dp"
+            android:inputType="textPassword"
             android:textAlignment="center"
             android:layout_margin="20dp"/>
 

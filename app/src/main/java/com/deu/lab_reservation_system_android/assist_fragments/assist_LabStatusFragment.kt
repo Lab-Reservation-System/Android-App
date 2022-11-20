@@ -357,13 +357,11 @@ class assist_LabStatusFragment : Fragment() {
     // labNumber에 해당하는 실습실 정보 읽어오기
     fun labStatus(labNumber: String) {
         val TAG: String = "강의실 상태 로그"
-        val call = RetrofitBuilder.api_lab.getReservationStatusResponse()
+        val call = RetrofitBuilder.api_reservation.getReservationStatusResponse()
 
         lab_915.clear(); lab_916.clear(); lab_918.clear(); lab_911.clear()
 
         call.enqueue(object : Callback<List<Reservation>> { // 비동기 방식 통신 메소드
-
-            @RequiresApi(Build.VERSION_CODES.S)
             override fun onResponse( // 통신에 성공한 경우
                 call: Call<List<Reservation>>,
                 response: Response<List<Reservation>>
@@ -375,15 +373,32 @@ class assist_LabStatusFragment : Fragment() {
 
                         Log.d(TAG, "총 예약되어 있는 좌석은 " + response_userList.size.toString() + "입니다.")
 
-                        if(response_userList.isNotEmpty()) {
 
                             // 화면켜자마자 좌석 정보 911 915 916 918 좌석 정보 리스트에 저장
                             response_userList.forEach { it ->
-                                when(it.labNumber.toString()) {
-                                    "915" -> { lab_915.add(it.seat.toString()); lab_915_adminName.add(it.name) }
-                                    "916" -> { lab_916.add(it.seat.toString()); lab_916_adminName.add(it.name) }
-                                    "918" -> { lab_918.add(it.seat.toString()); lab_918_adminName.add(it.name) }
-                                    "911" -> { lab_911.add(it.seat.toString()); lab_911_adminName.add(it.name) }
+                                if(it.permissionState==true) {
+                                    when (it.labNumber.toString()) {
+                                        "915" -> {
+                                            lab_915.add(it.seat.toString()); lab_915_adminName.add(
+                                                it.name
+                                            )
+                                        }
+                                        "916" -> {
+                                            lab_916.add(it.seat.toString()); lab_916_adminName.add(
+                                                it.name
+                                            )
+                                        }
+                                        "918" -> {
+                                            lab_918.add(it.seat.toString()); lab_918_adminName.add(
+                                                it.name
+                                            )
+                                        }
+                                        "911" -> {
+                                            lab_911.add(it.seat.toString()); lab_911_adminName.add(
+                                                it.name
+                                            )
+                                        }
+                                    }
                                 }
                             }
 
@@ -398,9 +413,7 @@ class assist_LabStatusFragment : Fragment() {
 
                             Log.d("테스트로그", "labStatus 초기화 중 lab 915 현재 인원 수 " + lab_915.size.toString())
 
-                        }
-                        else
-                            Log.d(TAG, "예약된 좌석 정보가 없습니다.")
+
                     }catch (e: JSONException){
                         e.printStackTrace()
                     }

@@ -169,7 +169,7 @@ class assist_ReservationFragment : Fragment() {
     }
 
     fun get_reservationList() {
-        val call = RetrofitBuilder.api_lab.getTodayReservationResponse()
+        val call = RetrofitBuilder.api_reservation.getTodayReservationResponse()
         Log.d("Watching: ", "성공1")
         call.enqueue(object : Callback<MutableList<Reservation>> { // 비동기 방식 통신 메소드
 
@@ -210,7 +210,7 @@ class assist_ReservationFragment : Fragment() {
     }
 
     fun allow_user(res_id:String) {
-        val call = RetrofitBuilder.api_lab.getAllowReservation(res_id)
+        val call = RetrofitBuilder.api_reservation.getAllowReservation(res_id)
         Log.d("Watching: ", "성공1")
         call.enqueue(object : Callback<String> { // 비동기 방식 통신 메소드
 
@@ -253,7 +253,7 @@ class assist_ReservationFragment : Fragment() {
         })
     }
     fun allow_all_user() {
-        val call = RetrofitBuilder.api_lab.getAllAllowReservation()
+        val call = RetrofitBuilder.api_reservation.getAllAllowReservation()
         Log.d("Watching: ", "성공1")
         call.enqueue(object : Callback<String> { // 비동기 방식 통신 메소드
 
@@ -297,7 +297,7 @@ class assist_ReservationFragment : Fragment() {
     }
 
     fun deny_user(res_id:String) {
-        val call = RetrofitBuilder.api_lab.getDenyReservation(res_id)
+        val call = RetrofitBuilder.api_reservation.getDenyReservation(res_id)
         var temp : Reservation? = null
         Log.d("Watching: ", "성공1")
         call.enqueue(object : Callback<String> { // 비동기 방식 통신 메소드

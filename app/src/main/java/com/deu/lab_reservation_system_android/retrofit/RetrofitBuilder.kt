@@ -23,9 +23,9 @@ object RetrofitBuilder {
         api_token = retrofit.create(TokenAPI_Controller::class.java)
     }
 
-    var api_lab: ReservationAPI_Controller
+    var api_reservation: ReservationAPI_Controller
     init {
-        api_lab = retrofit.create(ReservationAPI_Controller::class.java)
+        api_reservation = retrofit.create(ReservationAPI_Controller::class.java)
     }
 
     var api_blacklist: BlackListAPI_Controller
