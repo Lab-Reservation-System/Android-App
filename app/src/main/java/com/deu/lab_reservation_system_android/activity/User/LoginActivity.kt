@@ -88,7 +88,6 @@ class LoginActivity : AppCompatActivity() {
                     }
 
                 } else {
-                    // 통신 성공 but 응답 실패
 
                     wrong()
 
@@ -137,7 +136,7 @@ class LoginActivity : AppCompatActivity() {
     fun wrong(){
         val builder = AlertDialog.Builder(this)
             .setTitle("로그인 실패")
-            .setMessage("다시 입력하세요")
+            .setMessage("정보가 일치하지 않거나 정지된 계정입니다.\n\n[정지는 기준일로 부터 3일 후 09시 이후 해제]")
             .setPositiveButton("확인",
                 DialogInterface.OnClickListener{ dialog, which -> })
         builder.show()

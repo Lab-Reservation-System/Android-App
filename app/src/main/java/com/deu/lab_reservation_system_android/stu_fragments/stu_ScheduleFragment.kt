@@ -10,10 +10,12 @@ import androidx.fragment.app.Fragment
 import com.deu.lab_reservation_system_android.databinding.FragmentProfScheduleBinding
 import com.deu.lab_reservation_system_android.databinding.FragmentStuScheduleBinding
 import com.deu.lab_reservation_system_android.dialog.ClassInfo_Dialog
+import com.deu.lab_reservation_system_android.dialog.ClassInfo_assistant_Dialog
 import com.deu.lab_reservation_system_android.dialog.ClassRegist_Dialog
 import com.deu.lab_reservation_system_android.dialog.SeminarRegist_Dialog
 import com.deu.lab_reservation_system_android.model.Classes
 import com.deu.lab_reservation_system_android.model.Schedule
+import com.deu.lab_reservation_system_android.model.User
 import com.deu.lab_reservation_system_android.nav.Professor_Nav_Activity
 import com.deu.lab_reservation_system_android.nav.Student_Nav_Activity
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
@@ -35,7 +37,8 @@ class stu_ScheduleFragment : Fragment() {
     lateinit var classList : List<Classes>
     var weekclassList : MutableList<Classes> = mutableListOf()
     var scheduleList : MutableList<Schedule> = mutableListOf()
-
+    lateinit var user : User
+    var clicked : String = "915"
     override fun onCreateView(
 
         inflater: LayoutInflater,
@@ -44,7 +47,7 @@ class stu_ScheduleFragment : Fragment() {
     ): View? {
         Log.d("학생 로그", "onCreateView: 시간표")
 
-        var user = (activity as Student_Nav_Activity).getUser() // 사용자 정보 가져오기
+        user = (activity as Student_Nav_Activity).getUser() // 사용자 정보 가져오기
 
         var binding = FragmentStuScheduleBinding.inflate(inflater, container, false)
         mBinding = binding
@@ -67,7 +70,7 @@ class stu_ScheduleFragment : Fragment() {
 
 
 
-        var clicked : String = "915"
+        clicked = "915"
         binding.radioGroup.setOnCheckedChangeListener { radioGroup, i ->
 
             when(i){
@@ -88,10 +91,11 @@ class stu_ScheduleFragment : Fragment() {
             dialog.showDialog(user)
             dialog.setOnClickListener(object : SeminarRegist_Dialog.OnDialogClickListener {
                 override fun onClicked(num : Int) {
-                    delete_Schedule()
-                    get_ClassesList() //모든 수업 다 가져오기
                     binding.radioButton915.isChecked = true
                     clicked= "915"
+                    delete_Schedule()
+                    get_ClassesList() //모든 수업 다 가져오기
+
                 }
 
             })
@@ -218,7 +222,9 @@ class stu_ScheduleFragment : Fragment() {
 
 
                 if(dateOf != "" && timeOf != "") {
-                    var schedule_temp = Schedule(0,0,
+                    val schedule_temp = Schedule(
+                        it.userId,
+                        it.regularClassNum,it.classNum,
                         if (it.className == null) "" else it.className,
                         it.userName,
                         timeOf,
@@ -259,7 +265,19 @@ class stu_ScheduleFragment : Fragment() {
             mBinding!!.schedule.findCell(it.time,it.date).setOnClickListener {
                 Log.d("클릭진짜", "getMapToScedule: "+C_name)
                 val dialog = ClassInfo_Dialog(requireActivity())
-                dialog.showDialog(temp)
+                dialog.showDialog(temp,user.id)
+                dialog.setOnClickListener(object : ClassInfo_Dialog.OnDialogClickListener {
+                    override fun onClicked(num : Int) {
+
+                        mBinding!!.radioButton915.isChecked = true
+                        clicked= "915"
+                        delete_Schedule()
+
+                        get_ClassesList() //모든 수업 다 가져오기
+
+                    }
+
+                })
             }
         })
 

@@ -40,6 +40,7 @@ class ClassInfo_assistant_Dialog (context : Context) {
         val classname = dialog.findViewById<EditText>(R.id.class_name)
         val proname = dialog.findViewById<EditText>(R.id.pro_name)
         val date = dialog.findViewById<EditText>(R.id.date)
+        val userID = dialog.findViewById<EditText>(R.id.user_ID)
         val time = dialog.findViewById<EditText>(R.id.time)
         val cancel_btn = dialog.findViewById<Button>(R.id.cancel_btn)
         val delete_btn = dialog.findViewById<Button>(R.id.delete_btn)
@@ -47,6 +48,7 @@ class ClassInfo_assistant_Dialog (context : Context) {
         classname.setText(schedule.className)
         proname.setText(schedule.proName)
         date.setText(schedule.date+"요일")
+        userID.setText(schedule.userID)
         time.setText(schedule.time)
 
         dialog.show()

@@ -1,6 +1,7 @@
 package com.deu.lab_reservation_system_android.model
 
 data class Schedule (
+    var userID : String,
     var regularClassNum : Int,
     var classNum : Int,
     var className : String,

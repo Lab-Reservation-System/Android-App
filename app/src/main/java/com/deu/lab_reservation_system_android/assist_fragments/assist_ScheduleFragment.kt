@@ -238,6 +238,7 @@ class assist_ScheduleFragment : Fragment() {
 
                 if(dateOf != "" && timeOf != "") {
                     var schedule_temp = Schedule(
+                        it.userId,
                         it.regularClassNum,it.classNum,
                         if (it.className == null) "" else it.className,
                         it.userName,
