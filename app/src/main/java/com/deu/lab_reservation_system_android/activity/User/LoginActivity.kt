@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
 
             Log.d("BUTTON CLICKED", "id: " + logindto.id + ", pw: " + logindto.password)
 
-            var user2 = User("김준","1234","20183140", "1234-7897-44", true, "admin","asds@naver.com")
+            var user2 = User("김준","1234","20183140", "1234-7897-44", true, "professor","asds@naver.com")
             job_check(user2) //화면 전환 테스트
             //Login(logindto) //찐
         }
