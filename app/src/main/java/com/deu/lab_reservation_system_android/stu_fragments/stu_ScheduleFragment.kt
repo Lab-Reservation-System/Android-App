@@ -218,7 +218,7 @@ class stu_ScheduleFragment : Fragment() {
 
 
                 if(dateOf != "" && timeOf != "") {
-                    var schedule_temp = Schedule(
+                    var schedule_temp = Schedule(0,0,
                         if (it.className == null) "" else it.className,
                         it.userName,
                         timeOf,
