@@ -20,6 +20,7 @@ import com.deu.lab_reservation_system_android.activity.student.Lab_ReservationAc
 import com.deu.lab_reservation_system_android.databinding.FragmentStuLabstatusBinding
 import com.deu.lab_reservation_system_android.model.Dto.Reservation
 import com.deu.lab_reservation_system_android.dialog.SeatInfo_Dialog
+import com.deu.lab_reservation_system_android.model.Classes
 import com.deu.lab_reservation_system_android.nav.Student_Nav_Activity
 import com.deu.lab_reservation_system_android.retrofit.RetrofitBuilder
 import org.json.JSONException
@@ -35,10 +36,14 @@ class stu_LabStatusFragment : Fragment() {
     private var mBinding : FragmentStuLabstatusBinding? = null
 
     lateinit var response_userList: List<Reservation>
+    lateinit var response_classList: List<Classes>
     lateinit var binding : FragmentStuLabstatusBinding
 
     // 현재 시간이 비일과인지 일과인지 체크하는 변수 (false : 비일과, true : 일과)
     private var timeCheck: Boolean = true
+
+    // 강의실에 수업 또는 세미나가 등록되어있는지 체크하는 변수 (false : 미등록, true : 등록)
+    private var classCheck: Boolean = false
 
     // 강의실 현황
     private var lab_911: MutableList<String> = mutableListOf()
@@ -51,6 +56,17 @@ class stu_LabStatusFragment : Fragment() {
     private var lab_916_adminName = mutableListOf<String>()
     private var lab_918_adminName = mutableListOf<String>()
     private var lab_911_adminName = mutableListOf<String>()
+
+    // 수업 관련 변수
+    private var lab_915_class_time = mutableListOf<String>()
+    private var lab_916_class_time = mutableListOf<String>()
+    private var lab_918_class_time = mutableListOf<String>()
+    private var lab_911_class_time = mutableListOf<String>()
+
+    private var lab_915_class_date = mutableListOf<String>()
+    private var lab_916_class_date = mutableListOf<String>()
+    private var lab_918_class_date = mutableListOf<String>()
+    private var lab_911_class_date = mutableListOf<String>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -72,6 +88,8 @@ class stu_LabStatusFragment : Fragment() {
 
         Log.d("테스트로그", "labStatus 초기화 후 lab 915 현재 인원 수 " + lab_915.size.toString())
 
+        // 수업 정보 들고오기
+        classStatus()
 
         //실습실 뒤로 버튼 눌렀을 때
         binding.backLabNumber.setOnClickListener {
@@ -257,7 +275,8 @@ class stu_LabStatusFragment : Fragment() {
         // 실습실 예약 버튼을 눌렀을 때
         binding.labReservationBtn.setOnClickListener {
             var intent = Intent(activity, Lab_ReservationActivity::class.java)
-            intent.putExtra("key",user)
+            intent.putExtra("user",user)
+
             startActivity(intent)
         }
 
@@ -265,6 +284,22 @@ class stu_LabStatusFragment : Fragment() {
         return mBinding?.root
     }
 
+    // 강의실이 수업 또는 세미나가 있어서 예약하지 못하게 숨기는 함수
+    fun labClassClose() {
+        val height = 600
+        val width = FrameLayout.LayoutParams.MATCH_PARENT
+        val layoutParams = FrameLayout.LayoutParams(width, height)
+        binding.labClassClose.layoutParams = layoutParams
+    }
+
+    // 강의실 수업 또는 세미나가 끝나서 여는 함수
+    fun labClassEndOpenView() {
+        val height = 0
+        val width = FrameLayout.LayoutParams.MATCH_PARENT
+        val layoutParams = FrameLayout.LayoutParams(width, height)
+        binding.labClassClose.layoutParams = layoutParams
+    }
+    
     // 강의실 안 열렸을 때 숨기고 Text 표시하는 함수
     fun closeText() {
         val height = 600
@@ -290,7 +325,7 @@ class stu_LabStatusFragment : Fragment() {
 
         binding.labLeftSeat.setHeight(0)
         binding.labRightSeat.setHeight(0)
-        closeText()
+//        closeText()
     }
 
     // 강의실이 열리면 표시하는 함수
@@ -301,7 +336,7 @@ class stu_LabStatusFragment : Fragment() {
             binding.labLeftSeat.setHeight(520)
             binding.labRightSeat.setHeight(520)
         }
-        openView()
+//        openView()
     }
 
     // view height 설정을 위한 함수
@@ -355,6 +390,7 @@ class stu_LabStatusFragment : Fragment() {
                         //어떻게 응답
                         Log.d(TAG, "stu_LabStatusFragment - onResponse() called 성공4")
                         response_userList = response.body()!!
+
                         Log.d(TAG, "총 예약되어 있는 좌석은 " + response_userList.size.toString() + "입니다.")
 
                         if(response_userList.isNotEmpty()) {
@@ -395,6 +431,73 @@ class stu_LabStatusFragment : Fragment() {
 
             override fun onFailure(call: Call<List<Reservation>>, t: Throwable) {
                 // 통신에 실패한 경우
+                Log.d("CONNECTION FAILURE: ", t.localizedMessage)
+            }
+        })
+    }
+
+    // 수업 정보에 해당하는 정보 읽어오기
+    fun classStatus() {
+        val TAG: String = "수업정보로그"
+        val call = RetrofitBuilder.api_classes.getAllSeminarClassResponse()
+
+        // 다른 화면 넘어갔다가 올 때마다 실행되기 때문에 이전값 초기화
+        lab_915_class_time.clear(); lab_916_class_time.clear(); lab_918_class_time.clear(); lab_911_class_time.clear()
+        lab_915_class_date.clear(); lab_916_class_date.clear(); lab_918_class_date.clear(); lab_911_class_date.clear()
+        
+        Log.d(TAG, "stu_LabStatusFragment - classStatus() called 성공 1")
+
+        call.enqueue(object : Callback<List<Classes>> { // 비동기 방식 통신 메소드
+
+            @RequiresApi(Build.VERSION_CODES.S)
+            override fun onResponse( // 통신에 성공한 경우
+                call: Call<List<Classes>>,
+                response: Response<List<Classes>>
+            ) {
+                Log.d(TAG, "stu_LabStatusFragment - onResponse() called 성공 2")
+                if (response.isSuccessful) { // 응답 잘 받은 경우
+                    Log.d(TAG, "stu_LabStatusFragment - onResponse() called 성공 3")
+                    try {
+                        //어떻게 응답
+                        Log.d(TAG, "stu_LabStatusFragment - onResponse() called 성공 4")
+                        response_classList = response.body()!!
+
+                        Log.d(TAG, "response_classList ${response_classList.size}")
+
+                        if(response_classList.isNotEmpty()) {
+
+                            // 화면켜자마자 좌석 정보 911 915 916 918 좌석 정보 리스트에 저장
+                            response_classList.forEach { it ->
+                                when(it.labNumber.toString()) {
+                                    "915" -> { lab_915_class_time.add(it.time); lab_915_class_date.add(it.date) }
+                                    "916" -> { lab_916_class_time.add(it.time); lab_916_class_date.add(it.date) }
+                                    "918" -> { lab_918_class_time.add(it.time); lab_918_class_date.add(it.date) }
+                                    "911" -> { lab_911_class_time.add(it.time); lab_911_class_date.add(it.date) }
+                                }
+                            }
+
+                            Log.d(TAG, "lab_915_class = ${lab_915_class_time.size}, lab_915_class_date = ${lab_915_class_date.size}")
+                            Log.d(TAG, "lab_916_class = ${lab_916_class_time.size}, lab_916_class_date = ${lab_916_class_date.size}")
+                            Log.d(TAG, "lab_918_class = ${lab_918_class_time.size}, lab_918_class_date = ${lab_918_class_date.size}")
+                            Log.d(TAG, "lab_911_class = ${lab_911_class_time.size}, lab_911_class_date = ${lab_911_class_date.size}")
+
+                            checkClass("915")
+
+
+                        }
+                        else
+                            Log.d(TAG, "등록된 수업 정보가 없습니다.")
+                    }catch (e: JSONException){
+                        e.printStackTrace()
+                    }
+
+                } else {
+                    // 통신 성공 but 응답 실패
+                    Log.d("RESPONSE", "FAILURE")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Classes>>, t: Throwable) {
                 Log.d("CONNECTION FAILURE: ", t.localizedMessage)
             }
         })
@@ -462,43 +565,161 @@ class stu_LabStatusFragment : Fragment() {
     }
 
     // 일과시간 중 등록된 시간표가 있는지 확인하는 함수
+    fun checkClass(labNumber: String) {
+        val TAG: String = "시간표유무체크"
+        checkTime()
+        classCheck = false
+        
+        val currentTime : Long = System.currentTimeMillis() // ms로 반환
+        val dataFormat = SimpleDateFormat("yyyy-MM-dd HH")
+        val data = dataFormat.format(currentTime).split(" ") // data[0] : 년 월 일, date[1] : 시간
+
+        Log.d(TAG, "테스트 ${data[0]}")
+        Log.d(TAG, "${lab_915_class_date[0].substring(5, 7)}")
+        Log.d(TAG, "data ${data[1]}")
+        // timeCheck (true : 일과, false : 비일과)
+        if (timeCheck) {
+            when (labNumber) {
+                "915" -> {
+                    Log.d(TAG, "stu_LabStatusFragment - checkClass() called 성공2, classCheck전 = ${classCheck}")
+
+                    for(i: Int in 0 .. lab_915_class_time.size - 1) {
+                        // 오늘 날짜랑 915에 등록된 수업, 세미나랑 비교
+                        Log.d(TAG+"1", "for,${data[0]},${lab_915_class_date[i]}")
+                        Log.d(TAG+"2", "for,${data[1]},${lab_915_class_time[i]}")
+
+                        if(data[0].compareTo(lab_915_class_date[i]) == 0 && data[1].toString().compareTo(lab_915_class_time[i].toString()) == 0) {
+
+                            Log.d(TAG, "stu_LabStatusFragment - checkClass() called, classCheck 조건 걸림 ${classCheck}")
+                            // (false : 미등록, true : 등록)
+                            classCheck = true
+                            break
+                        } else {
+                            classCheck = false
+                        }
+                    }
+                    Log.d(TAG, "stu_LabStatusFragment - checkClass() called 성공2, classCheck후 = ${classCheck}")
+                }
+                "916" -> {
+                    for(i: Int in 0 .. lab_916_class_time.size - 1) {
+                        // 오늘 날짜랑 915에 등록된 수업, 세미나랑 비교
+                        if(data[0].compareTo(lab_916_class_date[i]) == 0 && data[1].toString().compareTo(lab_916_class_time[i].toString()) == 0) {
+                            // (false : 미등록, true : 등록)
+                            classCheck = true
+                        } else {
+                            classCheck = false
+                        }
+                    }
+                }
+                "918" -> {
+                    for(i: Int in 0 .. lab_918_class_time.size - 1) {
+                        // 오늘 날짜랑 915에 등록된 수업, 세미나랑 비교
+                        if(data[0].compareTo(lab_918_class_date[i]) == 0 && data[1].toString().compareTo(lab_918_class_time[i].toString()) == 0) {
+                            // (false : 미등록, true : 등록)
+                            classCheck = true
+                        } else {
+                            classCheck = false
+                        }
+                    }
+                }
+                "911" -> {
+                    for(i: Int in 0 .. lab_911_class_time.size - 1) {
+                        // 오늘 날짜랑 915에 등록된 수업, 세미나랑 비교
+                        if(data[0].compareTo(lab_911_class_date[i]) == 0 && data[1].toString().compareTo(lab_911_class_time[i].toString()) == 0) {
+                            // (false : 미등록, true : 등록)
+                            classCheck = true
+                        } else {
+                            classCheck = false
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 
     // 강의실 인원 체크, 915 -> 916 -> 918 -> 911 순으로 강의실 열고, 강의실 인원 수가 20명 이상이면 다음 강의실 연다.
     fun labCheck(labNumber: String) {
         checkTime()
 
+        Log.d("checkClass", "stu_LabStatusFragment - labCheck() called, classCheck전 : ${classCheck}")
+        checkClass(labNumber)
+        Log.d("checkClass", "stu_LabStatusFragment - labCheck() called, classCheck후 : ${classCheck}")
+        
         when(labNumber) {
             "911" -> {
-                if ((lab_915.size >= 20 && lab_916.size >= 20 && lab_918.size >= 20) && !timeCheck) {
-                    seatShow()
-                } else if (!timeCheck){
-                    seatHide()
-                } else {
-                    seatShow()
+                if(!timeCheck) {
+                    if((lab_915.size >= 20 && lab_916.size >= 20 && lab_918.size >= 20)) {
+                        seatShow()
+                        openView()
+                    } else {
+                        seatHide()
+                        closeText()
+                    }
+                } else { // 일과 시간
+                    // 강의실에 수업 또는 세미나가 등록되어있는지 체크하는 변수 (false : 미등록, true : 등록)
+                    if(!classCheck) {
+                        seatShow()
+                        openView()
+                        labClassEndOpenView()
+                    } else {
+                        seatHide()
+                        labClassClose()
+                    }
                 }
             }
             "918" -> {
-                if ((lab_915.size >= 20 && lab_916.size >= 20) && !timeCheck) {
-                    seatShow()
-                } else if (!timeCheck){
-                    seatHide()
-                } else {
-                    seatShow()
+                if(!timeCheck) {
+                    if((lab_915.size >= 20 && lab_916.size >= 20)) {
+                        seatShow()
+                        openView()
+                    } else {
+                        seatHide()
+                        closeText()
+                    }
+                } else { // 일과 시간
+                    // 강의실에 수업 또는 세미나가 등록되어있는지 체크하는 변수 (false : 미등록, true : 등록)
+                    if(!classCheck) {
+                        seatShow()
+                        openView()
+                        labClassEndOpenView()
+                    } else {
+                        seatHide()
+                        labClassClose()
+                    }
                 }
             }
             "916" -> {
-                if (lab_915.size >= 20 && !timeCheck) {
-                    seatShow()
-                } else if (!timeCheck){
-                    seatHide()
-                } else {
-                    seatShow()
+                if (!timeCheck) {
+                    if(lab_915.size >= 20) {
+                        seatShow()
+                        openView()
+                    } else {
+                        seatHide()
+                        closeText()
+                    }
+                } else { // 일과 시간
+                    // 강의실에 수업 또는 세미나가 등록되어있는지 체크하는 변수 (false : 미등록, true : 등록)
+                    if(!classCheck) {
+                        seatShow()
+                        openView()
+                        labClassEndOpenView()
+                    } else {
+                        seatHide()
+                        labClassClose()
+                    }
                 }
             }
-            else -> {
-                // 여기에 시간표 체크 조건 넣기
-                seatShow()
+            "915" -> {
+                // 강의실에 수업 또는 세미나가 등록되어있는지 체크하는 변수 (false : 미등록, true : 등록)
+                if(!classCheck) {
+                    seatShow()
+                    openView()
+                    labClassEndOpenView()
+                } else {
+                    seatHide()
+                    labClassClose()
+                }
             }
         }
     }

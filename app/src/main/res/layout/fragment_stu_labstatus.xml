@@ -655,6 +655,18 @@
             android:background="#808080"
             />
 
+        <TextView
+            android:id="@+id/labClassClose"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="수업 또는 세미나 \n진행중입니다."
+            android:textColor="@color/black"
+            android:textSize="50dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:background="#808080"
+            />
+
         <LinearLayout
             android:layout_marginTop="200dp"
             android:layout_width="match_parent"
