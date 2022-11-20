@@ -5,9 +5,7 @@ import com.deu.lab_reservation_system_android.model.Dto.ClassesDto
 import com.deu.lab_reservation_system_android.model.Dto.Reservation
 import com.deu.lab_reservation_system_android.model.Dto.SignupDto
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ClassesAPI_Controller {
     @POST("/api/class/create")
@@ -15,4 +13,11 @@ interface ClassesAPI_Controller {
 
     @GET("/api/class/index")
     fun getAllSeminarClassResponse() : Call<List<Classes>>
+
+    // 삭제
+    @DELETE("/api/class/delete/seminar/{classNum}")
+    fun DeleteSeminar(@Path("classNum") classnum: Int): Call<String>
+
+    @DELETE("/api/class/delete/regular/{regularClassNum}")
+    fun DeleteClass(@Path("regularClassNum") regularnum: Int): Call<String>
 }
