@@ -13,7 +13,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import com.deu.lab_reservation_system_android.activity.student.Lab_ReservationActivity
 import com.deu.lab_reservation_system_android.databinding.FragmentAssistLabstatusBinding
 import com.deu.lab_reservation_system_android.dialog.SeatInfo_Dialog
 import com.deu.lab_reservation_system_android.model.Classes
@@ -268,13 +267,6 @@ class assist_LabStatusFragment : Fragment() {
             show_detail_seat(binding.seat40.text.toString())
         }
 
-        // 실습실 예약 버튼을 눌렀을 때
-        binding.labReservationBtn.setOnClickListener {
-            var intent = Intent(activity, Lab_ReservationActivity::class.java)
-            intent.putExtra("user",user)
-
-            startActivity(intent)
-        }
 
 
         return mBinding?.root
@@ -554,9 +546,6 @@ class assist_LabStatusFragment : Fragment() {
         val dataFormat = SimpleDateFormat("yyyy-MM-dd HH")
         val data = dataFormat.format(currentTime).split(" ") // data[0] : 년 월 일, date[1] : 시간
 
-        Log.d(TAG, "테스트 ${data[0]}")
-        Log.d(TAG, "${lab_915_class_date[0].substring(5, 7)}")
-        Log.d(TAG, "data ${data[1]}")
         // timeCheck (true : 일과, false : 비일과)
         if (timeCheck) {
             when (labNumber) {

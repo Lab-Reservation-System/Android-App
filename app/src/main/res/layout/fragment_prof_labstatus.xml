@@ -709,18 +709,5 @@
 
     </FrameLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/labReservationBtn"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@drawable/skyblue_box"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:text="실습실 예약"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:textColor="@color/black"
-        />
 
 </LinearLayout>

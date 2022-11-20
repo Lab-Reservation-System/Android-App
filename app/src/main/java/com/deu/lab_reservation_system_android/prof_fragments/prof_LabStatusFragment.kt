@@ -13,7 +13,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import com.deu.lab_reservation_system_android.activity.student.Lab_ReservationActivity
 import com.deu.lab_reservation_system_android.databinding.FragmentProfLabstatusBinding
 import com.deu.lab_reservation_system_android.dialog.SeatInfo_Dialog
 import com.deu.lab_reservation_system_android.model.Classes
@@ -269,12 +268,7 @@ class prof_LabStatusFragment : Fragment() {
         }
 
         // 실습실 예약 버튼을 눌렀을 때
-        binding.labReservationBtn.setOnClickListener {
-            var intent = Intent(activity, Lab_ReservationActivity::class.java)
-            intent.putExtra("user",user)
 
-            startActivity(intent)
-        }
 
 
         return mBinding?.root
