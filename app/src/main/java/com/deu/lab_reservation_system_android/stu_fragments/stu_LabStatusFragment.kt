@@ -491,7 +491,7 @@ class stu_LabStatusFragment : Fragment() {
 
 
                             checkClass("915")
-
+                            run()
 
                         }
                         else
