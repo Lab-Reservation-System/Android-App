@@ -38,6 +38,7 @@
                 android:textColor="@color/black"
                 android:text="강의실 선택"/>
 
+
             <RadioGroup
                 android:layout_margin="10dp"
                 android:id="@+id/radioGroup"
@@ -124,6 +125,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@drawable/selector_radio_button"
+                    android:enabled="false"
                     android:textColor="@color/black"
                     android:button="@null"
                     android:text="09:00"
@@ -135,6 +137,7 @@
                     android:id="@+id/check1"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
+                    android:enabled="false"
                     android:layout_height="wrap_content"
                     android:background="@drawable/selector_radio_button"
                     android:textColor="@color/black"
@@ -150,6 +153,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/selector_radio_button"
                     android:textColor="@color/black"
+                        android:enabled="false"
                     android:button="@null"
                     android:text="10:00"
                     android:gravity="center"
@@ -165,6 +169,7 @@
                     android:textColor="@color/black"
                     android:button="@null"
                     android:text="10:30"
+                    android:enabled="false"
                     android:gravity="center"
                     />
 
@@ -187,6 +192,7 @@
                     android:textColor="@color/black"
                     android:button="@null"
                     android:text="11:00"
+                    android:enabled="false"
                     android:gravity="center"
 
                     />
@@ -200,6 +206,7 @@
                     android:textColor="@color/black"
                     android:button="@null"
                     android:text="11:30"
+                    android:enabled="false"
                     android:gravity="center"
                     />
                 <CheckBox
@@ -212,6 +219,7 @@
                     android:textColor="@color/black"
                     android:button="@null"
                     android:text="12:00"
+                    android:enabled="false"
                     android:gravity="center"
 
                     />
@@ -225,6 +233,7 @@
                     android:textColor="@color/black"
                     android:button="@null"
                     android:text="12:30"
+                    android:enabled="false"
                     android:gravity="center"
                     />
 
@@ -246,6 +255,7 @@
                     android:textColor="@color/black"
                     android:button="@null"
                     android:text="13:00"
+                    android:enabled="false"
                     android:gravity="center"
 
                     />
@@ -259,6 +269,7 @@
                     android:textColor="@color/black"
                     android:button="@null"
                     android:text="13:30"
+                    android:enabled="false"
                     android:gravity="center"
                     />
                 <CheckBox
@@ -271,6 +282,7 @@
                     android:textColor="@color/black"
                     android:button="@null"
                     android:text="14:00"
+                    android:enabled="false"
                     android:gravity="center"
 
                     />
@@ -284,6 +296,7 @@
                     android:textColor="@color/black"
                     android:button="@null"
                     android:text="14:30"
+                    android:enabled="false"
                     android:gravity="center"
                     />
 
@@ -307,7 +320,7 @@
                     android:button="@null"
                     android:text="15:00"
                     android:gravity="center"
-
+                        android:enabled="false"
                     />
                 <CheckBox
                     android:layout_margin="5dp"
@@ -319,6 +332,7 @@
                     android:textColor="@color/black"
                     android:button="@null"
                     android:text="15:30"
+                        android:enabled="false"
                     android:gravity="center"
                     />
                 <CheckBox
@@ -331,6 +345,7 @@
                     android:textColor="@color/black"
                     android:button="@null"
                     android:text="16:00"
+                    android:enabled="false"
                     android:gravity="center"
 
                     />
@@ -344,6 +359,7 @@
                     android:textColor="@color/black"
                     android:button="@null"
                     android:text="16:30"
+                    android:enabled="false"
                     android:gravity="center"
                     />
 
@@ -378,7 +394,7 @@
                     android:button="@null"
                     android:text="17:00"
                     android:gravity="center"
-
+                        android:enabled="false"
                     />
                 <CheckBox
                     android:layout_margin="5dp"
@@ -391,6 +407,7 @@
                     android:button="@null"
                     android:text="17:30"
                     android:gravity="center"
+                        android:enabled="false"
                     />
                 <CheckBox
                     android:layout_margin="5dp"
@@ -403,6 +420,7 @@
                     android:button="@null"
                     android:text="18:00"
                     android:gravity="center"
+                        android:enabled="false"
 
                     />
                 <CheckBox
@@ -416,6 +434,7 @@
                     android:button="@null"
                     android:text="18:30"
                     android:gravity="center"
+                        android:enabled="false"
                     />
 
             </LinearLayout>
@@ -438,7 +457,7 @@
                     android:button="@null"
                     android:text="19:00"
                     android:gravity="center"
-
+                        android:enabled="false"
                     />
                 <CheckBox
                     android:layout_margin="5dp"
@@ -451,6 +470,7 @@
                     android:button="@null"
                     android:text="19:30"
                     android:gravity="center"
+                        android:enabled="false"
                     />
                 <CheckBox
                     android:layout_margin="5dp"
@@ -463,7 +483,7 @@
                     android:button="@null"
                     android:text="20:00"
                     android:gravity="center"
-
+                        android:enabled="false"
                     />
                 <CheckBox
                     android:layout_margin="5dp"
@@ -476,6 +496,7 @@
                     android:button="@null"
                     android:text="20:30"
                     android:gravity="center"
+                        android:enabled="false"
                     />
 
             </LinearLayout>
@@ -498,7 +519,7 @@
                     android:button="@null"
                     android:text="21:00"
                     android:gravity="center"
-
+                        android:enabled="false"
                     />
                 <CheckBox
                     android:layout_margin="5dp"
@@ -511,6 +532,7 @@
                     android:button="@null"
                     android:text="21:30"
                     android:gravity="center"
+                        android:enabled="false"
                     />
                 <CheckBox
                     android:layout_margin="5dp"
@@ -523,7 +545,7 @@
                     android:button="@null"
                     android:text="22:00"
                     android:gravity="center"
-
+                        android:enabled="false"
                     />
                 <CheckBox
                     android:layout_margin="5dp"
@@ -536,6 +558,7 @@
                     android:button="@null"
                     android:text="22:30"
                     android:gravity="center"
+                        android:enabled="false"
                     />
 
             </LinearLayout>
@@ -558,7 +581,7 @@
                     android:button="@null"
                     android:text="23:00"
                     android:gravity="center"
-
+                        android:enabled="false"
                     />
                 <CheckBox
                     android:layout_margin="5dp"
@@ -571,6 +594,7 @@
                     android:button="@null"
                     android:text="23:30"
                     android:gravity="center"
+                        android:enabled="false"
                     />
                 <CheckBox
                     android:layout_margin="5dp"
@@ -583,7 +607,7 @@
                     android:button="@null"
                     android:text="00:00"
                     android:gravity="center"
-
+                        android:enabled="false"
                     />
                 <CheckBox
                     android:layout_margin="5dp"
@@ -596,6 +620,7 @@
                     android:button="@null"
                     android:text="00:30"
                     android:gravity="center"
+                        android:enabled="false"
                     />
 
             </LinearLayout>

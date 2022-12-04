@@ -27,6 +27,8 @@ class Reservation_Activity : AppCompatActivity() {
 
     lateinit var user: User //가져온 예약할 사용자 정보
     lateinit var today : String
+    lateinit var hour : String
+    lateinit var min : String
 
     lateinit var response_ReservationList : MutableList<Reservation> // 오늘 예약
     var reservationTodayList : MutableList<Reservation> = mutableListOf() // 해당 실습실 예약 정보
@@ -47,8 +49,18 @@ class Reservation_Activity : AppCompatActivity() {
 
         //오늘 날짜 구하기
         val currentTime : Long = System.currentTimeMillis() // ms로 반환
+        val timeHourFormat = SimpleDateFormat("HH")
+        val timeMinFormat = SimpleDateFormat("mm")
         val dataFormat = SimpleDateFormat("yyyy-MM-dd")
+
         today = dataFormat.format(currentTime)
+        hour = timeHourFormat.format(currentTime)
+
+        if(hour.equals("00"))
+            hour = "24"
+
+        min = timeMinFormat.format(currentTime)
+
         Log.d(TAG, "오늘 날짜: "+today)
 
         //이전 화면에서 유저 정보 가져오기
@@ -76,15 +88,40 @@ class Reservation_Activity : AppCompatActivity() {
         // 체크박스 리스트로 바인딩
         var packName : String  = this.packageName // 패키지 이름
         var checkBox = arrayOfNulls<CheckBox>(32)   // 체크박스
-        for(i in 0..31){
-            var resName = "@id/check"+i.toString()
-            var resId = getResources().getIdentifier(resName, "id", packName)
-            checkBox[i] = findViewById(resId)
 
-            checkBox[i]?.setOnClickListener{
-                Log.d("체크박스 클릭 리스너 : ", "onCreate: ${i}번째 클릭")
+        Log.d(TAG, "현재 시간: "+hour+":"+min)
+
+        var hour_flag : Int = 0
+        var min_flag : Int = 0
+
+        if(hour.toInt()-9 >= 0)
+        {
+            hour_flag = (hour.toInt()-9)*2
+
+            //현재 시간이 30분이 넘는지 확인
+            if(min.compareTo("30") < 0) //안넘으면
+                min_flag = 0
+            else
+                min_flag = 1
+
+
+            var tempI : Int = hour_flag+min_flag
+
+            Log.d(TAG, "현재 시간: "+ tempI)
+
+            for(i in tempI..31) {
+                var resName = "@id/check"+i.toString()
+                var resId = getResources().getIdentifier(resName, "id", packName)
+                checkBox[i] = findViewById(resId)
+
+                checkBox[i]?.isEnabled = true
+                checkBox[i]?.setOnClickListener{
+                    Log.d("체크박스 클릭 리스너 : ", "onCreate: ${i}번째 클릭")
+                }
+
             }
         }
+
 
         // 선택 완료 시
         val select_btn = findViewById<Button>(R.id.select_btn)  // 선택 완료 버튼
